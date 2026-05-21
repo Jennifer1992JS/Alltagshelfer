@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alltagsfreund Jenny - Haushaltshilfe & Nachbarschaftshilfe</title>
+    <style>
+        /* --- Farbschema & Basis-Styles nach dem Goldenen Schnitt --- */
+        :root {
+            --primary-yellow: #FFD93D; /* Warmes Sonnengelb */
+            --light-yellow: #FFF9D0;   /* Sanftes Hintergrund-Gelb */
+            --primary-green: #89A894;  /* Elegantes Salbeigrün */
+            --light-green: #EBF1EA;    /* Sanftes Hintergrund-Grün */
+            --dark-text: #223326;      /* Gut lesbares Dunkelgrün */
+            --white: #ffffff;
+            --footer-bg: #152218;      /* Kompakter, dunkler Abschluss */
+            
+            /* Goldener Schnitt Variablen (Basis 16px) */
+            --space-sm: 10px;          /* 16 / 1.618 */
+            --space-md: 26px;          /* 16 * 1.618 */
+            --space-lg: 42px;          /* 26 * 1.618 */
+            --space-xl: 68px;          /* 42 * 1.618 */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-text);
+            line-height: 1.618; /* Goldener Schnitt für Zeilenabstand */
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+            line-height: 1.2;
+            color: var(--dark-text);
+        }
+
+        h1 { font-size: 2.6rem; margin-bottom: var(--space-md); }
+        h2 { font-size: 1.9rem; margin-bottom: var(--space-md); border-bottom: 2px solid var(--primary-green); padding-bottom: var(--space-sm); display: inline-block; }
+
+        section {
+            padding: var(--space-xl) var(--space-md);
+            max-width: 1100px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .section-wrapper {
+            width: 100%;
+        }
+
+        /* --- Navigation --- */
+        header {
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md);
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: var(--dark-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: var(--space-md);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        /* --- Layout-Raster nach dem Goldenen Schnitt (62% zu 38%) --- */
+        .phi-grid {
+            display: grid;
+            grid-template-columns: 1.618fr 1fr; /* Goldener Schnitt proportional */
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .phi-grid.reverse {
+            grid-template-columns: 1fr 1.618fr;
+        }
+
+        .web-image {
+            width: 100%;
+            height: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        /* --- 1. Hero-Bereich (Auffälliges Gelb) --- */
+        .hero-bg {
+            background: linear-gradient(150deg, var(--primary-yellow) 0%, var(--light-yellow) 100%);
+            padding-top: var(--space-md);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: #1a291e;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--dark-text);
+            color: var(--white);
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-2px);
+        }
+
+        /* --- 2. Über mich (Salbeigrün) --- */
+        .aboutme-bg {
+            background-color: var(--light-green);
+        }
+
+        /* --- 3. Leistungen --- */
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: var(--space-md);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-green);
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* --- 4. Abrechnung --- */
+        .yellow-bg {
+            background-color: var(--light-yellow);
+        }
+
+        .alert-box {
+            background-color: var(--white);
+            padding: var(--space-md);
+            border-left: 6px solid var(--primary-yellow);
+            border-radius: 4px;
+            margin-top: var(--space-md);
+        }
+
+        /* --- 5. Kontaktseite (Kompakt & Übersichtlich) --- */
+        .contact-bg {
+            background-color: var(--light-green);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+        }
+
+        .contact-form-side {
+            background: var(--white);
+            padding: var(--space-lg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Formular-Elemente */
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-inline {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .form-inline .form-group {
+            flex: 1;
+        }
+
+        input[type="text"], input[type="email"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #C4D1C2;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: inherit;
+            background-color: #FAFAFA;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            background-color: var(--white);
+        }
+
+        .radio-group, .checkbox-group {
+            margin-bottom: var(--space-md);
+            font-size: 0.95rem;
+        }
+
+        .radio-options {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-sm);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-text);
+        }
+
+        /* --- 6. Footer (Rechtssicher & strukturiert) --- */
+        footer {
+            background-color: var(--footer-bg);
+            color: #D2DDD4;
+            padding: var(--space-xl) var(--space-md) var(--space-md) var(--space-md);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .footer-content h3 {
+            color: var(--primary-yellow);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-content p, .footer-content li {
+            font-size: 0.88rem;
+            margin: 0 0 var(--space-sm) 0;
+        }
+
+        /* Mobiloptimierung */
+        @media (max-width: 850px) {
+            nav { flex-direction: column; gap: var(--space-sm); padding: var(--space-sm); }
+            .phi-grid, .phi-grid.reverse, .contact-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+            .form-inline { flex-direction: column; gap: 0; }
+            section { padding: var(--space-lg) var(--space-sm); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENÜLEISTE -->
+    <header>
+        <nav>
+            <div class="logo">🌼 Alltagsfreund Jenny</div>
+            <ul class="nav-links">
+                <li><a href="#start">Startseite</a></li>
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#nachbarschaftshilfe">Nachbarschaftshilfe</a></li>
+                <li><a href="#abrechnung">Kosten & Abrechnung</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. HERO-BEREICH (Goldener Schnitt Grid) -->
+    <div id="start" class="section-wrapper hero-bg">
+        <section class="phi-grid">
+            <div class="hero-text">
+                <h1>Herzlich willkommen bei Ihrem Alltagsfreund Jenny!</h1>
+                <p class="subtitle">Ihre verlässliche und empathische Unterstützung für Haushaltshilfe und Nachbarschaftshilfe direkt in Ihrer Nähe.</p>
+                <p>Ein sauberer Haushalt, erledigte Einkäufe oder einfach ein nettes Gespräch bei einer Tasse Kaffee – im Alltag gibt es Momente, in denen eine helfende Hand den entscheidenden Unterschied macht. Als Ihre persönliche Alltagsfreundin stehe ich Ihnen und Ihren Angehörigen mit Herz, Respekt und Tatkraft zur Seite. Mein Ziel ist es, Ihnen ein selbstbestimmtes Leben im eigenen Zuhause zu erleichtern und ein Lächeln in Ihren Alltag zu bringen. Unkompliziert, herzlich und absolut verlässlich.</p>
+                <a href="#kontakt" class="btn">Jetzt Kennenlerngespräch vereinbaren</a>
+            </div>
+            <div>
+                <!-- Echtes, einladendes Symbolbild (Hände/Zusammenhalt) -->
+                <img src="https://unsplash.com" alt="Helfende Hände im Alltag" class="web-image">
+            </div>
+        </section>
+    </div>
+
+    <!-- 2. BEREICH: ÜBER MICH -->
+    <div id="ueber-mich" class="section-wrapper aboutme-bg">
+        <section class="phi-grid reverse">
+            <div>
+                <!-- Echtes, sympathisches Portrait-Symbolbild für Jenny -->
+                <img src="https://unsplash.com" alt="Jenny E. - Ihre Alltagsfreundin" class="web-image" style="max-height: 450px;">
+            </div>
+            <div>
+                <h2>Wer ich bin & was mich antreibt</h2>
+                <p>Hallo, ich bin Jenny E. – Ihre Alltagsfreundin. Schon immer lag es mir am Herzen, für Menschen da zu sein, die Unterstützung im Alltag benötigen. Aus eigener Erfahrung weiß ich, wie schnell die Bewältigung des Haushalts oder der Behördengang zu einer Belastung werden können – sei es durch das Alter, gesundheitliche Einschränkungen oder fordernde Lebensphasen.</p>
+                <p>Für mich ist meine Arbeit keine bloße Dienstleistung, sondern eine Herzensangelegenheit. Ich möchte nicht nur Formulare ausfüllen oder Staub wischen, sondern Ihnen als echter Alltagsfreund echte Lebensqualität zurückgeben. Ich nehme mir Zeit für Sie, höre zu und packe dort an, wo Sie es am meisten entlastet. Frei von Vorurteilen, mit einem offenen Ohr und maximaler Empathie.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 3. BEREICH: WAS IST NACHBARSCHAFTSHILFE -->
+    <div id="nachbarschaftshilfe" class="section-wrapper white-bg">
+        <section>
+            <h2>Alltags- & Nachbarschaftshilfe im Überblick</h2>
+            <p>Unter anerkannter Nachbarschaftshilfe versteht man die ehrenamtliche oder aufwandsentschädigte Unterstützung von Pflegebedürftigen im Alltag. Es handelt sich dabei nicht um medizinische Pflege, sondern um die Entlastung im täglichen Leben, um die Selbstständigkeit in den eigenen vier Wänden zu bewahren.</p>
+            
+            <div class="grid-services">
+                <div class="service-card">
+                    <h3>Haushaltshilfe</h3>
+                    <p>Unterstützung beim Reinigen der Wohnung, beim Wäschewaschen, Bettenbeziehen und Kochen.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Einkaufsservice</h3>
+                    <p>Gemeinsames oder eigenständiges Erledigen von Wocheneinkäufen und Besorgungen im Supermarkt.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Alltagsbegleitung</h3>
+                    <p>Begleitung zu Arztterminen, Behörden, zur Apotheke oder bei erholsamen Spaziergängen.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Gesellschaft</h3>
+                    <p>Gemeinsames Vorlesen, Gesellschaftsspiele spielen oder einfach Zeit für ein gutes Gespräch bei Kaffee und Kuchen.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 4. BEREICH: ABRECHNUNG -->
+    <div id="abrechnung" class="section-wrapper yellow-bg">
+        <section>
+            <h2>Finanzierung über die Pflegekasse</h2>
+            <p>Wussten Sie schon? Wenn Sie oder Ihr Angehöriger einen <strong>Pflegegrad (1 bis 5)</strong> besitzen, müssen Sie meine Unterstützung in den meisten Fällen nicht privat bezahlen!</p>
+            
+            <div class="alert-box">
+                <p><strong>Der Entlastungsbetrag nach § 45b SGB XI:</strong> Jedem Pflegebedürftigen steht ein gesetzlicher Entlastungsbetrag von <strong>125 Euro pro Monat</strong> zur Verfügung. Dieser Betrag ist zweckgebunden und kann direkt für anerkannte Angebote zur Unterstützung im Alltag – wie meine Nachbarschaftshilfe – eingesetzt werden.</p>
+                <p style="margin-bottom: 0;"><strong>Keine Vorauszahlung nötig:</strong> Die Abrechnung erfolgt unkompliziert über Kostenerstattung mit Ihrer Pflegekasse. Ich unterstütze Sie gerne bei den notwendigen Schritten und Anträgen. Als anerkannte Nachbarschaftshelferin erfülle ich alle länderspezifischen gesetzlichen Kriterien.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 5. KONTAKTSEITE & ANFRAGEFORMULAR -->
+    <div id="kontakt" class="section-wrapper contact-bg">
+        <section>
+            <h2>Ich freue mich auf Ihre Nachricht!</h2>
+            <p style="margin-bottom: var(--space-lg);">Haben Sie Fragen oder möchten Sie ein unverbindliches Erstgespräch vereinbaren? Nutzen Sie einfach das untenstehende Formular. Ich melde mich schnellstmöglich bei Ihnen.</p>
+            
+            <div class="contact-grid">
+                <!-- FORMULAR -->
+                <div class="contact-form-side">
+                    <form action="#" method="POST" onsubmit="alert('Dies ist eine fiktive Testseite. Das Formular wurde datenschutzkonform simuliert.'); return false;">
+                        
+                        <div class="radio-group">
+                            <label>Anrede:</label>
+                            <div class="radio-options">
+                                <label><input type="radio" name="anrede" value="herr"> Herr</label>
+                                <label><input type="radio" name="anrede" value="frau"> Frau</label>
+                                <label><input type="radio" name="anrede" value="divers"> Divers / Keine Angabe</label>
+                            </div>
+                        </div>
+
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label for="vorname">Vorname *</label>
+                                <input type="text" id="vorname" name="vorname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nachname">Nachname *</label>
+                                <input type="text" id="nachname" name="nachname" required>
+                            </div>
+                        </div>
+
+                        <div class="form-inline">
+                            <div class="form-group" style="flex: 1.618;">
+                                <label for="strasse">Straße & Hausnummer *</label>
+                                <input type="text" id="strasse" name="strasse" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="geburtsdatum">Geburtsdatum (Optional)</label>
+                                <input type="date" id="geburtsdatum" name="geburtsdatum">
+                            </div>
+                        </div>
+
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label for="telefon">Telefonnummer *</label>
+                                <input type="text" id="telefon" name="telefon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail-Adresse *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pflegegrad">Liegt bereits ein Pflegegrad vor?</label>
+                            <select id="pflegegrad" name="pflegegrad">
+                                <option value="nein">Nein</option>
+                                <option value="pg1">Ja, Pflegegrad 1</option>
+                                <option value="pg2-5">Ja, Pflegegrad 2 bis 5</option>
+                                <option value="pruefung">Wird aktuell geprüft</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nachricht">Ihre Nachricht an mich</label>
+                            <textarea id="nachricht" name="nachricht" rows="3"></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label style="display: flex; gap: 10px; font-weight: normal;">
+                                <input type="checkbox" name="dsgvo" required style="margin-top: 4px;">
+                                <span>* Ich willige ein, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert werden. Ich habe die Datenschutzerklärung im Fußbereich zur Kenntnis genommen.</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">DATEN ABSENDEN</button>
+                    </form>
+                </div>
+
+                <!-- VERTRAUENSBILD NEBEN DEM FORMULAR -->
+                <div>
+                    <img src="https://unsplash.com" alt="Beratungsgespräch mit Herz" class="web-image" style="height: 100%; min-height: 400px;">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 6. FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <!-- Impressum -->
+            <div>
+                <h3>Impressum</h3>
+                <p><strong>Angaben gemäß § 5 TMG:</strong><br>
+                Alltagsfreund Jenny<br>
+                Inhaberin: Jenny Muster-Elster (Fiktiver Name)<br>
+                Musterstraße 45, 12345 Musterstadt</p>
+                <p><strong>Kontakt:</strong><br>
+                Telefon: 0123-4567890<br>
+                E-Mail: info@alltagsfreund-jenny.de</p>
+                <p><em>Umsatzsteuerbefreit aufgrund der Kleinunternehmerregelung gemäß § 19 UStG.</em></p>
+            </div>
+
+            <!-- Branchenregelungen -->
+            <div>
+                <h3>Gesetzliche Regelungen</h3>
+                <p><strong>SGB XI Konformität:</strong> Die Erbringung der Leistungen erfolgt als anerkannte Nachbarschaftshilfe / Angebot zur Unterstützung im Alltag gemäß § 45a und § 45b SGB XI. Es werden keine medizinischen Behandlungspflegen oder grundpflegerische Tätigkeiten erbracht.</p>
+                <p><strong>Antidiskriminierung (AGG & GGB):</strong> Bei der Beratung und Unterstützung gilt das strikte Benachteiligungsverbot des Allgemeinen Gleichbehandlungsgesetzes. Niemand wird aufgrund von ethnischer Herkunft, Geschlecht, Religion, Behinderung, Alter oder sexueller Identität diskriminiert.</p>
+            </div>
+
+            <!-- Datenschutz -->
+            <div>
+                <h3>Datenschutz (DSGVO)</h3>
+                <p><strong>Zweck der Datenverarbeitung:</strong> Die über das Kontaktformular übermittelten Daten (Name, Adresse, Kontaktdaten, freiwilliges Geburtsdatum) werden ausschließlich zur Beantwortung Ihrer Anfrage und vorvertraglichen Pflichten (Art. 6 Abs. 1 lit. b DSGVO) verarbeitet. Das Geburtsdatum dient rein optional zur späteren Kassenprüfung und wahrt das Datensparsamkeitsgebot.</p>
+                <p><strong>Ihre Rechte:</strong> Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung sowie das Recht auf Widerruf Ihrer Einwilligung.</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: var(--space-xl); font-size: 0.8rem; color: #728A79;">&copy; 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten. Rechtssicher gestaltet nach deutschen Verordnungen.</p>
+    </footer>
+
+</body>
+</html>
