@@ -4,163 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alltagsfreund Jenny – Haushalt & Nachbarschaftshilfe</title>
-  <link rel="preconnect" href="https://googleapis.com">
-  <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Korrigierte Google Fonts Einbindung -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --v:#6b21d6; --v-d:#531aab; --v-l:#9b5de5;
-      --p:#d946a8; --p-l:#f0abda; --p-pale:#fce7f3;
-      --grad:linear-gradient(135deg,#6b21d6,#d946a8);
-      --warm:#fdf4ff; --cream:#fff9fe;
-      --text:#2d1a4a; --text-s:#5a3f8a;
-      --border:#e9d5f7; --shadow:rgba(107,33,214,.1); --white:#fff;
+      /* Neue, weichere Farbpalette für mehr Vertrauen */
+      --primary: #6b21d6;
+      --primary-dark: #531aab;
+      --primary-light: #9b5de5;
+      --accent: #c026d3;
+      --grad: linear-gradient(135deg, #6b21d6, #c026d3);
+      --bg-warm: #fdfaf6;      /* Weicherer, wärmerer Ton */
+      --bg-cream: #fffdfd;     /* Clean, aber nicht kalt */
+      --text: #2d1a4a;
+      --text-muted: #5a3f8a;
+      --border: #f3e8ff;
+      --shadow: rgba(107,33,214,0.06);
+      --white: #fff;
     }
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:16px;line-height:1.7;}
-
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,249,254,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:72px;padding:0 52px;display:flex;align-items:center;justify-content:space-between;}
-    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-    .nav-logo img{height:44px;width:auto;border-radius:6px;}
-    .nav-logo-text{font-size:15px;font-weight:700;line-height:1.25;}
-    .nav-logo-text strong{display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .nav-logo-text small{font-size:10px;color:var(--text-s);font-weight:500;letter-spacing:.8px;}
-    .nav-links{display:flex;gap:4px;list-style:none;}
-    .nav-links a{text-decoration:none;color:var(--text-s);font-size:14px;font-weight:500;padding:7px 14px;border-radius:100px;transition:all .2s;}
-    .nav-links a:hover{background:var(--p-pale);color:var(--v);}
-    .nav-cta{background:var(--grad)!important;color:#fff!important;font-weight:700!important;}
-    .nav-cta:hover{opacity:.88;transform:translateY(-1px);}
-
-    /* HERO – Golden Ratio 58:42 */
-    #home{display:grid;grid-template-columns:58fr 42fr;min-height:calc(100vh - 72px);margin-top:72px;}
-    .hero-left{
-      background:var(--warm);
-      padding:60px 52px 60px 64px;
-      display:flex;flex-direction:column;justify-content:center;gap:24px;
-      position:relative;overflow:hidden;
-    }
-    .hero-left::before{content:'';position:absolute;top:-80px;left:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(107,33,214,.07),transparent 70%);pointer-events:none;}
-    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;color:var(--v);width:fit-content;}
-    .dot{width:6px;height:6px;border-radius:50%;background:var(--p);animation:blink 2s ease-in-out infinite;}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(34px,3.6vw,52px);line-height:1.16;color:var(--text);}
-    h1 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .hero-desc{font-size:16px;color:var(--text-s);max-width:460px;line-height:1.78;}
-    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-    .btn-primary{background:var(--grad);color:#fff;padding:13px 26px;border-radius:100px;text-decoration:none;font-weight:700;font-size:15px;transition:all .2s;box-shadow:0 4px 16px rgba(107,33,214,.3);}
-    .btn-primary:hover{opacity:.9;transform:translateY(-2px);}
-    .btn-secondary{background:#fff;color:var(--v);padding:13px 26px;border-radius:100px;text-decoration:none;font-weight:700;font-size:15px;border:2px solid var(--v);transition:all .2s;}
-    .btn-secondary:hover{background:var(--warm);}
     
-    /* Trust Pills */
-    .trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
-    .trust-pill{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-s);}
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg-cream); color: var(--text); font-size: 16px; line-height: 1.7; }
 
-    /* Hero Right */
-    .hero-right{
-      position:relative;
-      overflow:hidden;
-      background:linear-gradient(150deg,#ede9fe 0%,#fce7f3 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .hero-img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:0.95;
-    }
-    .hero-floating-logo {
-      position:absolute;
-      top:30px;
-      right:30px;
-      background:#fff;
-      padding:12px;
-      border-radius:16px;
-      box-shadow:0 10px 25px rgba(107,33,214,0.15);
-      border:1px solid var(--border);
-      max-width:120px;
-      height:auto;
-      z-index:2;
-    }
-    .hero-overlay-card {
-      position:absolute;
-      bottom:30px;
-      left:30px;
-      right:30px;
-      background:rgba(255,255,255,0.92);
-      backdrop-filter:blur(10px);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:20px;
-      box-shadow:0 10px 30px rgba(107,33,214,0.15);
-      z-index:2;
-    }
-    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:8px;}
-    .stat-num{display:block;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .stat-label{display:block;font-size:11px;color:var(--text-s);font-weight:600;margin-top:2px;}
+    /* NAVIGATION */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 72px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 44px; width: auto; border-radius: 6px; object-fit: contain; }
+    .nav-logo-text { font-size: 15px; font-weight: 700; line-height: 1.25; }
+    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo-text small { font-size: 10px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
+    .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; padding: 8px 16px; border-radius: 100px; transition: all .2s; }
+    .nav-links a:hover { background: #f5f0ff; color: var(--primary); }
+    .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
+    .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
 
-    /* WHY STRIP */
-    .why-strip{background:var(--grad);padding:28px 52px;display:flex;justify-content:space-evenly;flex-wrap:wrap;gap:16px;}
-    .why-item{display:flex;align-items:center;gap:12px;}
-    .why-item *{color:#fff!important;}
-    .why-icon{width:42px;height:42px;background:rgba(255,255,255,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;border:1px solid rgba(255,255,255,.22);}
-    .why-item strong{display:block;font-size:14px;font-weight:700;color:#fff;}
-    .why-item span{font-size:12px;color:rgba(255,255,255,.88)!important;}
+    /* HERO – Clean & einladend */
+    #home { display: grid; grid-template-columns: 55fr 45fr; min-height: calc(100vh - 72px); margin-top: 72px; }
+    .hero-left { background: var(--bg-warm); padding: 60px 52px 60px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; overflow: hidden; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--primary); width: fit-content; }
+    
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.16; color: var(--text); }
+    h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+    .hero-desc { font-size: 16px; color: var(--text-muted); max-width: 480px; line-height: 1.78; }
+    
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all .2s; box-shadow: 0 4px 18px rgba(107,33,214,0.15); }
+    .btn-primary:hover { opacity: .95; transform: translateY(-2px); }
+    .btn-secondary { background: #fff; color: var(--primary); padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 15px; border: 2px solid var(--primary); transition: all .2s; }
+    .btn-secondary:hover { background: #fdfaf6; }
+    
+    .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .trust-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text-muted); }
 
-    /* SHARED */
-    section{padding:100px 0;}
-    .container{max-width:1140px;margin:0 auto;padding:0 52px;}
-    .section-tag{display:inline-block;background:var(--p-pale);color:var(--p);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;border:1px solid var(--p-l);}
-    h2{font-family:'Playfair Display',serif;font-size:clamp(28px,2.8vw,42px);color:var(--text);line-height:1.22;margin-bottom:14px;}
-    h2 em{font-style:italic;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .lead{font-size:16px;color:var(--text-s);max-width:600px;line-height:1.8;margin-bottom:52px;}
+    /* Hero Right – Fokus auf Bild statt bunte Grafiken */
+    .hero-right { position: relative; overflow: hidden; background: #f5f0ff; display: flex; align-items: center; justify-content: center; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; }
+    
+    /* Diskrete, hochwertige Textkarte statt Statistik-Box */
+    .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .hero-overlay-card strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
+    .hero-overlay-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* SEKTIONEN TYPOGRAFIE */
+    section { padding: 100px 0; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
+    .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 2.8vw, 42px); color: var(--text); line-height: 1.22; margin-bottom: 16px; }
+    .lead { font-size: 16px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 52px; }
 
     /* LEISTUNGEN */
-    #leistungen{background:#fff;}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .card{background:var(--cream);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:all .25s;position:relative;overflow:hidden;}
-    .card:hover{transform:translateY(-4px);box-shadow:0 16px 48px var(--shadow);border-color:var(--p-l);}
-    .card-icon{width:52px;height:52px;background:var(--grad);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;box-shadow:0 4px 14px rgba(107,33,214,.22);}
-    .card h3{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:9px;color:var(--text);}
-    .card p{font-size:14px;color:var(--text-s);line-height:1.72;margin-bottom:14px;}
-    .card-tag{display:inline-block;background:var(--p-pale);color:var(--p);font-size:11px;font-weight:700;padding:3px 11px;border-radius:100px;border:1px solid var(--p-l);}
-    .card-glow{position:absolute;bottom:0;right:0;width:88px;height:88px;background:radial-gradient(circle at bottom right,rgba(217,70,168,.09),transparent 70%);}
+    #leistungen { background: var(--white); }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card { background: var(--bg-warm); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; transition: all .25s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow); background: var(--white); }
+    .card-icon { font-size: 28px; margin-bottom: 16px; display: inline-block; }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; color: var(--text); }
+    .card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
 
     /* NACHBARSCHAFTSHILFE */
-    #nachbarschaftshilfe{background:var(--warm);}
-    .two-col{display:grid;grid-template-columns:61.8fr 38.2fr;gap:52px;align-items:center;}
-    .info-list{list-style:none;display:flex;flex-direction:column;gap:18px;}
-    .info-list li{display:flex;gap:14px;align-items:flex-start;}
-    .info-list-icon{font-size:18px;color:var(--p);margin-top:2px;}
-    .info-list-text strong{display:block;font-size:16px;color:var(--text);margin-bottom:2px;}
-    .info-list-text p{font-size:14px;color:var(--text-s);line-height:1.6;}
-    
-    .section-side-img{
-      width:100%;
-      height:450px;
-      object-fit:cover;
-      border-radius:24px;
-      box-shadow:0 20px 40px rgba(107,33,214,0.08);
-      border:1px solid var(--border);
-    }
+    #nachbarschaftshilfe { background: var(--bg-warm); }
+    .two-col { display: grid; grid-template-columns: 60fr 40fr; gap: 52px; align-items: center; }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+    .info-list li { display: flex; gap: 14px; align-items: flex-start; }
+    .info-list-icon { font-size: 18px; color: var(--accent); margin-top: 2px; }
+    .info-list-text strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
+    .info-list-text p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .section-side-img { width: 100%; height: 420px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 
-    /* RESPONSIVE MEDIA QUERIES */
-    @media(max-width:992px){
-      #home, .two-col{grid-template-columns:1fr;}
-      .hero-right{height:450px;}
-      .hero-floating-logo{top:20px;right:20px;max-width:90px;}
-      .cards-grid{grid-template-columns:repeat(2,1fr);}
-      nav{padding:0 24px;}
-      .nav-links{display:none;}
+    /* KONTAKTFORMULAR */
+    #kontakt { background: var(--white); }
+    .contact-wrapper { max-width: 600px; margin: 0 auto; background: var(--bg-warm); border: 1px solid var(--border); padding: 40px; border-radius: 24px; }
+    .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .form-group label { font-size: 14px; font-weight: 600; color: var(--text); }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 15px; color: var(--text); background: var(--white); outline: none; transition: border .2s; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .btn-submit { background: var(--grad); color: #fff; border: none; padding: 14px; border-radius: 100px; font-weight: 700; font-size: 15px; cursor: pointer; transition: opacity .2s; width: 100%; margin-top: 10px; }
+    .btn-submit:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: #fff; padding: 40px 0; text-align: center; font-size: 14px; }
+    footer p { opacity: 0.7; }
+
+    /* RESPONSIVE DESIGN */
+    @media(max-width: 992px){
+      #home, .two-col { grid-template-columns: 1fr; }
+      .hero-right { height: 400px; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      nav { padding: 0 24px; }
+      .nav-links { display: none; } /* Mobil versteckt für Simplizität */
     }
-    @media(max-width:640px){
-      .cards-grid{grid-template-columns:1fr;}
-      section{padding:60px 0;}
-      .container{padding:0 24px;}
-      .hero-left{padding:40px 24px;}
+    @media(max-width: 640px){
+      .cards-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+      .container { padding: 0 24px; }
+      .hero-left { padding: 40px 24px; }
     }
   </style>
 </head>
@@ -169,11 +132,143 @@
   <!-- NAVIGATION -->
   <nav>
     <a href="#home" class="nav-logo">
-      <!-- Logo fest als Internet-Adresse integriert -->
-      <img src="https://allorigins.win" onerror="this.src='https://unsplash.com'" alt="Alltagsfreund Jenny Logo">
+      <img src="./assets/logo.jpg" alt="Alltagsfreund Jenny Logo">
       <div class="nav-logo-text">
         <strong>Alltagsfreund Jenny</strong>
         <small>Haushalt & Nachbarschaftshilfe</small>
       </div>
     </a>
     <ul class="nav-links">
+      <li><a href="#home">Start</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#nachbarschaftshilfe">Nachbarschaftshilfe</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home">
+    <div class="hero-left">
+      <div class="hero-tag">
+        ❤️ Mit Herz & Zeit für Sie da
+      </div>
+      <h1>Persönliche Unterstützung im <em>Alltag</em></h1>
+      <p class="hero-desc">
+        Ob tatkräftige Haushaltshilfe, liebevolle Begleitung zu Terminen oder entlastende Nachbarschaftshilfe – ich unterstütze Sie zuverlässig und individuell in Ihrem gewohnten Zuhause.
+      </p>
+      <div class="hero-btns">
+        <a href="#kontakt" class="btn-primary">Kontakt aufnehmen</a>
+        <a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-pill">✓ Herzlich & Empathisch</div>
+        <div class="trust-pill">✓ Zuverlässig & Pünktlich</div>
+        <div class="trust-pill">✓ Flexibel anpassbar</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="./assets/hero.jpg" alt="Alltagsfreund Jenny Unterstützung im Alltag" class="hero-img">
+      <div class="hero-overlay-card">
+        <strong>Unterstützung, die entlastet</strong>
+        <p>Gemeinsam gestalten wir Ihren Alltag wieder leichter und unbeschwerter. Rufen Sie mich einfach an oder schreiben Sie mir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <div class="container">
+      <span class="section-tag">Mein Angebot</span>
+      <h2>Wie ich Ihnen helfen kann</h2>
+      <p class="lead">Jeder Mensch hat andere Bedürfnisse. Deshalb stimme ich meine Hilfe ganz individuell auf Ihre Wünsche und Ihren Rhythmus ab.</p>
+      
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🧹</div>
+          <h3>Haushaltshilfe</h3>
+          <p>Unterstützung beim Reinigen der Wohnung, Wäschepflege, Einkaufen und der allgemeinen Organisation des Haushalts.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚗</div>
+          <h3>Begleitung & Freizeit</h3>
+          <p>Gemeinsame Spaziergänge, Begleitung zu Arztterminen, Behördengängen oder einfach Zeit für gute Gespräche bei einer Tasse Kaffee.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Entlastung</h3>
+          <p>Kleine Handreichungen im Alltag, die das Leben im eigenen Zuhause sicherer, leichter und angenehmer machen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NACHBARSCHAFTSHILFE -->
+  <section id="nachbarschaftshilfe">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="section-tag">Anerkannt & Nah</span>
+          <h2>Nachbarschaftshilfe</h2>
+          <p class="lead">Wussten Sie schon? Viele Leistungen können unkompliziert im Rahmen der Nachbarschaftshilfe oder Entlastungsleistungen erbracht werden.</p>
+          <ul class="info-list">
+            <li>
+              <span class="info-list-icon">✓</span>
+              <div class="info-list-text">
+                <strong>Individuelle Betreuung</strong>
+                <p>Keine Massenabfertigung. Ich nehme mir die Zeit, die Sie wirklich brauchen.</p>
+              </div>
+            </li>
+            <li>
+              <span class="info-list-icon">✓</span>
+              <div class="info-list-text">
+                <strong>Lokale Präsenz</strong>
+                <p>Schnell erreichbar und fest in der Region verwurzelt für kurze Wege.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="./assets/nachbarschaft.jpg" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag">Kontakt</span>
+        <h2>Lassen Sie uns sprechen</h2>
+        <p class="lead" style="margin: 0 auto 30px auto;">Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich schnellstmöglich bei Ihnen.</p>
+      </div>
+      
+      <div class="contact-wrapper">
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Wie kann ich Ihnen helfen?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht an mich..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten. | Ein Service mit Herz.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
