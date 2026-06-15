@@ -22,7 +22,7 @@
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,249,254,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:72px;padding:0 52px;display:flex;align-items:center;justify-content:space-between;}
     .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-    .nav-logo img{height:50px;width:auto;border-radius:8px;}
+    .nav-logo img{height:44px;width:auto;border-radius:6px;}
     .nav-logo-text{font-size:15px;font-weight:700;line-height:1.25;}
     .nav-logo-text strong{display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .nav-logo-text small{font-size:10px;color:var(--text-s);font-weight:500;letter-spacing:.8px;}
@@ -57,7 +57,7 @@
     .trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
     .trust-pill{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-s);}
 
-    /* Hero Right - Mit Logo und KI-Bild */
+    /* Hero Right */
     .hero-right{
       position:relative;
       overflow:hidden;
@@ -72,7 +72,6 @@
       object-fit:cover;
       opacity:0.95;
     }
-    /* Schwebendes Logo-Element oben rechts im Bild */
     .hero-floating-logo {
       position:absolute;
       top:30px;
@@ -82,7 +81,7 @@
       border-radius:16px;
       box-shadow:0 10px 25px rgba(107,33,214,0.15);
       border:1px solid var(--border);
-      max-width:140px;
+      max-width:120px;
       height:auto;
       z-index:2;
     }
@@ -130,7 +129,7 @@
     .card-tag{display:inline-block;background:var(--p-pale);color:var(--p);font-size:11px;font-weight:700;padding:3px 11px;border-radius:100px;border:1px solid var(--p-l);}
     .card-glow{position:absolute;bottom:0;right:0;width:88px;height:88px;background:radial-gradient(circle at bottom right,rgba(217,70,168,.09),transparent 70%);}
 
-    /* NACHBARSCHAFTSHILFE – Golden Ratio 61.8% zu 38.2% */
+    /* NACHBARSCHAFTSHILFE */
     #nachbarschaftshilfe{background:var(--warm);}
     .two-col{display:grid;grid-template-columns:61.8fr 38.2fr;gap:52px;align-items:center;}
     .info-list{list-style:none;display:flex;flex-direction:column;gap:18px;}
@@ -139,7 +138,6 @@
     .info-list-text strong{display:block;font-size:16px;color:var(--text);margin-bottom:2px;}
     .info-list-text p{font-size:14px;color:var(--text-s);line-height:1.6;}
     
-    /* Harmonisches Bild in der Sektion */
     .section-side-img{
       width:100%;
       height:450px;
@@ -153,7 +151,7 @@
     @media(max-width:992px){
       #home, .two-col{grid-template-columns:1fr;}
       .hero-right{height:450px;}
-      .hero-floating-logo{top:20px;right:20px;max-width:110px;}
+      .hero-floating-logo{top:20px;right:20px;max-width:90px;}
       .cards-grid{grid-template-columns:repeat(2,1fr);}
       nav{padding:0 24px;}
       .nav-links{display:none;}
@@ -171,5 +169,11 @@
   <!-- NAVIGATION -->
   <nav>
     <a href="#home" class="nav-logo">
-      <!-- Dein Logo als direkter Code eingebaut -->
-      <img src="https://allorigins.win" onerror="this.src='https://unsplash.com'" style="display:none;">
+      <!-- Logo fest als Internet-Adresse integriert -->
+      <img src="https://allorigins.win" onerror="this.src='https://unsplash.com'" alt="Alltagsfreund Jenny Logo">
+      <div class="nav-logo-text">
+        <strong>Alltagsfreund Jenny</strong>
+        <small>Haushalt & Nachbarschaftshilfe</small>
+      </div>
+    </a>
+    <ul class="nav-links">
