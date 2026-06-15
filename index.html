@@ -5,21 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alltagsfreund Jenny – Haushalt & Nachbarschaftshilfe</title>
   
-  <!-- Korrigierte Google Fonts Einbindung -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Neue, weichere Farbpalette für mehr Vertrauen */
       --primary: #6b21d6;
       --primary-dark: #531aab;
       --primary-light: #9b5de5;
       --accent: #c026d3;
       --grad: linear-gradient(135deg, #6b21d6, #c026d3);
-      --bg-warm: #fdfaf6;      /* Weicherer, wärmerer Ton */
-      --bg-cream: #fffdfd;     /* Clean, aber nicht kalt */
+      --bg-warm: #fdfaf6;
+      --bg-cream: #fffdfd;
       --text: #2d1a4a;
       --text-muted: #5a3f8a;
       --border: #f3e8ff;
@@ -44,7 +42,7 @@
     .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
     .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
 
-    /* HERO – Clean & einladend */
+    /* HERO */
     #home { display: grid; grid-template-columns: 55fr 45fr; min-height: calc(100vh - 72px); margin-top: 72px; }
     .hero-left { background: var(--bg-warm); padding: 60px 52px 60px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; overflow: hidden; }
     .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--primary); width: fit-content; }
@@ -62,16 +60,14 @@
     .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
     .trust-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text-muted); }
 
-    /* Hero Right – Fokus auf Bild statt bunte Grafiken */
     .hero-right { position: relative; overflow: hidden; background: #f5f0ff; display: flex; align-items: center; justify-content: center; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; }
     
-    /* Diskrete, hochwertige Textkarte statt Statistik-Box */
     .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     .hero-overlay-card strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
     .hero-overlay-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-    /* SEKTIONEN TYPOGRAFIE */
+    /* SEKTIONEN */
     section { padding: 100px 0; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
     .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
@@ -97,7 +93,7 @@
     .info-list-text p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
     .section-side-img { width: 100%; height: 420px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 
-    /* KONTAKTFORMULAR */
+    /* KONTAKT FORMULAR */
     #kontakt { background: var(--white); }
     .contact-wrapper { max-width: 600px; margin: 0 auto; background: var(--bg-warm); border: 1px solid var(--border); padding: 40px; border-radius: 24px; }
     .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
@@ -117,7 +113,7 @@
       .hero-right { height: 400px; }
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
       nav { padding: 0 24px; }
-      .nav-links { display: none; } /* Mobil versteckt für Simplizität */
+      .nav-links { display: none; }
     }
     @media(max-width: 640px){
       .cards-grid { grid-template-columns: 1fr; }
@@ -132,7 +128,8 @@
   <!-- NAVIGATION -->
   <nav>
     <a href="#home" class="nav-logo">
-      <img src="./assets/logo.jpg" alt="Alltagsfreund Jenny Logo">
+      <!-- Hier sucht der Code nach deinem hochgeladenen Logo -->
+      <img src="logo.jpg" alt="Alltagsfreund Jenny Logo">
       <div class="nav-logo-text">
         <strong>Alltagsfreund Jenny</strong>
         <small>Haushalt & Nachbarschaftshilfe</small>
@@ -167,7 +164,8 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="./assets/hero.jpg" alt="Alltagsfreund Jenny Unterstützung im Alltag" class="hero-img">
+      <!-- Automatisches, kostenloses Bild von Unsplash -->
+      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80" alt="Alltagsfreund Jenny Unterstützung im Alltag" class="hero-img">
       <div class="hero-overlay-card">
         <strong>Unterstützung, die entlastet</strong>
         <p>Gemeinsam gestalten wir Ihren Alltag wieder leichter und unbeschwerter. Rufen Sie mich einfach an oder schreiben Sie mir.</p>
@@ -228,7 +226,8 @@
           </ul>
         </div>
         <div>
-          <img src="./assets/nachbarschaft.jpg" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
+          <!-- Automatisches, kostenloses Bild von Unsplash -->
+          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
         </div>
       </div>
     </div>
