@@ -297,24 +297,33 @@
         <p class="lead" style="margin: 0 auto 30px auto;">Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich schnellstmöglich bei Ihnen.</p>
       </div>
       
-     <div class="contact-wrapper">
-  <form action="https://formsubmit.co/stoll24@googlemail.com" method="POST">
+    <div class="contact-wrapper">
+  <form action="https://formsubmit.co/stoll124@googlemail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
+
     <div class="form-group">
-      <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Ihr Name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">E-Mail-Adresse</label>
-            <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Wie kann ich Ihnen helfen?</label>
-            <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht an mich..." required></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Nachricht senden</button>
-        </form>
-      </div>
+      <label for="name">Vor- und Zuname</label>
+      <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Telefonnummer</label>
+      <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-Mail-Adresse</label>
+      <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
+      <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Nachricht senden</button>
+  </form>
+</div>
     </div>
   </section>
 
