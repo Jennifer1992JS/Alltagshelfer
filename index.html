@@ -116,21 +116,36 @@
   /* Menüleiste fürs Handy optimieren */
   nav {
     height: auto !important;
-    padding: 15px 20px !important;
+    padding: 12px 16px !important;
     flex-direction: column !important;
-    gap: 15px !important;
-    position: static !important; /* Nimmt auf kleinen Bildschirmen keinen Platz weg */
+    gap: 12px !important;
+    position: sticky !important; /* Nimmt auf kleinen Bildschirmen keinen Platz weg */
   }
+  .nav-logo img { 
+  height: 45px !important; /* Macht das Logo-Bild kleiner */
+}
+.nav-logo-text { 
+  font-size: 18px !important; /* Macht die Schrift "Alltagsfreund Jenny" kleiner */
+}
+.nav-logo-text small { 
+  font-size: 12px !important; /* Macht die Unterzeile kleiner */
+  letter-spacing: 0px;
+}
   .nav-links {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 4px !important;
+  width: 100%;
+  padding: 0;
+}
   .nav-links a {
-    font-size: 16px !important;
-    padding: 8px 15px !important;
-  }
+  font-size: 11px !important; /* Vorher 16px */
+  padding: 6px 2px !important;  /* Vorher 8px 15px */
+  text-align: center;
+  border-radius: 6px;
+  display: block;
+  white-space: nowrap; /* Das sorgt dafür, dass kein Wort mitten drin umbricht */
+}
   
   /* Startbereich untereinander stapeln */
   #home, .two-col {
@@ -178,7 +193,7 @@
     <ul class="nav-links">
       <li><a href="#home">Start</a></li>
       <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#nachbarschaftshilfe">Nachbarschaftshilfe</a></li>
+      <li><a href="#nachbarschaftshilfe">Hilfe</a></li>
       <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
   </nav>
