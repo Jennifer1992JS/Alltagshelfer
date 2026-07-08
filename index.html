@@ -16,7 +16,7 @@
       --primary-light: #9b5de5;
       --accent: #c026d3;
       --grad: linear-gradient(135deg, #6b21d6, #c026d3);
-      --bg-warm: #a38b97;
+      --bg-warm: #fdfaf6;
       --bg-cream: #fffdfd;
       --text: #2d1a4a;
       --text-muted: #5a3f8a;
@@ -26,383 +26,113 @@
     }
     
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--bg-cream); color: var(--text); font-size: 18px; line-height: 1.7; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg-cream); color: var(--text); font-size: 1.15rem; line-height: 1.7; }
 
     /* NAVIGATION */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
-  .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-.nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
-.nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
-.nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
-.nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
-.nav-links a { text-decoration: none; color: var(--text-muted); font-size: 18px; font-weight: 600; padding: 12px 20px; border-radius: 100px; transition: all .2s; }
-    .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
-    .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
+    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-logo img { height: 80px; width: auto; border-radius: 6px; }
+    .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
+    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; }
+    .nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 18px; font-weight: 600; padding: 12px 20px; border-radius: 100px; transition: all .2s; }
+    .nav-cta { background: var(--grad) !important; color: #fff !important; }
 
     /* HERO */
     #home { display: grid; grid-template-columns: 55fr 45fr; min-height: calc(100vh - 110px); margin-top: 110px; }
-    .hero-left { background: var(--bg-warm); padding: 60px 52px 60px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; overflow: hidden; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--primary); width: fit-content; }
-    
-    h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.16; color: var(--text); }
-    h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
-    .hero-desc { font-size: 18px; color: var(--text-muted); max-width: 480px; line-height: 1.78; }
-    
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
-    .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all .2s; box-shadow: 0 4px 18px rgba(107,33,214,0.15); }
-    .btn-primary:hover { opacity: .95; transform: translateY(-2px); }
-    .btn-secondary { background: #fff; color: var(--primary); padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; border: 2px solid var(--primary); transition: all .2s; }
-    .btn-secondary:hover { background: #fdfaf6; }
-    
-    .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-    .trust-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text-muted); }
-
-    .hero-right { position: relative; overflow: hidden; background: #f5f0ff; display: flex; align-items: center; justify-content: center; }
+    .hero-left { background: var(--bg-warm); padding: 60px 52px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 14px; font-weight: 600; color: var(--primary); width: fit-content; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.6vw, 3.5rem); line-height: 1.16; color: var(--text); }
+    .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; transition: all .2s; }
+    .hero-right { position: relative; background: #f5f0ff; display: flex; align-items: center; justify-content: center; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; }
     
-    .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .hero-overlay-card strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
-    .hero-overlay-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-
     /* SEKTIONEN */
-    section { padding: 100px 0; }
+    section { padding: 80px 0; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
-    .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
-    h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 2.8vw, 42px); color: var(--text); line-height: 1.22; margin-bottom: 16px; }
-    .lead { font-size: 16px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 52px; }
+    .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text); margin-bottom: 20px; }
 
-    /* LEISTUNGEN */
-    #leistungen { background: var(--white); }
+    /* CARDS */
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .card { background: var(--bg-warm); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; transition: all .25s; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow); background: var(--white); }
-    .card-icon { font-size: 28px; margin-bottom: 16px; display: inline-block; }
-    .card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; color: var(--text); }
-    .card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(107,33,214,0.1); }
 
-    /* NACHBARSCHAFTSHILFE */
-    #nachbarschaftshilfe { background: var(--bg-warm); }
-    .two-col { display: grid; grid-template-columns: 60fr 40fr; gap: 52px; align-items: center; }
-    .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
-    .info-list li { display: flex; gap: 14px; align-items: flex-start; }
-    .info-list-icon { font-size: 18px; color: var(--accent); margin-top: 2px; }
-    .info-list-text strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
-    .info-list-text p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-    .section-side-img { width: 100%; height: 420px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+    /* FORM */
+    .contact-wrapper { max-width: 600px; margin: 0 auto; background: var(--bg-warm); padding: 40px; border-radius: 24px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-size: 1rem; }
+    .btn-submit { background: var(--grad); color: #fff; border: none; padding: 16px; border-radius: 100px; font-weight: 700; width: 100%; cursor: pointer; }
 
-    /* KONTAKT FORMULAR */
-    #kontakt { background: var(--white); }
-    .contact-wrapper { max-width: 600px; margin: 0 auto; background: var(--bg-warm); border: 1px solid var(--border); padding: 40px; border-radius: 24px; }
-    .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
-    .form-group label { font-size: 14px; font-weight: 600; color: var(--text); }
-    .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 15px; color: var(--text); background: var(--white); outline: none; transition: border .2s; }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
-    .btn-submit { background: var(--grad); color: #fff; border: none; padding: 14px; border-radius: 100px; font-weight: 700; font-size: 15px; cursor: pointer; transition: opacity .2s; width: 100%; margin-top: 10px; }
-    .btn-submit:hover { opacity: 0.9; }
-
-    /* FOOTER */
-    footer { background: var(--text); color: #fff; padding: 40px 0; text-align: center; font-size: 14px; }
-    footer p { opacity: 0.7; }
-
-    /* --- Verbessertes Kartendesign --- */
-.card { 
-  background: var(--white); 
-  border: 1px solid var(--border); 
-  border-radius: 20px; 
-  padding: 32px 28px; 
-  transition: all 0.3s ease; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.03); 
-}
-.card:hover { 
-  transform: translateY(-8px); 
-  box-shadow: 0 12px 24px rgba(107,33,214,0.1); 
-}
-
-/* --- Button Animation --- */
-.btn-primary:hover { 
-  opacity: 1; 
-  transform: translateY(-3px); 
-  box-shadow: 0 10px 20px rgba(107,33,214,0.25); 
-}
-    /* RESPONSIVE DESIGN (SENIORENGERECHT) */
-@media (max-width: 992px) {
-  .hero-right { height: 400px; }
-  .cards-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  /* Menüleiste fürs Handy optimieren */
-  nav {
-    height: auto !important;
-    padding: 12px 16px !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    position: sticky !important; /* Nimmt auf kleinen Bildschirmen keinen Platz weg */
-  }
-  .nav-logo img { 
-  height: 45px !important; /* Macht das Logo-Bild kleiner */
-}
-.nav-logo-text { 
-  font-size: 18px !important; /* Macht die Schrift "Alltagsfreund Jenny" kleiner */
-}
-.nav-logo-text small { 
-  font-size: 12px !important; /* Macht die Unterzeile kleiner */
-  letter-spacing: 0px;
-}
-  .nav-links {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 4px !important;
-  width: 100%;
-  padding: 0;
-}
-  .nav-links a {
-  font-size: 11px !important; /* Vorher 16px */
-  padding: 6px 2px !important;  /* Vorher 8px 15px */
-  text-align: center;
-  border-radius: 6px;
-  display: block;
-  white-space: nowrap; /* Das sorgt dafür, dass kein Wort mitten drin umbricht */
-}
-  
-  /* Startbereich untereinander stapeln */
-  #home, .two-col {
-    display: flex !important;
-    flex-direction: column-reverse !important;
-    margin-top: 0 !important;
-    min-height: auto !important;
-  }
-  .hero-left, .hero-right {
-    width: 100% !important;
-    padding: 30px 20px !important;
-  }
-  h1 {
-    font-size: 28px !important;
-    text-align: center !important;
-  }
-  .hero-desc {
-    font-size: 18px !important;
-    text-align: center !important;
-  }
-  .hero-btns {
-    justify-content: center !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .cards-grid { grid-template-columns: 1fr; }
-  section { padding: 40px 0; }
-  .container { padding: 0 20px; }
-}
+    /* RESPONSIVE */
+    @media (max-width: 992px) { .cards-grid { grid-template-columns: 1fr; } #home { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { nav { height: auto; padding: 15px; } .nav-links { display: none; } }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
     <a href="#home" class="nav-logo">
-      <!-- Hier sucht der Code nach deinem hochgeladenen Logo -->
-      <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
+      <img src="./assets/logo.png" alt="Logo">
       <div class="nav-logo-text">
         <strong>Alltagsfreund Jenny</strong>
         <small>Haushalt & Nachbarschaftshilfe</small>
       </div>
     </a>
-    <ul class="nav-links">
-      <li><a href="#home">Start</a></li>
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#nachbarschaftshilfe">NBH</a></li>
-      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
-    </ul>
   </nav>
 
-  <!-- HERO SECTION -->
   <section id="home">
     <div class="hero-left">
-      <div class="hero-tag">
-        ❤️ Mit Herz & Zeit für Sie da
-      </div>
-     <h1>Unterstützung, die von Herzen kommt.</h1>
-      <p class="hero-desc">
-        Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite – mit Geduld, Zeit und einem offenen Ohr. Damit Sie sich wieder auf das konzentrieren können, was Ihnen Freude macht.
-      </p>
-      <div class="hero-btns">
-        <a href="#kontakt" class="btn-primary">Mich unverbindlich kennenlernen</a>
-        <a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
-      </div>
-      <div class="trust-row">
-        <div class="trust-pill">✓ Herzlich & Empathisch</div>
-        <div class="trust-pill">✓ Zuverlässig & Pünktlich</div>
-        <div class="trust-pill">✓ Flexibel anpassbar</div>
-      </div>
+      <div class="hero-tag">❤️ Mit Herz & Zeit für Sie da</div>
+      <h1>Unterstützung, die von Herzen kommt.</h1>
+      <p>Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite.</p>
+      <a href="#kontakt" class="btn-primary" style="width: fit-content;">Mich kennenlernen</a>
     </div>
     <div class="hero-right">
-      <!-- Automatisches, kostenloses Bild von Unsplash -->
-      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80" alt="Alltagsfreund Jenny Unterstützung im Alltag" class="hero-img">
-      <div class="hero-overlay-card">
-        <strong>Unterstützung, die entlastet</strong>
-        <p>Gemeinsam gestalten wir Ihren Alltag wieder leichter und unbeschwerter. Rufen Sie mich einfach an oder schreiben Sie mir.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80" alt="Alltagsbegleitung" class="hero-img">
     </div>
   </section>
 
-  <!-- LEISTUNGEN -->
   <section id="leistungen">
     <div class="container">
-      <span class="section-tag">Mein Angebot</span>
+      <span class="section-tag">Leistungen</span>
       <h2>Wie ich Ihnen helfen kann</h2>
-      <p class="lead">Jeder Mensch hat andere Bedürfnisse. Deshalb stimme ich meine Hilfe ganz individuell auf Ihre Wünsche und Ihren Rhythmus ab.</p>
-      
       <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">🏠</div>
-          <h3>Ein Zuhause zum Wohlfühlen</h3>
-          <p>Ich unterstütze Sie dabei, dass Ihr Zuhause genau der Ort bleibt, an dem Sie sich entspannen können – ganz in Ihrem Tempo und nach Ihren Wünschen.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">🚶</div>
-          <h3>Sicher & Gemeinsam unterwegs</h3>
-          <p>Egal ob Arztbesuche, Behördengänge oder ein entspannter Spaziergang: Ich begleite Sie zuverlässig, damit Sie sich nie gehetzt oder unsicher fühlen müssen.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">☕</div>
-          <h3>Zeit für das Wesentliche</h3>
-          <p>Manchmal sind es die kleinen Dinge, die zählen. Ich nehme Ihnen den Druck des Alltags ab, damit Sie mehr Zeit für Hobbys, Gespräche oder einfach zum Durchatmen haben.</p>
-        </div>
-      </div>
-  </section>
-
-  <section id="ueber-mich" style="background: #fdfaf6;">
-  <div class="container" style="max-width: 800px; text-align: center;">
-    <span class="section-tag">Über mich</span>
-    <h2>Hallo, ich bin Jenny</h2>
-    <p class="lead" style="margin: 0 auto 30px auto;">
-      Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist für mich keine bloße Dienstleistung, sondern eine Herzensangelegenheit. 
-    </p>
-    <p style="color: var(--text-muted);">
-      Mir ist es wichtig, dass Sie sich nicht nur unterstützt, sondern sicher und wertgeschätzt fühlen. Ich kenne die Region und die Menschen hier – und genau deshalb weiß ich, wie wichtig ein verlässlicher Ansprechpartner an der Seite ist. Lassen Sie uns gerne bei einem Gespräch schauen, wie ich Ihren Alltag erleichtern kann.
-    </p>
-  </div>
-</section>
-
-<section id="ablauf">
-  <div class="container">
-    <span class="section-tag">Der Weg zu mir</span>
-    <h2>In 3 Schritten zur Entlastung</h2>
-    <div class="cards-grid">
-      <div class="card">
-        <h3>1. Kennenlernen</h3>
-        <p>Wir führen ein kurzes, unverbindliches Gespräch. Dabei finden wir heraus, ob die Chemie stimmt und was du genau brauchst.</p>
-      </div>
-      <div class="card">
-        <h3>2. Planen</h3>
-        <p>Wir legen gemeinsam fest, welche Aufgaben ich übernehme. Alles wird individuell auf deinen Alltag und deine Wünsche abgestimmt.</p>
-      </div>
-      <div class="card">
-        <h3>3. Durchstarten</h3>
-        <p>Wir legen los. Ich unterstütze dich zuverlässig und wir schauen regelmäßig, ob alles für dich passt und du zufrieden bist.</p>
-      </div>
-    </div>
-  </div>
-</section>
-  
-  <!-- NACHBARSCHAFTSHILFE -->
-  <section id="nachbarschaftshilfe">
-    <div class="container">
-      <div class="two-col">
-        <div>
-          <span class="section-tag">Anerkannt & Nah</span>
-          <h2>Nachbarschaftshilfe</h2>
-          <p class="lead">Wussten Sie schon? Viele Leistungen können unkompliziert im Rahmen der Nachbarschaftshilfe oder Entlastungsleistungen erbracht werden.</p>
-          <ul class="info-list">
-            <li>
-              <span class="info-list-icon">✓</span>
-              <div class="info-list-text">
-                <strong>Individuelle Betreuung</strong>
-                <p>Keine Massenabfertigung. Ich nehme mir die Zeit, die Sie wirklich brauchen.</p>
-              </div>
-            </li>
-            <li>
-              <span class="info-list-icon">✓</span>
-              <div class="info-list-text">
-                <strong>Lokale Präsenz</strong>
-                <p>Schnell erreichbar und fest in der Region verwurzelt für kurze Wege.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <!-- Automatisches, kostenloses Bild von Unsplash -->
-          <img src="assets/nbh.jpg" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img" style="width:100%; height:100%; object-fit:cover;">
+        <div class="card"><h3>🏠 Zuhause</h3><p>Unterstützung im Haushalt nach Ihren Wünschen.</p></div>
+        <div class="card"><h3>🚶 Begleitung</h3><p>Zuverlässige Unterstützung bei Terminen und Wegen.</p></div>
+        <div class="card"><h3>☕ Zeit</h3><p>Mehr Raum für das, was Ihnen Freude macht.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- KONTAKT -->
   <section id="kontakt">
     <div class="container">
       <div style="text-align: center; margin-bottom: 40px;">
         <span class="section-tag">Kontakt</span>
-        <!-- Ändere Zeile 350 -->
-<h2>Lassen Sie uns gemeinsam schauen, was Sie brauchen</h2>
-
-<!-- Ändere Zeile 351 -->
-<div style="text-align: center; margin-bottom: 40px;">
-    <span class="section-tag">Kontakt</span>
-    <h2>Lassen Sie uns sprechen</h2>
-    <p class="lead" style="margin: 0 auto 30px auto;">
-        Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen, um in Ruhe über Ihre Wünsche zu sprechen.
-    </p>
-</div>
+        <h2>Lassen Sie uns sprechen</h2>
+        <p>Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen.</p>
+      </div>
         
-    <div class="contact-wrapper">
-  <form action="https://formsubmit.co/stoll24@googlemail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-
-    <div class="form-group">
-      <label for="name">Vor- und Zuname</label>
-      <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
-    </div>
-
-    <div class="form-group">
-      <label for="phone">Telefonnummer</label>
-      <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
-    </div>
-
-    <div class="form-group">
-      <label for="email">E-Mail-Adresse</label>
-      <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
-    </div>
-
-    <div class="form-group">
-      <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
-      <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
-    </div>
-
-    <button type="submit" class="btn-submit">Jetzt Erstgespräch anfragen</button>
-
-<p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
-  Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
-</p>
-  </form>
-</div>
+      <div class="contact-wrapper">
+        <form action="https://formsubmit.co/stoll24@googlemail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
+          <div class="form-group"><label>Telefon</label><input type="tel" name="phone" required></div>
+          <div class="form-group"><label>Nachricht</label><textarea name="message" rows="5" required></textarea></div>
+          <button type="submit" class="btn-submit">Jetzt Erstgespräch anfragen</button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-  <div class="container">
-    <p>&copy; 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten. | Ein Service mit Herz.</p>
-    <p style="margin-top: 10px; font-size: 13px;">
-      <a href="impressum.html" style="color: rgba(255,255,255,0.7); text-decoration: none; margin-right: 15px;">Impressum</a>
-      <a href="datenschutz.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Datenschutz</a>
-    </p>
-  </div>
-</footer>
+    <div class="container" style="text-align: center; padding: 20px;">
+      <p>&copy; 2026 Alltagsfreund Jenny. | Ein Service mit Herz.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
