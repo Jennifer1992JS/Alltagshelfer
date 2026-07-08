@@ -16,7 +16,7 @@
       --primary-light: #9b5de5;
       --accent: #c026d3;
       --grad: linear-gradient(135deg, #6b21d6, #c026d3);
-      --bg-warm: #fdfaf6;
+      --bg-warm: #a38b97;
       --bg-cream: #fffdfd;
       --text: #2d1a4a;
       --text-muted: #5a3f8a;
@@ -26,50 +26,52 @@
     }
     
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 18px; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg-cream); color: var(--text); font-size: 1.15rem; line-height: 1.7; }
+    html { scroll-behavior: smooth; }
+    /* Globale Schriftgröße angepasst */
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg-cream); color: var(--text); font-size: 20px; line-height: 1.7; }
 
     /* NAVIGATION */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-    .nav-logo img { height: 80px; width: auto; border-radius: 6px; }
+    .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
     .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
     .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; }
     .nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
     .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 18px; font-weight: 600; padding: 12px 20px; border-radius: 100px; transition: all .2s; }
-    .nav-cta { background: var(--grad) !important; color: #fff !important; }
+    .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
 
     /* HERO */
     #home { display: grid; grid-template-columns: 55fr 45fr; min-height: calc(100vh - 110px); margin-top: 110px; }
     .hero-left { background: var(--bg-warm); padding: 60px 52px; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
     .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 14px; font-weight: 600; color: var(--primary); width: fit-content; }
-    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.6vw, 3.5rem); line-height: 1.16; color: var(--text); }
-    .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; transition: all .2s; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; line-height: 1.16; color: var(--text); }
+    .hero-desc { font-size: 20px; color: var(--text-muted); line-height: 1.78; }
+    .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; }
     .hero-right { position: relative; background: #f5f0ff; display: flex; align-items: center; justify-content: center; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; }
     
     /* SEKTIONEN */
-    section { padding: 80px 0; }
+    section { padding: 100px 0; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
     .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
-    h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text); margin-bottom: 20px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--text); margin-bottom: 20px; }
+    .lead { font-size: 20px; color: var(--text-muted); line-height: 1.7; margin-bottom: 52px; }
 
     /* CARDS */
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(107,33,214,0.1); }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; }
 
-    /* FORM */
+    /* KONTAKT FORMULAR */
     .contact-wrapper { max-width: 600px; margin: 0 auto; background: var(--bg-warm); padding: 40px; border-radius: 24px; }
     .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
-    .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-size: 1rem; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 18px; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-size: 18px; }
     .btn-submit { background: var(--grad); color: #fff; border: none; padding: 16px; border-radius: 100px; font-weight: 700; width: 100%; cursor: pointer; }
 
     /* RESPONSIVE */
     @media (max-width: 992px) { .cards-grid { grid-template-columns: 1fr; } #home { grid-template-columns: 1fr; } }
-    @media (max-width: 768px) { nav { height: auto; padding: 15px; } .nav-links { display: none; } }
   </style>
 </head>
 <body>
@@ -77,18 +79,20 @@
   <nav>
     <a href="#home" class="nav-logo">
       <img src="./assets/logo.png" alt="Logo">
-      <div class="nav-logo-text">
-        <strong>Alltagsfreund Jenny</strong>
-        <small>Haushalt & Nachbarschaftshilfe</small>
-      </div>
+      <div class="nav-logo-text"><strong>Alltagsfreund Jenny</strong><small>Haushalt & Nachbarschaftshilfe</small></div>
     </a>
+    <ul class="nav-links">
+      <li><a href="#home">Start</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
   </nav>
 
   <section id="home">
     <div class="hero-left">
       <div class="hero-tag">❤️ Mit Herz & Zeit für Sie da</div>
       <h1>Unterstützung, die von Herzen kommt.</h1>
-      <p>Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite.</p>
+      <p class="hero-desc">Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite.</p>
       <a href="#kontakt" class="btn-primary" style="width: fit-content;">Mich kennenlernen</a>
     </div>
     <div class="hero-right">
@@ -98,7 +102,7 @@
 
   <section id="leistungen">
     <div class="container">
-      <span class="section-tag">Leistungen</span>
+      <span class="section-tag">Mein Angebot</span>
       <h2>Wie ich Ihnen helfen kann</h2>
       <div class="cards-grid">
         <div class="card"><h3>🏠 Zuhause</h3><p>Unterstützung im Haushalt nach Ihren Wünschen.</p></div>
@@ -108,21 +112,41 @@
     </div>
   </section>
 
+  <section id="ueber-mich" style="background: #fdfaf6;">
+    <div class="container" style="max-width: 800px; text-align: center;">
+      <span class="section-tag">Über mich</span>
+      <h2>Hallo, ich bin Jenny</h2>
+      <p class="lead">Ich bin hier in Burgstädt zu Hause. Meine Arbeit ist für mich eine Herzensangelegenheit.</p>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="container">
+      <span class="section-tag">Der Weg zu mir</span>
+      <h2>In 3 Schritten zur Entlastung</h2>
+      <div class="cards-grid">
+        <div class="card"><h3>1. Kennenlernen</h3><p>Wir führen ein unverbindliches Gespräch.</p></div>
+        <div class="card"><h3>2. Planen</h3><p>Wir legen fest, was ich übernehme.</p></div>
+        <div class="card"><h3>3. Durchstarten</h3><p>Wir legen los und schauen, was passt.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="kontakt">
     <div class="container">
       <div style="text-align: center; margin-bottom: 40px;">
         <span class="section-tag">Kontakt</span>
         <h2>Lassen Sie uns sprechen</h2>
-        <p>Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen.</p>
       </div>
         
       <div class="contact-wrapper">
         <form action="https://formsubmit.co/stoll24@googlemail.com" method="POST">
           <input type="hidden" name="_captcha" value="false">
-          <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
-          <div class="form-group"><label>Telefon</label><input type="tel" name="phone" required></div>
+          <div class="form-group"><label>Vor- und Zuname</label><input type="text" name="name" required></div>
+          <div class="form-group"><label>Telefonnummer</label><input type="tel" name="phone" required></div>
           <div class="form-group"><label>Nachricht</label><textarea name="message" rows="5" required></textarea></div>
           <button type="submit" class="btn-submit">Jetzt Erstgespräch anfragen</button>
+          <p style="font-size: 14px; color: #888; margin-top: 15px; text-align: center;">Ihre Daten werden vertraulich behandelt.</p>
         </form>
       </div>
     </div>
@@ -133,6 +157,5 @@
       <p>&copy; 2026 Alltagsfreund Jenny. | Ein Service mit Herz.</p>
     </div>
   </footer>
-
 </body>
 </html>
