@@ -132,16 +132,21 @@
       .container { padding: 0 20px; }
     }
     
-    /* SCROLL ANIMATION VORSCHAU-MODUS */
-    .reveal {
-      opacity: 0.15;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  body {
+  background-color: #fdfafb;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%239b5de5' stroke-width='0.6'%3E%3Crect x='10' y='10' width='80' height='80' stroke-opacity='0.025' transform='rotate(20 50 50)'/%3E%3Crect x='70' y='60' width='70' height='70' stroke-opacity='0.02' transform='rotate(45 105 95)'/%3E%3Crect x='20' y='90' width='60' height='60' stroke-opacity='0.015' transform='rotate(15 50 120)'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* SCROLL ANIMATION VORSCHAU-MODUS */
+.reveal {
+  opacity: 0.15;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 <body>
