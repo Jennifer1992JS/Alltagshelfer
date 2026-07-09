@@ -131,6 +131,17 @@
       section { padding: 40px 0; }
       .container { padding: 0 20px; }
     }
+    
+    /* SCROLL ANIMATION VORSCHAU-MODUS */
+    .reveal {
+      opacity: 0.15;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -189,19 +200,19 @@
       <p class="lead">Jeder Mensch hat andere Bedürfnisse. Deshalb stimme ich meine Hilfe ganz individuell auf Ihre Wünsche und Ihren Rhythmus ab.</p>
       
       <div class="cards-grid">
-        <div class="card">
+        <div class="card reveal">
           <div class="card-icon">🏠</div>
           <h3>Ein Zuhause zum Wohlfühlen</h3>
           <p>Ich unterstütze Sie dabei, dass Ihr Zuhause genau der Ort bleibt, an dem Sie sich entspannen können – ganz in Ihrem Tempo und nach Ihren Wünschen.</p>
         </div>
         
-        <div class="card">
+        <div class="card reveal">
           <div class="card-icon">🚶</div>
           <h3>Sicher & Gemeinsam unterwegs</h3>
           <p>Egal ob Arztbesuche, Behördengänge oder ein entspannter Spaziergang: Ich begleite Sie zuverlässig, damit Sie sich nie gehetzt oder unsicher fühlen müssen.</p>
         </div>
         
-        <div class="card">
+        <div class="card reveal">
           <div class="card-icon">☕</div>
           <h3>Zeit für das Wesentliche</h3>
           <p>Manchmal sind es die kleinen Dinge, die zählen. Ich nehme Ihnen den Druck des Alltags ab, damit Sie mehr Zeit für Hobbys, Gespräche oder einfach zum Durchatmen haben.</p>
@@ -333,6 +344,26 @@
       </p>
     </div>
   </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active'); 
+        }
+      });
+    }, { 
+      threshold: 0.1,
+      rootMargin: "-40px 0px -40px 0px" 
+    });
 
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+  
 </body>
 </html>
