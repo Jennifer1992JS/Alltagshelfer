@@ -191,7 +191,19 @@
   opacity: 1;
   transform: translateY(0);
 }
-  </style>
+
+/* Behebt das Aufkleben der weißen Box auf dem Handy */
+@media (max-width: 768px) {
+  .hero-overlay-card {
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 15px !important;
+    right: 15px !important;
+    width: auto !important;
+  }
+}
+
+</style>
 </head>
 <body>
 
