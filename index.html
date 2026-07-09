@@ -93,9 +93,50 @@
     .section-side-img { width: 100%; height: 420px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 
     /* KONTAKT FORMULAR */
-    #kontakt { background: var(--white); }
-    .contact-wrapper { max-width: 600px; margin: 0 auto; background: var(--bg-warm); border: 1px solid var(--border); padding: 40px; border-radius: 24px; }
-    .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+  #kontakt { 
+  background: transparent; /* Macht die weiße Wand unsichtbar, damit das Muster durchscheint */
+  padding: 60px 0;
+}
+
+/* Der neue Container für das Zwei-Spalten-Layout */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-text {
+  text-align: center; /* Auf dem Handy bleibt der Text mittig */
+}
+
+/* Deine bestehende lila Box, leicht angepasst */
+.contact-wrapper { 
+  width: 100%;
+  max-width: 550px; 
+  margin: 0 auto; 
+  background: var(--bg-warm); 
+  border: 1px solid var(--border); 
+  padding: 40px; 
+  border-radius: 24px; 
+}
+
+/* Ab PC-Größe springt das Layout in zwei Spalten */
+@media (min-width: 992px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Links Text, rechts Formular */
+    gap: 80px;
+    align-items: center;
+  }
+
+  .contact-text {
+    text-align: left; /* Am PC sieht linksbündig sauberer aus */
+  }
+}
     .form-group label { font-size: 18px; font-weight: 600; color: var(--text); }
     .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 16px; color: var(--text); background: var(--white); outline: none; transition: border .2s; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
@@ -299,17 +340,20 @@
 
   <!-- KONTAKT -->
   <section id="kontakt">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 40px;">
+  <div class="container">
+    
+    <div class="contact-grid">
+      
+      <div class="contact-text">
         <span class="section-tag">Kontakt</span>
         <h2>Lassen Sie uns sprechen</h2>
-        <p class="lead" style="margin: 0 auto;">
+        <p class="lead">
           Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen, um in Ruhe über Ihre Wünsche zu sprechen.
         </p>
       </div>
-        
+
       <div class="contact-wrapper">
-        <form action="https://formsubmit.co/" method="POST">
+        <form action="https://formsubmit.co/DEINE_MAIL_HIER" method="POST">
           <input type="hidden" name="_captcha" value="false">
 
           <div class="form-group">
@@ -339,8 +383,8 @@
           </p>
         </form>
       </div>
-    </div>
-  </section>
+
+    </div> </div> </section>
 
   <!-- FOOTER -->
   <footer>
