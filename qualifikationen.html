@@ -68,15 +68,18 @@
     }
 
 .zertifikat-img {
-  width: 320px;
-  height: 320px;
-  object-fit: contain;     /* Zeigt JETZT das komplette Dokument an, ohne Beschnitt! */
-  background: #ffffff;     /* Füllt die Ränder links und rechts sauber mit Weiß auf */
-  padding: 15px;           /* Gibt dem Dokument etwas Atemraum zum Rand */
+  width: 100%;
+  max-width: 320px;        /* Verhindert, dass es auf dem PC riesig wird */
+  height: auto;            /* Verhindert Verzerrungen */
+  aspect-ratio: 1 / 1;     /* Hält es perfekt quadratisch */
+  object-fit: contain;     /* Zeigt das komplette Dokument ohne Beschnitt */
+  background: #ffffff;     /* Weißer Hintergrund für die Ränder */
+  padding: 12px;
   border-radius: 16px;
   border: 1px solid var(--border);
   margin-top: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-sizing: border-box;  /* Wichtig: Rechnet Padding in die Breite ein! */
 }
 
     .btn-back {
