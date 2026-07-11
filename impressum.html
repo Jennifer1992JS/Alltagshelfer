@@ -3,51 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum - Alltagsfreund Jenny</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Impressum – Alltagsfreund Jenny</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    body { font-family: 'DM Sans', sans-serif; line-height: 1.6; color: #2d1a4a; padding: 40px 20px; max-width: 800px; margin: 0 auto; background: #fffdfd; }
-    h1 { color: #6b21d6; border-bottom: 2px solid #f3e8ff; padding-bottom: 10px; }
-    h2 { color: #5a3f8a; margin-top: 30px; }
-    a { color: #c026d3; text-decoration: none; }
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #6b21d6; font-weight: bold; }
+    :root {
+      --primary: #704882;
+      --primary-dark: #55147a;
+      --accent: #d6c1cb;
+      --grad: linear-gradient(135deg, #2f1f47, #4b1252);
+      --bg-warm: #c2a5bb;
+      --text: #2b143b;
+      --text-muted: #362357;
+      --border: #eee1f5;
+      --white: #fff;
+    }
+    
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      font-family: 'DM Sans', sans-serif; 
+      background-color: #fdfafb;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%239b5de5' stroke-width='0.8'%3E%3Crect x='30' y='30' width='160' height='160' stroke-opacity='0.1' transform='rotate(25 110 110)'/%3E%3Crect x='140' y='120' width='140' height='140' stroke-opacity='0.06' transform='rotate(45 210 190)'/%3E%3Crect x='20' y='180' width='110' height='110' stroke-opacity='0.05' transform='rotate(-15 75 235)'/%3E%3Crect x='180' y='20' width='120' height='120' stroke-opacity='0.07' transform='rotate(55 240 80)'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(135deg, rgba(155, 93, 229, 0.07) 0%, rgba(243, 232, 255, 0.4) 50%, #fdfafb 100%);
+      background-attachment: fixed;
+      color: var(--text); 
+      font-size: 18px; 
+      line-height: 1.7; 
+    }
+
+    /* UNTERSEITEN NAVIGATION */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
+    .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
+    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
+    
+    .btn-back { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 16px; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 100px; transition: all .2s; background: #fff; }
+    .btn-back:hover { background: var(--grad); color: #fff; border-color: transparent; transform: translateY(-1px); }
+
+    /* INHALTS-CONTAINER */
+    .content-page { padding: 60px 20px; min-height: calc(100vh - 210px); }
+    .content-card { background: #fff; border: 1px solid var(--border); padding: 52px; border-radius: 24px; box-shadow: 0 4px 20px rgba(126,72,144,0.05); max-width: 900px; margin: 0 auto; }
+    
+    h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--text); margin-bottom: 30px; border-bottom: 2px solid var(--border); padding-bottom: 15px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--text); margin-top: 35px; margin-bottom: 15px; }
+    p { margin-bottom: 15px; color: var(--text-muted); }
+    a { color: var(--primary); text-decoration: none; font-weight: 500; border-bottom: 1px dotted var(--primary); }
+    a:hover { color: var(--primary-dark); }
+
+    /* FOOTER */
+    footer { background: var(--text); color: #fff; padding: 30px 0; text-align: center; font-size: 14px; margin-top: 60px; }
+    footer p { opacity: 0.7; margin: 0; }
+
+    /* HANDY ANPASSUNGEN */
+    @media (max-width: 768px) {
+      nav { height: auto !important; padding: 16px !important; flex-direction: column !important; gap: 16px !important; }
+      .nav-logo img { height: 50px !important; }
+      .nav-logo-text { font-size: 18px !important; }
+      .nav-logo-text small { font-size: 12px !important; }
+      .btn-back { width: 100% !important; text-align: center; padding: 10px !important; font-size: 14px; }
+      .content-card { padding: 25px !important; }
+      h1 { font-size: 30px !important; }
+      h2 { font-size: 22px !important; }
+    }
   </style>
 </head>
 <body>
 
-  <a href="index.html" class="back-btn">&larr; Zurück zur Startseite</a>
-  
-  <h1>Impressum</h1>
-  
-  <h2>Angaben gemäß § 5 TMG:</h2>
-  <p>
-    Jenny Marion Eckardt<br>
-    Alltagsfreund Jenny<br>
-    Burkersdorfer Str. 209<br>
-    09217 Burgstädt
-  </p>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
+      <div class="nav-logo-text">
+        <strong>Alltagsfreund Jenny</strong>
+        <small>Haushalt & Nachbarschaftshilfe</small>
+      </div>
+    </a>
+    <a href="index.html" class="btn-back">← Zurück zur Startseite</a>
+  </nav>
 
-  <h2>Kontakt:</h2>
-  <p>
-    Telefon: 015758348366<br>
-    E-Mail: jennyeckardt@outlook.de
-  </p>
+  <!-- INHALT -->
+  <main class="content-page">
+    <div class="content-card">
+      <h1>Impressum</h1>
+      
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        Jenny Marion Eckardt<br>
+        Alltagsfreund Jenny<br>
+        Burkersdorfer Str. 209<br>
+        09217 Burgstädt
+      </p>
 
-  <h2>Umsatzsteuer-ID:</h2>
-  Umsatzsteuerbefreit aufgrund der Kleinunternehmerregelung gemäß § 19 UStG.</p>
-  
-  <h2>Redaktionell verantwortlich:</h2>
-  <p>
-     Jenny Marion Eckardt<br>
-     Burkersdorfer Str. 209<br>
-     09217 Burgstädt
-  </p>
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: 015758348366<br>
+        E-Mail: <a href="mailto:jennyeckardt@outlook.de">jennyeckardt@outlook.de</a>
+      </p>
 
-  <h2>EU-Streitschlichtung:</h2>
-  <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+      <h2>Umsatzsteuer-ID</h2>
+      <p>Umsatzsteuerbefreit aufgrund der Kleinunternehmerregelung gemäß § 19 UStG.</p>
 
-  <h2>Verbraucher­streit­beilegung/Universal­schlichtungs­stelle:</h2>
-  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <h2>Redaktionell verantwortlich</h2>
+      <p>
+        Jenny Marion Eckardt<br>
+        Burkersdorfer Str. 209<br>
+        09217 Burgstädt
+      </p>
+
+      <h2>EU-Streitschlichtung</h2>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br>
+        Unsere E-Mail-Adresse finden Sie oben im Impressum.
+      </p>
+
+      <h2>Verbraucher­streit­beilegung/Universal­schlichtungs­stelle</h2>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten.</p>
+  </footer>
 
 </body>
 </html>
