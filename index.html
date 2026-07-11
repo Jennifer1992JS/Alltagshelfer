@@ -358,8 +358,12 @@
       </div>
 
       <div class="contact-wrapper">
-        <form action="https://formsubmit.co/DEINE_MAIL_HIER" method="POST">
-          <input type="hidden" name="_captcha" value="false">
+        <form method="POST" id="contact-form">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
+    
+    <!-- Spam-Schutz (Honeypot) -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
           <div class="form-group">
             <label for="name">Vor- und Zuname</label>
@@ -383,9 +387,11 @@
 
           <button type="submit" class="btn-submit">Jetzt Erstgespräch anfragen</button>
 
-          <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
-            Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
-          </p>
+         <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
+        Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
+    </p>
+
+    <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
         </form>
       </div>
 
@@ -422,6 +428,53 @@
       });
     });
   </script>
-  
+  <script>
+const form = document.getElementById('contact-form');
+const result = document.getElementById('form-result');
+const submitBtn = document.getElementById('submit-btn');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Wird gesendet...";
+    result.style.display = "block";
+    result.style.color = "#333";
+    result.innerText = "Bitte einen Moment Geduld...";
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            result.style.color = "green";
+            result.innerText = "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
+            form.reset();
+        } else {
+            console.log(response);
+            result.style.color = "red";
+            result.innerText = json.message;
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        result.style.color = "red";
+        result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuche es später noch einmal.";
+    })
+    .then(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Jetzt Erstgespräch anfragen"; // Habe den Text an deinen Button angepasst!
+    });
+});
+</script>
 </body>
 </html>
