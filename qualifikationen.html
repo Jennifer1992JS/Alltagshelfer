@@ -3,118 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qualifikationen & Zertifikate – Alltagsfreund Jenny</title>
+  <title>Qualifikationen & Nachweise – Alltagsfreund Jenny</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
       --primary: #704882;
       --primary-dark: #55147a;
+      --primary-light: #b755e0;
+      --accent: #d6c1cb;
+      --grad: linear-gradient(135deg, #2f1f47, #4b1252);
+      --bg-warm: #c2a5bb;
       --bg-cream: #f2ebeb;
       --text: #2b143b;
       --text-muted: #362357;
       --border: #eee1f5;
       --white: #fff;
     }
-
+    
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     
     body { 
       font-family: 'DM Sans', sans-serif; 
       background-color: #fdfafb;
       color: var(--text); 
-      line-height: 1.6;
-      padding: 60px 20px;
+      font-size: 18px; 
+      line-height: 1.7; 
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 40px;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(126,72,144,0.05);
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: var(--text-muted);
-      margin-bottom: 30px;
-      font-size: 18px;
-    }
-
-    .zertifikat-box {
-      background: #fdfaf6;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .zertifikat-box h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-.zertifikat-img {
-  width: 100%;
-  max-width: 320px;        /* Verhindert, dass es auf dem PC riesig wird */
-  height: auto;            /* Verhindert Verzerrungen */
-  aspect-ratio: 1 / 1;     /* Hält es perfekt quadratisch */
-  object-fit: contain;     /* Zeigt das komplette Dokument ohne Beschnitt */
-  background: #ffffff;     /* Weißer Hintergrund für die Ränder */
-  padding: 12px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  margin-top: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  box-sizing: border-box;  /* Wichtig: Rechnet Padding in die Breite ein! */
-}
-
-    .btn-back {
-      display: inline-block;
-      background: linear-gradient(135deg, #2f1f47, #4b1252);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 100px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      transition: opacity .2s;
-      margin-top: 20px;
-    }
-
-    .btn-back:hover { opacity: 0.9; }
-  </style>
-</head>
-<body>
-
-  <a href="index.html" class="btn-back">← Zurück zur Startseite</a>
-  <div class="container">
-    <h1>Qualifikationen & Nachweise</h1>
-    <p>Die Sicherheit und das Wohlbefinden meiner Klienten stehen für mich an erster Stelle. Hier finden Sie alle offiziellen Zertifikate und Nachweise über meine Aus- und Weiterbildungen.</p>
-
-    <!-- ZERTIFIKAT 1: ERSTE HILFE -->
-    <div class="zertifikat-box">
-      <h3>✓ Zertifizierter Erste-Hilfe-Kurs</h3>
-      <p style="font-size: 15px; margin-bottom: 10px;">Ausgebildet für Notfälle im Alltag – für ein sicheres Gefühl bei jeder Begleitung.</p>
-      <!-- Hier den Pfad zu deinem Bild eintragen -->
-      <img src="assets/erstehilfe.png" alt="Erste-Hilfe-Kurs Zertifikat Jenny" class="zertifikat-img">
-    </div>
-
-    <!-- Falls später noch mehr Zertifikate dazukommen, kannst du sie einfach hier drunter kopieren -->
-  </div>
-
-</body>
-</html>
+    /* NAVIGATION */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
+    .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
+    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
+    .nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
