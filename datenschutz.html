@@ -3,58 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutzerklärung - Alltagsfreund Jenny</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Datenschutzerklärung – Alltagsfreund Jenny</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    body { font-family: 'DM Sans', sans-serif; line-height: 1.6; color: #2d1a4a; padding: 40px 20px; max-width: 800px; margin: 0 auto; background: #fffdfd; }
-    h1 { color: #6b21d6; border-bottom: 2px solid #f3e8ff; padding-bottom: 10px; }
-    h2 { color: #5a3f8a; margin-top: 30px; font-size: 20px; }
-    h3 { color: #2d1a4a; font-size: 16px; margin-top: 20px; }
-    a { color: #c026d3; text-decoration: none; }
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #6b21d6; font-weight: bold; }
+    :root {
+      --primary: #704882;
+      --primary-dark: #55147a;
+      --accent: #d6c1cb;
+      --grad: linear-gradient(135deg, #2f1f47, #4b1252);
+      --bg-warm: #c2a5bb;
+      --text: #2b143b;
+      --text-muted: #362357;
+      --border: #eee1f5;
+      --white: #fff;
+    }
+    
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      font-family: 'DM Sans', sans-serif; 
+      background-color: #fdfafb;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%239b5de5' stroke-width='0.8'%3E%3Crect x='30' y='30' width='160' height='160' stroke-opacity='0.1' transform='rotate(25 110 110)'/%3E%3Crect x='140' y='120' width='140' height='140' stroke-opacity='0.06' transform='rotate(45 210 190)'/%3E%3Crect x='20' y='180' width='110' height='110' stroke-opacity='0.05' transform='rotate(-15 75 235)'/%3E%3Crect x='180' y='20' width='120' height='120' stroke-opacity='0.07' transform='rotate(55 240 80)'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(135deg, rgba(155, 93, 229, 0.07) 0%, rgba(243, 232, 255, 0.4) 50%, #fdfafb 100%);
+      background-attachment: fixed;
+      color: var(--text); 
+      font-size: 18px; 
+      line-height: 1.7; 
+    }
+
+    /* UNTERSEITEN NAVIGATION */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
+    .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
+    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
+    
+    .btn-back { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 16px; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 100px; transition: all .2s; background: #fff; }
+    .btn-back:hover { background: var(--grad); color: #fff; border-color: transparent; transform: translateY(-1px); }
+
+    /* INHALTS-CONTAINER */
+    .content-page { padding: 60px 20px; min-height: calc(100vh - 210px); }
+    .content-card { background: #fff; border: 1px solid var(--border); padding: 52px; border-radius: 24px; box-shadow: 0 4px 20px rgba(126,72,144,0.05); max-width: 900px; margin: 0 auto; }
+    
+    h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--text); margin-bottom: 30px; border-bottom: 2px solid var(--border); padding-bottom: 15px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--text); margin-top: 35px; margin-bottom: 15px; }
+    h3 { font-size: 19px; font-weight: 700; color: var(--text); margin-top: 20px; margin-bottom: 10px; }
+    p { margin-bottom: 15px; color: var(--text-muted); }
+    a { color: var(--primary); text-decoration: none; font-weight: 500; border-bottom: 1px dotted var(--primary); }
+    a:hover { color: var(--primary-dark); }
+    
+    ul { margin: 20px 0 20px 20px; color: var(--text-muted); }
+    li { margin-bottom: 10px; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: #fff; padding: 30px 0; text-align: center; font-size: 14px; margin-top: 60px; }
+    footer p { opacity: 0.7; margin: 0; }
+
+    /* HANDY ANPASSUNGEN */
+    @media (max-width: 768px) {
+      nav { height: auto !important; padding: 16px !important; flex-direction: column !important; gap: 16px !important; }
+      .nav-logo img { height: 50px !important; }
+      .nav-logo-text { font-size: 18px !important; }
+      .nav-logo-text small { font-size: 12px !important; }
+      .btn-back { width: 100% !important; text-align: center; padding: 10px !important; font-size: 14px; }
+      .content-card { padding: 25px !important; }
+      h1 { font-size: 30px !important; }
+      h2 { font-size: 22px !important; }
+      h3 { font-size: 18px !important; }
+    }
   </style>
 </head>
 <body>
 
-  <a href="index.html" class="back-btn">&larr; Zurück zur Startseite</a>
-  
-  <h1>Datenschutzerklärung</h1>
-  
-  <h2>1. Datenschutz auf einen Blick</h2>
-  <h3>Allgemeine Hinweise</h3>
-  <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
+      <div class="nav-logo-text">
+        <strong>Alltagsfreund Jenny</strong>
+        <small>Haushalt & Nachbarschaftshilfe</small>
+      </div>
+    </a>
+    <a href="index.html" class="btn-back">← Zurück zur Startseite</a>
+  </nav>
 
-  <h2>2. Verantwortliche Stelle</h2>
-  <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-  <p>
-    
-    Alltagsfreund Jenny<br>
-    
-    Jenny Marion Eckardt<br>
-    Burkersdorfer Str. 209<br>
-    09217 Burgstädt<br>
-    E-Mail: jennyeckardt@outlook.de
-  </p>
-  <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.</p>
+  <!-- INHALT -->
+  <main class="content-page">
+    <div class="content-card">
+      <h1>Datenschutzerklärung</h1>
+      
+      <h2>1. Datenschutz auf einen Blick</h2>
+      <h3>Allgemeine Hinweise</h3>
+      <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
 
-  <h2>3. Datenerfassung auf dieser Website</h2>
-  <h3>Kontaktformular</h3>
-  <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-  <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
-  <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage).</p>
+      <h2>2. Verantwortliche Stelle</h2>
+      <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+      <p style="background: #faf6fc; padding: 20px; border-radius: 12px; border: 1px dashed var(--accent); margin-bottom: 20px;">
+        <strong>Alltagsfreund Jenny</strong><br>
+        Jenny Marion Eckardt<br>
+        Burkersdorfer Str. 209<br>
+        09217 Burgstädt<br>
+        E-Mail: <a href="mailto:jennyeckardt@outlook.de">jennyeckardt@outlook.de</a>
+      </p>
+      <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
 
-  <h3>Hosting durch GitHub Pages</h3>
-  Wir hosten unsere Website bei GitHub Pages. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA. Wenn Sie unsere Website aufrufen, erfasst GitHub Logfiles inklusive Ihrer IP-Adresse. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse an einer fehlerfreien Darstellung der Website).</p>
+      <h2>3. Datenerfassung auf dieser Website</h2>
+      <h3>Kontaktformular</h3>
+      <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+      <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage).</p>
 
-  <h2>4. Ihre Rechte</h2>
-  <p>Sie haben jederzeit das Recht:</p>
-  <ul>
-    <li>Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten (Art. 15 DSGVO).</li>
-    <li>Die Berichtigung oder Löschung Ihrer Daten zu verlangen (Art. 16 und 17 DSGVO).</li>
-    <li>Die Einschränkung der Verarbeitung zu verlangen (Art. 18 DSGVO).</li>
-    <li>Widerspruch gegen die Verarbeitung einzulegen (Art. 21 DSGVO).</li>
-    <li>Beschwerde bei der zuständigen Datenschutz-Aufsichtsbehörde einzureichen.</li>
-  </ul>
+      <h3>Hosting durch GitHub Pages</h3>
+      <p>Wir hosten unsere Website bei GitHub Pages. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA. Wenn Sie unsere Website aufrufen, erfasst GitHub Logfiles inklusive Ihrer IP-Adresse. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse an einer fehlerfreien und sicheren Darstellung der Website).</p>
+
+      <h2>4. Ihre Rechte</h2>
+      <p>Sie haben jederzeit das Recht:</p>
+      <ul>
+        <li>Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten (Art. 15 DSGVO).</li>
+        <li>Die Berichtigung oder Löschung Ihrer Daten zu verlangen (Art. 16 und 17 DSGVO).</li>
+        <li>Die Einschränkung der Verarbeitung zu verlangen (Art. 18 DSGVO).</li>
+        <li>Widerspruch gegen die Verarbeitung einzulegen (Art. 21 DSGVO).</li>
+        <li>Beschwerde bei der zuständigen Datenschutz-Aufsichtsbehörde einzureichen.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten.</p>
+  </footer>
 
 </body>
 </html>
