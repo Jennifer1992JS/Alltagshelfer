@@ -77,16 +77,19 @@
     .hero-overlay-card strong { display: block; font-size: 22px; color: #333; margin-bottom: 6px; }
     .hero-overlay-card p { font-size: 16px; color: #555; line-height: 1.5; }
 
-    /* SEKTIONEN */
+    /* SEKTIONEN & GRIDS */
     section { padding: 100px 0; scroll-margin-top: 130px; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
     .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
     h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 2.8vw, 42px); color: var(--text); line-height: 1.22; margin-bottom: 16px; }
     .lead { font-size: 20px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 52px; }
 
-    /* LEISTUNGEN */
-    #leistungen { background: var(--white); }
+    /* 2er Grid für Leistungen */
     .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    
+    /* 3er Grid speziell für den Ablaufbereich */
+    .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
     .card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
     .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(107,33,214,0.1); }
     .card-icon { font-size: 28px; margin-bottom: 16px; display: inline-block; }
@@ -132,6 +135,7 @@
       #home { flex-direction: column; }
       .hero-right { height: 450px; width: 100%; }
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .step-grid { grid-template-columns: 1fr; }
     }
 
     /* RESPONSIVE DESIGN - SMARTPHONE HUB */
@@ -304,23 +308,23 @@
     </div>
   </section>
 
-  <!-- ABLAUF -->
+  <!-- ABLAUF (Jetzt sauber in 3 Spalten nebeneinander) -->
   <section id="ablauf">
     <div class="container">
       <span class="section-tag">Der Weg zu mir</span>
       <h2>In 3 Schritten zur Entlastung</h2>
-      <div class="cards-grid">
+      <div class="step-grid">
         <div class="card reveal">
           <h3>1. Kennenlernen</h3>
-          <p>Wir führen ein kurzes, unverbindliches Gespräch. Dabei finden wir heraus, ob die Chemie stimmt und was du genau brauchst.</p>
+          <p>Wir führen ein kurzes, unverbindliches Gespräch. Dabei finden wir heraus, ob die Chemie stimmt und was Sie genau brauchen.</p>
         </div>
         <div class="card reveal">
           <h3>2. Planen</h3>
-          <p>Wir legen gemeinsam fest, welche Aufgaben ich übernehme. Alles wird individuell auf deinen Alltag und deine Wünsche abgestimmt.</p>
+          <p>Wir legen gemeinsam fest, welche Aufgaben ich übernehme. Alles wird individuell auf Ihren Alltag und Ihre Wünsche abgestimmt.</p>
         </div>
         <div class="card reveal">
           <h3>3. Durchstarten</h3>
-          <p>Wir legen los. Ich unterstütze dich verlässlich und wir schauen regelmäßig, ob alles für dich passt und du zufrieden bist.</p>
+          <p>Wir legen los. Ich unterstütze Sie verlässlich und wir schauen regelmäßig, ob alles für Sie passt und Sie zufrieden sind.</p>
         </div>
       </div>
     </div>
@@ -479,7 +483,7 @@
           let data = await response.json();
           if (response.status == 200) {
               result.style.color = "green";
-              result.innerText = "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
+              result.innerText = "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.";
               form.reset();
           } else {
               console.log(response);
@@ -490,7 +494,7 @@
       .catch(error => {
           console.log(error);
           result.style.color = "red";
-          result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuche es später noch einmal.";
+          result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuchen Sie es später noch einmal.";
       })
       .then(() => {
           submitBtn.disabled = false;
