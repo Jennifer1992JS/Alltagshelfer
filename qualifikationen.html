@@ -67,12 +67,13 @@
       color: var(--text);
     }
 
-  .zertifikat-img {
-  width: 320px;         /* Gewünschte Breite */
-  height: 320px;        /* Exakt gleiche Höhe für das perfekte Quadrat */
-  object-fit: cover;    /* Verhindert, dass das Bild verzerrt wird */
-  object-position: top center; /* Zeigt eher den oberen/mittleren Teil (gut für Text/Kopfzeilen) */
-  border-radius: 16px;  /* Schöne abgerundete Ecken */
+.zertifikat-img {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;     /* Zeigt JETZT das komplette Dokument an, ohne Beschnitt! */
+  background: #ffffff;     /* Füllt die Ränder links und rechts sauber mit Weiß auf */
+  padding: 15px;           /* Gibt dem Dokument etwas Atemraum zum Rand */
+  border-radius: 16px;
   border: 1px solid var(--border);
   margin-top: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
