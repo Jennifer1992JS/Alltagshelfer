@@ -53,8 +53,8 @@
     .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
 
     /* HERO */
-    #home { display: grid; grid-template-columns: 55fr 45fr; min-height: calc(100vh - 110px); margin-top: 110px; }
-    .hero-left { background: var(--bg-warm); padding: 60px 52px 60px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; overflow: hidden; }
+    #home { display: flex; align-items: stretch; min-height: calc(100vh - 110px); margin-top: 110px; overflow: hidden; }
+    .hero-left { flex: 55; background: var(--bg-warm); padding: 60px 52px 60px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; }
     .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--primary); width: fit-content; }
     
     h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.16; color: var(--text); }
@@ -70,10 +70,10 @@
     .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
     .trust-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text-muted); }
 
-    .hero-right { position: relative; overflow: hidden; background: #f5f0ff; display: flex; align-items: center; justify-content: center; }
-    .hero-img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-right { flex: 45; position: relative; overflow: hidden; background: #f5f0ff; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
     
-    .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); z-index: 2; }
     .hero-overlay-card strong { display: block; font-size: 22px; color: #333; margin-bottom: 6px; }
     .hero-overlay-card p { font-size: 16px; color: #555; line-height: 1.5; }
 
@@ -129,7 +129,8 @@
     }
 
     @media (max-width: 992px) {
-      .hero-right { height: 400px; }
+      #home { flex-direction: column; }
+      .hero-right { height: 450px; width: 100%; }
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -142,22 +143,19 @@
       .nav-links { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 4px !important; width: 100%; padding: 0; }
       .nav-links a { font-size: 11px !important; padding: 6px 2px !important; text-align: center; border-radius: 6px; display: block; white-space: nowrap; }
       
-      /* Struktur-Fix: Text sauber oben positionieren */
       #home, .two-col { display: flex !important; flex-direction: column !important; margin-top: 0 !important; min-height: auto !important; }
-      .hero-left, .hero-right { width: 100% !important; padding: 30px 20px !important; }
+      .hero-left { width: 100% !important; padding: 40px 20px !important; }
+      .hero-right { width: 100% !important; height: 420px !important; position: relative !important; }
       
-      /* NEU: Zentriert das Herz-Tag auf Handys perfekt */
       .hero-tag { margin: 0 auto !important; }
-      
       h1 { font-size: 28px !important; text-align: center !important; }
       .hero-desc { font-size: 18px !important; text-align: center !important; max-width: 100% !important; }
       
-      /* Haupt-Buttons zentrieren und angleichen */
       .hero-btns {
         display: flex !important;
         flex-direction: column !important; 
         align-items: center !important;
-        gap: 16px !important;             
+        gap: 16px !important;              
         margin-top: 25px !important;      
         margin-bottom: 30px !important;   
       }
@@ -168,7 +166,6 @@
         box-sizing: border-box !important;
       }
 
-      /* Häkchen-Pillen (Trust-Row) sauber stapeln */
       .trust-row {
         display: flex !important;
         flex-direction: column !important;
@@ -185,14 +182,16 @@
         box-sizing: border-box !important;
       }
 
-      /* Schwebende Bild-Karte absolut positionieren */
       .hero-overlay-card {
         position: absolute !important;
         bottom: 15px !important;
         left: 15px !important;
         right: 15px !important;
         width: auto !important;
+        padding: 15px !important;
       }
+      .hero-overlay-card strong { font-size: 18px !important; }
+      .hero-overlay-card p { font-size: 14px !important; }
     }
 
     @media (max-width: 640px) {
@@ -242,7 +241,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="./assets/alltagshelfer1r.png" alt="Alltagsfreund Jenny">
+      <img src="./assets/alltagshelfer1r.png" alt="Alltagsfreund Jenny" class="hero-img">
       <div class="hero-overlay-card">
         <strong>Unterstützung, die entlastet</strong>
         <p>Gemeinsam gestalten wir Ihren Alltag wieder leichter und unbeschwerter. Rufen Sie mich einfach an oder schreiben Sie mir.</p>
@@ -270,7 +269,7 @@
         <div class="card reveal">
           <div class="card-icon">🚶</div>
           <h3>Sicher & Gemeinsam unterwegs</h3>
-          <p>Egal ob Arztbesuche, Behördengänge oder ein entspannter Spaziergang: Ich begleite Sie zuverlässig, damit Sie sich nie gehetzt oder unsicher fühlen müssen.</p>
+          <p>Egal ob Arztbesuche, Behördengänge oder ein entspannter Spaziergang: Ich begleite Sie verlässlich, damit Sie sich nie gehetzt oder unsicher fühlen müssen.</p>
         </div>
         
         <!-- Karte 3 -->
@@ -321,7 +320,7 @@
         </div>
         <div class="card reveal">
           <h3>3. Durchstarten</h3>
-          <p>Wir legen los. Ich unterstütze dich zuverlässig und wir schauen regelmäßig, ob alles für dich passt und du zufrieden bist.</p>
+          <p>Wir legen los. Ich unterstütze dich verlässlich und wir schauen regelmäßig, ob alles für dich passt und du zufrieden bist.</p>
         </div>
       </div>
     </div>
@@ -477,7 +476,7 @@
           body: json
       })
       .then(async (response) => {
-          let data = await response.json(); // Konflikt gelöst: von 'json' zu 'data' geändert
+          let data = await response.json();
           if (response.status == 200) {
               result.style.color = "green";
               result.innerText = "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
