@@ -67,15 +67,16 @@
       color: var(--text);
     }
 
-    .zertifikat-img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      margin-top: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
+  .zertifikat-img {
+  width: 320px;         /* Gewünschte Breite */
+  height: 320px;        /* Exakt gleiche Höhe für das perfekte Quadrat */
+  object-fit: cover;    /* Verhindert, dass das Bild verzerrt wird */
+  object-position: top center; /* Zeigt eher den oberen/mittleren Teil (gut für Text/Kopfzeilen) */
+  border-radius: 16px;  /* Schöne abgerundete Ecken */
+  border: 1px solid var(--border);
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
 
     .btn-back {
       display: inline-block;
