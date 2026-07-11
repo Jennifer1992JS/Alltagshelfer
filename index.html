@@ -145,6 +145,10 @@
       /* Struktur-Fix: Text sauber oben positionieren */
       #home, .two-col { display: flex !important; flex-direction: column !important; margin-top: 0 !important; min-height: auto !important; }
       .hero-left, .hero-right { width: 100% !important; padding: 30px 20px !important; }
+      
+      /* NEU: Zentriert das Herz-Tag auf Handys perfekt */
+      .hero-tag { margin: 0 auto !important; }
+      
       h1 { font-size: 28px !important; text-align: center !important; }
       .hero-desc { font-size: 18px !important; text-align: center !important; max-width: 100% !important; }
       
@@ -153,7 +157,7 @@
         display: flex !important;
         flex-direction: column !important; 
         align-items: center !important;
-        gap: 16px !important;              
+        gap: 16px !important;             
         margin-top: 25px !important;      
         margin-bottom: 30px !important;   
       }
@@ -274,7 +278,7 @@
           <div class="card-icon">☕</div>
           <h3>Zeit für das Wesentliche</h3>
           <p>Manchmal sind es die kleinen Dinge, die zählen. Ich nehme Ihnen den Druck des Alltags ab, damit Sie mehr Zeit für Hobbys, Gespräche oder einfach zum Durchatmen haben.</p>
-        </div> <!-- Diese Klammer hat gefehlt/saß falsch! -->
+        </div>
 
         <!-- Karte 4 -->
         <div class="card reveal">
@@ -283,8 +287,8 @@
           <p>In den schwersten Stunden nicht allein sein. Ich begleite Sie und Ihre Angehörigen mit tiefem Mitgefühl, spende Trost und bin in Zeiten des Abschieds und der Trauer verlässlich an Ihrer Seite.</p>
         </div>
 
-      </div> <!-- Hier schließt das Grid -->
-    </div> <!-- Hier schließt der Container -->
+      </div>
+    </div>
   </section>
 
   <!-- ÜBER MICH -->
@@ -371,11 +375,11 @@
 
       <div class="contact-wrapper">
         <form method="POST" id="contact-form">
-    <!-- Web3Forms Access Key -->
-    <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
-    
-    <!-- Spam-Schutz (Honeypot) -->
-    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
+          
+          <!-- Spam-Schutz (Honeypot) -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
           <div class="form-group">
             <label for="name">Vor- und Zuname</label>
@@ -397,31 +401,34 @@
             <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
           </div>
           
-<button type="submit" id="submit-btn" class="btn-submit">Jetzt Erstgespräch anfragen</button>
+          <button type="submit" id="submit-btn" class="btn-submit">Jetzt Erstgespräch anfragen</button>
 
-         <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
-        Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
-    </p>
+          <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
+            Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
+          </p>
 
-    <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
+          <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
         </form>
       </div>
 
-    </div> </div> </section>
+    </div>
+  </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-    <p style="margin-top: 15px; font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
-  <a href="impressum.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Impressum</a>
-  <span style="color: rgba(255,255,255,0.3);">|</span>
-  <a href="datenschutz.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Datenschutz</a>
-  <span style="color: rgba(255,255,255,0.3);">|</span>
-  <a href="qualifikationen.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Qualifikationen</a>
-</p>
+      <p style="margin-top: 15px; font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+        <a href="impressum.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Impressum</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="datenschutz.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Datenschutz</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="qualifikationen.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Qualifikationen</a>
+      </p>
     </div>
   </footer>
 
+  <!-- Scroll-Animation Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const observer = new IntersectionObserver((entries) => {
@@ -442,53 +449,55 @@
       });
     });
   </script>
+
+  <!-- Kontaktformular Script (Web3Forms) -->
   <script>
-const form = document.getElementById('contact-form');
-const result = document.getElementById('form-result');
-const submitBtn = document.getElementById('submit-btn');
+  const form = document.getElementById('contact-form');
+  const result = document.getElementById('form-result');
+  const submitBtn = document.getElementById('submit-btn');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-    
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Wird gesendet...";
-    result.style.display = "block";
-    result.style.color = "#333";
-    result.innerText = "Bitte einen Moment Geduld...";
+  form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Wird gesendet...";
+      result.style.display = "block";
+      result.style.color = "#333";
+      result.innerText = "Bitte einen Moment Geduld...";
 
-    fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: json
-    })
-    .then(async (response) => {
-        let json = await response.json();
-        if (response.status == 200) {
-            result.style.color = "green";
-            result.innerText = "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
-            form.reset();
-        } else {
-            console.log(response);
-            result.style.color = "red";
-            result.innerText = json.message;
-        }
-    })
-    .catch(error => {
-        console.log(error);
-        result.style.color = "red";
-        result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuche es später noch einmal.";
-    })
-    .then(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerText = "Jetzt Erstgespräch anfragen"; // Habe den Text an deinen Button angepasst!
-    });
-});
-</script>
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: json
+      })
+      .then(async (response) => {
+          let data = await response.json(); // Konflikt gelöst: von 'json' zu 'data' geändert
+          if (response.status == 200) {
+              result.style.color = "green";
+              result.innerText = "Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.";
+              form.reset();
+          } else {
+              console.log(response);
+              result.style.color = "red";
+              result.innerText = data.message;
+          }
+      })
+      .catch(error => {
+          console.log(error);
+          result.style.color = "red";
+          result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuche es später noch einmal.";
+      })
+      .then(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Jetzt Erstgespräch anfragen";
+      });
+  });
+  </script>
 </body>
 </html>
