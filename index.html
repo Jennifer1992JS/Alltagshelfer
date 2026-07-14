@@ -139,29 +139,28 @@ footer {
     margin-right: -50vw;
     margin-top: 50px; /* Optional: Abstand zum Inhalt davor */
 }
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    display: inline-block; /* Hilft bei der korrekten Abstands-Darstellung */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
-footer a:hover {
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #fff;
     text-decoration: underline;
 }
-    /* RESPONSIVE DESIGN - PC & INTERMEDIATE */
-    @media (min-width: 992px) {
-      .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-      .contact-text { text-align: left; }
-    }
+/* NEUER CODE BIS HIER */
 
-    @media (max-width: 992px) {
-      #home { flex-direction: column; }
-      .hero-right { height: 450px; width: 100%; }
-      .cards-grid { grid-template-columns: repeat(2, 1fr); }
-      .step-grid { grid-template-columns: 1fr; }
-    }
+/* RESPONSIVE DESIGN - PC & INTERMEDIATE */
+@media (min-width: 992px) {
 
     /* RESPONSIVE DESIGN - SMARTPHONE HUB */
     @media (max-width: 768px) {
@@ -443,15 +442,11 @@ footer a:hover {
 </div>
   <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p style="margin-top: 15px; font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
-        <a href="impressum.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Impressum</a>
-        <span style="color: rgba(255,255,255,0.3);">|</span>
-        <a href="datenschutz.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Datenschutz</a>
-        <span style="color: rgba(255,255,255,0.3);">|</span>
-        <a href="qualifikationen.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Qualifikationen</a>
-      </p>
-    </div>
+<div class="container footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="qualifikationen.html">Qualifikationen</a>
+</div>
   </footer>
 
   <!-- Scroll-Animation Script -->
