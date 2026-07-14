@@ -122,25 +122,33 @@
     .reveal.active { opacity: 1; transform: translateY(0); }
 
     /* FOOTER */
-footer { 
-    background: var(--text); 
-    color: #fff; 
-    padding: 40px 20px; /* Hier das Padding anpassen für mehr Luft */
-    text-align: center; 
-    font-size: 16px; 
+/* FOOTER - Mit "Ausbruch"-Trick für volle Breite */
+footer {
+    background: var(--text);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 16px;
+    
+    /* Der Ausbruch-Trick: */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 50px; /* Optional: Abstand zum Inhalt davor */
 }
 
-footer p { opacity: 0.7; }
-
-/* Das hier ist wichtig, damit die Links Abstand zueinander haben: */
-footer a { 
-    color: #fff; 
-    text-decoration: none; 
-    margin: 0 15px; /* Gibt den Links links/rechts etwas Luft */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    display: inline-block; /* Hilft bei der korrekten Abstands-Darstellung */
 }
 
-footer a:hover { 
-    text-decoration: underline; 
+footer a:hover {
+    text-decoration: underline;
 }
     /* RESPONSIVE DESIGN - PC & INTERMEDIATE */
     @media (min-width: 992px) {
