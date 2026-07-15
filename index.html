@@ -31,9 +31,12 @@
     body { 
       font-family: 'DM Sans', sans-serif; 
       background-color: #fdfafb;
+      /* FIX: Gültige CSS-Syntax für mehrere Hintergründe */
       background-image: 
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%239b5de5' stroke-width='0.8'%3E%3Crect x='30' y='30' width='100' height='100' fill='none'/%3E%3C/g%3E%3C/svg%3E"),
         linear-gradient(135deg, rgba(155, 93, 229, 0.07) 0%, rgba(243, 232, 255, 0.4) 50%, #fdfafb 100%);
+      background-repeat: repeat, no-repeat;
+      background-size: auto, cover;
       background-attachment: fixed;
       color: var(--text); 
       font-size: 20px; 
@@ -84,7 +87,10 @@
     h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 2.8vw, 42px); color: var(--text); line-height: 1.22; margin-bottom: 16px; }
     .lead { font-size: 20px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 52px; }
 
+    /* 2er Grid für Leistungen */
     .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    
+    /* 3er Grid speziell für den Ablaufbereich */
     .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
     .card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
@@ -114,43 +120,124 @@
     .btn-submit { background: var(--grad); color: #fff; border: none; padding: 14px; border-radius: 100px; font-weight: 700; font-size: 16px; cursor: pointer; transition: opacity .2s; width: 100%; margin: 10px 0; }
     .btn-submit:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(107,33,214,0.25); }
 
-    /* SCROLL ANIMATION */
+    /* SCROLL ANIMATION VORSCHAU-MODUS */
     .reveal { opacity: 0.15; transform: translateY(30px); transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
     /* FOOTER */
-    footer { background: var(--text); color: #fff; padding: 40px 20px; text-align: center; font-size: 16px; margin-top: 50px; width: 100%; }
-    .footer-links { display: flex; justify-content: center; gap: 30px; margin-top: 10px; flex-wrap: wrap; }
-    .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 14px; }
-    .footer-links a:hover { color: #fff; text-decoration: underline; }
-
-    /* --- RESPONSIVE FIXES --- */
-
-    /* Desktop (ab 992px) - explizit definiert, um Copilot-Fehler zu überschreiben */
-    @media (min-width: 992px) {
-      .container { max-width: 1140px; }
-      .cards-grid { grid-template-columns: repeat(2, 1fr); }
-      .step-grid { grid-template-columns: repeat(3, 1fr); }
+    footer {
+        background: var(--text);
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 50px;
+        width: 100%;
     }
 
-    /* Tablet/Mobile bis 768px */
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px; 
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    /* RESPONSIVE DESIGN - Desktop & Tablet ab 992px */
+    @media (min-width: 992px) {
+      /* Explizite Desktop-Spalten zur Absicherung gegen CSS-Verwirrungen */
+      .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .step-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .two-col { display: grid !important; grid-template-columns: 60fr 40fr !important; }
+    }
+
+    /* RESPONSIVE DESIGN - Tablet/Mobile bis 768px */
     @media (max-width: 768px) {
       nav { height: auto !important; padding: 12px 16px !important; flex-direction: column !important; gap: 12px !important; position: sticky !important; }
       .nav-logo img { height: 45px !important; }
       .nav-logo-text { font-size: 18px !important; }
-      .nav-logo-text small { font-size: 12px !important; }
+      .nav-logo-text small { font-size: 12px !important; letter-spacing: 0px; }
       .nav-links { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 4px !important; width: 100%; padding: 0; }
-      .nav-links a { font-size: 11px !important; padding: 6px 2px !important; text-align: center; border-radius: 6px; }
+      .nav-links a { font-size: 11px !important; padding: 6px 2px !important; text-align: center; border-radius: 6px; display: block; white-space: nowrap; }
       
       #home, .two-col { display: flex !important; flex-direction: column !important; margin-top: 0 !important; min-height: auto !important; }
       .hero-left { width: 100% !important; padding: 40px 20px !important; }
       .hero-right { width: 100% !important; height: 420px !important; position: relative !important; }
-      h1 { font-size: 28px !important; text-align: center !important; }
-      .hero-desc { font-size: 18px !important; text-align: center !important; }
       
+      .hero-tag { margin: 0 auto !important; }
+      h1 { font-size: 28px !important; text-align: center !important; }
+      .hero-desc { font-size: 18px !important; text-align: center !important; max-width: 100% !important; }
+      
+      .hero-btns {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        gap: 16px !important;              
+        margin-top: 25px !important;      
+        margin-bottom: 30px !important;   
+      }
+      .hero-btns a {
+        width: 100% !important;
+        max-width: 320px !important;      
+        text-align: center !important;    
+        box-sizing: border-box !important;
+      }
+
+      .trust-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-top: 12px !important;
+        width: 100% !important;
+      }
+      .trust-pill {
+        width: 100% !important;
+        max-width: 320px !important;
+        text-align: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+      }
+
+      .hero-overlay-card {
+        position: absolute !important;
+        bottom: 15px !important;
+        left: 15px !important;
+        right: 15px !important;
+        width: auto !important;
+        padding: 15px !important;
+      }
+      .hero-overlay-card strong { font-size: 18px !important; }
+      .hero-overlay-card p { font-size: 14px !important; }
+
       .cards-grid { grid-template-columns: 1fr !important; }
       .step-grid { grid-template-columns: 1fr !important; }
-      .contact-wrapper { padding: 20px !important; margin: 0 10px !important; }
+      section { padding: 40px 0 !important; }
+      .container { padding: 0 20px !important; }
+
+      .contact-wrapper {
+        padding: 20px !important;
+        margin: 0 10px !important;
+      }
+    }
+
+    /* RESPONSIVE DESIGN - Kleine Phones bis 640px */
+    @media (max-width: 640px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .step-grid { grid-template-columns: 1fr; }
+      section { padding: 40px 0; }
+      .container { padding: 0 20px; }
     }
   </style>
 </head>
@@ -174,10 +261,12 @@
 
   <section id="home">
     <div class="hero-left">
-      <div class="hero-tag">❤️ Mit Herz & Zeit für Sie da</div>
+      <div class="hero-tag">
+        ❤️ Mit Herz & Zeit für Sie da
+      </div>
       <h1>Unterstützung, die von Herzen kommt.</h1>
       <p class="hero-desc">
-        Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite – mit Geduld, Zeit und einem offenen Ohr.
+        Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite – mit Geduld, Zeit und einem offenen Ohr. Damit Sie sich wieder auf das konzentrieren können, was wirklich wichtig ist.
       </p>
       <div class="hero-btns">
         <a href="#kontakt" class="btn-primary">Mich unverbindlich kennenlernen</a>
@@ -193,7 +282,7 @@
       <img src="./assets/alltagshelfer1r.png" alt="Alltagsfreund Jenny" class="hero-img">
       <div class="hero-overlay-card">
         <strong>Unterstützung, die entlastet</strong>
-        <p>Gemeinsam gestalten wir Ihren Alltag wieder leichter und unbeschwerter.</p>
+        <p>Gemeinsam gestalten wir Ihren Alltag wieder leichter und unbeschwerter. Rufen Sie mich einfach an oder schreiben Sie mir.</p>
       </div>
     </div>
   </section>
@@ -202,28 +291,34 @@
     <div class="container">
       <span class="section-tag">Mein Angebot</span>
       <h2>Wie ich Ihnen helfen kann</h2>
-      <p class="lead">Jeder Mensch hat andere Bedürfnisse. Deshalb stimme ich meine Hilfe individuell ab.</p>
+      <p class="lead">Jeder Mensch hat andere Bedürfnisse. Deshalb stimme ich meine Hilfe ganz individuell auf Ihre Wünsche und Ihren Rhythmus ab.</p>
+      
       <div class="cards-grid">
+        
         <div class="card reveal">
           <div class="card-icon">🏠</div>
           <h3>Ein Zuhause zum Wohlfühlen</h3>
-          <p>Ich unterstütze Sie, damit Ihr Zuhause genau der Ort bleibt, an dem Sie sich entspannen können.</p>
+          <p>Ich unterstütze Sie dabei, dass Ihr Zuhause genau der Ort bleibt, an dem Sie sich entspannen können – ganz in Ihrem Tempo und nach Ihren Wünschen.</p>
         </div>
+        
         <div class="card reveal">
           <div class="card-icon">🚶</div>
           <h3>Sicher & Gemeinsam unterwegs</h3>
-          <p>Egal ob Arztbesuche oder Behördengänge: Ich begleite Sie verlässlich und sicher.</p>
+          <p>Egal ob Arztbesuche, Behördengänge oder ein entspannter Spaziergang: Ich begleite Sie verlässlich, damit Sie sich nie gehetzt oder unsicher fühlen müssen.</p>
         </div>
+        
         <div class="card reveal">
           <div class="card-icon">☕</div>
           <h3>Zeit für das Wesentliche</h3>
-          <p>Ich nehme Ihnen den Druck ab, damit Sie mehr Zeit für Hobbys und Gespräche haben.</p>
+          <p>Manchmal sind es die kleinen Dinge, die zählen. Ich nehme Ihnen den Druck des Alltags ab, damit Sie mehr Zeit für Hobbys, Gespräche oder einfach zum Durchatmen haben.</p>
         </div>
+
         <div class="card reveal">
           <div class="card-icon">🕊️</div>
           <h3>Sterbe- & Trauerbegleitung</h3>
-          <p>In den schwersten Stunden nicht allein sein. Ich begleite Sie mit tiefem Mitgefühl.</p>
+          <p>In den schwersten Stunden nicht allein sein. Ich begleite Sie und Ihre Angehörigen mit tiefem Mitgefühl, spende Trost und bin in Zeiten des Abschieds und der Trauer verlässlich an Ihrer Seite.</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -232,7 +327,12 @@
     <div class="container" style="max-width: 800px; text-align: center;">
       <span class="section-tag">Über mich</span>
       <h2>Hallo, ich bin Jenny</h2>
-      <p class="lead" style="margin: 0 auto 30px auto;">Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist eine Herzensangelegenheit.</p>
+      <p class="lead" style="margin: 0 auto 30px auto;">
+        Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist für mich keine bloße Dienstleistung, sondern eine Herzensangelegenheit. 
+      </p>
+      <p style="color: var(--text-muted);">
+        Mir ist es wichtig, dass Sie sich nicht nur unterstützt, sondern sicher und wertgeschätzt fühlen. Ich kenne die Region und die Menschen hier – und genau deshalb weiß ich, wie wichtig ein gutes Miteinander ist.
+      </p>
     </div>
   </section>
 
@@ -241,26 +341,49 @@
       <span class="section-tag">Der Weg zu mir</span>
       <h2>In 3 Schritten zur Entlastung</h2>
       <div class="step-grid">
-        <div class="card reveal"><h3>1. Kennenlernen</h3><p>Wir finden heraus, was Sie genau brauchen.</p></div>
-        <div class="card reveal"><h3>2. Planen</h3><p>Wir legen gemeinsam Ihre Wünsche fest.</p></div>
-        <div class="card reveal"><h3>3. Durchstarten</h3><p>Ich unterstütze Sie verlässlich im Alltag.</p></div>
+        <div class="card reveal">
+          <h3>1. Kennenlernen</h3>
+          <p>Wir führen ein kurzes, unverbindliches Gespräch. Dabei finden wir heraus, ob die Chemie stimmt und was Sie genau brauchen.</p>
+        </div>
+        <div class="card reveal">
+          <h3>2. Planen</h3>
+          <p>Wir legen gemeinsam fest, welche Aufgaben ich übernehme. Alles wird individuell auf Ihren Alltag und Ihre Wünsche abgestimmt.</p>
+        </div>
+        <div class="card reveal">
+          <h3>3. Durchstarten</h3>
+          <p>Wir legen los. Ich unterstütze Sie verlässlich und wir schauen regelmäßig, ob alles für Sie passt und Sie zufrieden sind.</p>
+        </div>
       </div>
     </div>
   </section>
-
+  
   <section id="nachbarschaftshilfe">
     <div class="container">
       <div class="two-col">
         <div>
           <span class="section-tag">Anerkannt & Nah</span>
           <h2>Nachbarschaftshilfe</h2>
-          <p class="lead">Viele Leistungen können über die Nachbarschaftshilfe abgerechnet werden.</p>
+          <p class="lead">Wussten Sie schon? Viele Leistungen können unkompliziert im Rahmen der Nachbarschaftshilfe oder Entlastungsleistungen erbracht werden.</p>
           <ul class="info-list">
-            <li><span class="info-list-icon">✓</span><div class="info-list-text"><strong>Individuelle Betreuung</strong><p>Keine Massenabfertigung.</p></div></li>
-            <li><span class="info-list-icon">✓</span><div class="info-list-text"><strong>Lokale Präsenz</strong><p>Fest in der Region verwurzelt.</p></div></li>
+            <li>
+              <span class="info-list-icon">✓</span>
+              <div class="info-list-text">
+                <strong>Individuelle Betreuung</strong>
+                <p>Keine Massenabfertigung. Ich nehme mir die Zeit, die Sie wirklich brauchen.</p>
+              </div>
+            </li>
+            <li>
+              <span class="info-list-icon">✓</span>
+              <div class="info-list-text">
+                <strong>Lokale Präsenz</strong>
+                <p>Schnell erreichbar und fest in der Region verwurzelt für kurze Wege.</p>
+              </div>
+            </li>
           </ul>
         </div>
-        <div><img src="assets/nbh.jpg" alt="Nachbarschaftshilfe" class="section-side-img"></div>
+        <div>
+          <img src="assets/nbh.jpg" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img" style="width:100%; height:100%; object-fit:cover;">
+        </div>
       </div>
     </div>
   </section>
@@ -271,29 +394,46 @@
         <div class="contact-text">
           <span class="section-tag">Kontakt</span>
           <h2>Lassen Sie uns sprechen</h2>
+          <p class="lead">
+            Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen, um in Ruhe über Ihre Wünsche zu sprechen.
+          </p>
         </div>
+
         <div class="contact-wrapper">
           <form method="POST" id="contact-form">
             <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
-            <input type="checkbox" name="botcheck" style="display: none;">
+            
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
             <div class="form-group">
-              <label>Vor- und Zuname</label>
-              <input type="text" name="name" required>
+              <label for="name">Vor- und Zuname</label>
+              <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
             </div>
+
             <div class="form-group">
-              <label>Telefonnummer</label>
-              <input type="tel" name="phone" required>
+              <label for="phone">Telefonnummer</label>
+              <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
             </div>
+
             <div class="form-group">
-              <label>E-Mail-Adresse</label>
-              <input type="email" name="email" required>
+              <label for="email">E-Mail-Adresse</label>
+              <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
             </div>
+
             <div class="form-group">
-              <label>Wie kann ich Ihnen helfen?</label>
-              <textarea name="message" rows="5" required></textarea>
+              <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
+              <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
             </div>
+            
+            <div id="form-error" style="color: #d63031; display: none; margin: 15px 0; font-weight: 600; text-align: center; background: #fff1f1; padding: 10px; border-radius: 8px;"></div>
+            
             <button type="submit" id="submit-btn" class="btn-submit">Jetzt Erstgespräch anfragen</button>
-            <div id="form-result" style="display:none; text-align:center;"></div>
+
+            <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
+              Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
+            </p>
+
+            <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
           </form>
         </div>
       </div>
@@ -312,10 +452,94 @@
     document.addEventListener("DOMContentLoaded", function() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('active');
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          } else {
+            entry.target.classList.remove('active'); 
+          }
         });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      }, { 
+        threshold: 0.1,
+        rootMargin: "-40px 0px -40px 0px" 
+      });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const result = document.getElementById('form-result');
+    const errorDiv = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Fehler und Ergebnisse zurücksetzen
+        errorDiv.style.display = "none";
+        result.style.display = "none";
+
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        // Validierung (RegEx)
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Erlaubt Zahlen, +, -, /, Leerzeichen, Klammern, mind. 6 Zeichen
+        const phonePattern = /^(0|\+49)[\d\s\-\/\(\)]{5,}$/; 
+
+        if (!emailPattern.test(email)) {
+            errorDiv.innerText = "Bitte geben Sie eine gültige E-Mail-Adresse ein (z.B. name@beispiel.de).";
+            errorDiv.style.display = "block";
+            return;
+        }
+
+        if (!phonePattern.test(phone)) {
+            errorDiv.innerText = "Bitte überprüfen Sie Ihre Telefonnummer.";
+            errorDiv.style.display = "block";
+            return;
+        }
+
+        // Senden
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Wird gesendet...";
+        result.style.display = "block";
+        result.style.color = "#333";
+        result.innerText = "Bitte einen Moment Geduld...";
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let data = await response.json();
+            if (response.status == 200) {
+                result.style.color = "green";
+                result.innerText = "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.";
+                form.reset();
+            } else {
+                result.style.color = "red";
+                result.innerText = data.message;
+            }
+        })
+        .catch(error => {
+            result.style.color = "red";
+            result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuchen Sie es später noch einmal.";
+        })
+        .then(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Jetzt Erstgespräch anfragen";
+        });
     });
   </script>
 </body>
