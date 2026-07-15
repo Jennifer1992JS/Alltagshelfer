@@ -31,12 +31,9 @@
     body { 
       font-family: 'DM Sans', sans-serif; 
       background-color: #fdfafb;
-      /* FIX: Gültige CSS-Syntax für mehrere Hintergründe */
       background-image: 
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%239b5de5' stroke-width='0.8'%3E%3Crect x='30' y='30' width='100' height='100' fill='none'/%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%239b5de5' stroke-width='0.8'%3E%3Crect x='30' y='30' width='160' height='160' stroke-opacity='0.1' transform='rotate(25 110 110)'/%3E%3Crect x='140' y='120' width='140' height='140' stroke-opacity='0.06' transform='rotate(45 210 190)'/%3E%3Crect x='20' y='180' width='110' height='110' stroke-opacity='0.05' transform='rotate(-15 75 235)'/%3E%3Crect x='180' y='20' width='120' height='120' stroke-opacity='0.07' transform='rotate(55 240 80)'/%3E%3C/g%3E%3C/svg%3E"),
         linear-gradient(135deg, rgba(155, 93, 229, 0.07) 0%, rgba(243, 232, 255, 0.4) 50%, #fdfafb 100%);
-      background-repeat: repeat, no-repeat;
-      background-size: auto, cover;
       background-attachment: fixed;
       color: var(--text); 
       font-size: 20px; 
@@ -44,7 +41,7 @@
     }
 
     /* NAVIGATION */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; gap: 40px; align-items: center; justify-content: space-between; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
     .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
     .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
@@ -58,32 +55,32 @@
     /* HERO */
     #home { display: flex; align-items: stretch; min-height: calc(100vh - 110px); margin-top: 110px; overflow: hidden; }
     .hero-left { flex: 55; background: var(--bg-warm); padding: 60px 52px 60px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--text); }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--primary); width: fit-content; }
     
     h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.16; color: var(--text); }
     h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
     .hero-desc { font-size: 20px; color: var(--text-muted); max-width: 480px; line-height: 1.78; }
     
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
-    .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all .2s; box-shadow: 0 4px 18px rgba(107,33,214,0.25); }
+    .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all .2s; box-shadow: 0 4px 18px rgba(107,33,214,0.15); }
     .btn-primary:hover { opacity: .95; transform: translateY(-2px); }
     .btn-secondary { background: #fff; color: var(--primary); padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; border: 2px solid var(--primary); transition: all .2s; }
     .btn-secondary:hover { background: #fdfaf6; }
     
     .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-    .trust-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text); }
+    .trust-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text-muted); }
 
     .hero-right { flex: 45; position: relative; overflow: hidden; background: #f5f0ff; }
     .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
     
-    .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+    .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); z-index: 2; }
     .hero-overlay-card strong { display: block; font-size: 22px; color: #333; margin-bottom: 6px; }
     .hero-overlay-card p { font-size: 16px; color: #555; line-height: 1.5; }
 
     /* SEKTIONEN & GRIDS */
     section { padding: 100px 0; scroll-margin-top: 130px; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
-    .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 14px; }
+    .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
     h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 2.8vw, 42px); color: var(--text); line-height: 1.22; margin-bottom: 16px; }
     .lead { font-size: 20px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 52px; }
 
@@ -115,9 +112,9 @@
     .contact-text { text-align: center; }
     .contact-wrapper { width: 100%; max-width: 550px; margin: 0 auto; background: var(--bg-warm); border: 1px solid var(--border); padding: 40px; border-radius: 24px; }
     .form-group label { font-size: 18px; font-weight: 600; color: var(--text); }
-    .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 16px; color: var(--text); background: #fff; margin: 8px 0 14px 0; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 16px; color: var(--text); background: var(--white); outline: none; transition: border .2s; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
-    .btn-submit { background: var(--grad); color: #fff; border: none; padding: 14px; border-radius: 100px; font-weight: 700; font-size: 16px; cursor: pointer; transition: opacity .2s; width: 100%; margin: 10px 0; }
+    .btn-submit { background: var(--grad); color: #fff; border: none; padding: 14px; border-radius: 100px; font-weight: 700; font-size: 16px; cursor: pointer; transition: opacity .2s; width: 100%; margin-top: 10px; }
     .btn-submit:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(107,33,214,0.25); }
 
     /* SCROLL ANIMATION VORSCHAU-MODUS */
@@ -125,44 +122,23 @@
     .reveal.active { opacity: 1; transform: translateY(0); }
 
     /* FOOTER */
-    footer {
-        background: var(--text);
-        color: #fff;
-        padding: 40px 20px;
-        text-align: center;
-        font-size: 16px;
-        margin-top: 50px;
-        width: 100%;
-    }
+    footer { background: var(--text); color: #fff; padding: 40px 0; text-align: center; font-size: 14px; }
+    footer p { opacity: 0.7; }
 
-    .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 30px; 
-        margin-top: 10px;
-        flex-wrap: wrap;
-    }
-
-    .footer-links a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .footer-links a:hover {
-        color: #fff;
-        text-decoration: underline;
-    }
-
-    /* RESPONSIVE DESIGN - Desktop & Tablet ab 992px */
+    /* RESPONSIVE DESIGN - PC & INTERMEDIATE */
     @media (min-width: 992px) {
-      /* Explizite Desktop-Spalten zur Absicherung gegen CSS-Verwirrungen */
-      .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .step-grid { grid-template-columns: repeat(3, 1fr) !important; }
-      .two-col { display: grid !important; grid-template-columns: 60fr 40fr !important; }
+      .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+      .contact-text { text-align: left; }
     }
 
-    /* RESPONSIVE DESIGN - Tablet/Mobile bis 768px */
+    @media (max-width: 992px) {
+      #home { flex-direction: column; }
+      .hero-right { height: 450px; width: 100%; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .step-grid { grid-template-columns: 1fr; }
+    }
+
+    /* RESPONSIVE DESIGN - SMARTPHONE HUB */
     @media (max-width: 768px) {
       nav { height: auto !important; padding: 12px 16px !important; flex-direction: column !important; gap: 12px !important; position: sticky !important; }
       .nav-logo img { height: 45px !important; }
@@ -183,14 +159,14 @@
         display: flex !important;
         flex-direction: column !important; 
         align-items: center !important;
-        gap: 16px !important;              
-        margin-top: 25px !important;      
-        margin-bottom: 30px !important;   
+        gap: 16px !important;         
+        margin-top: 25px !important;   
+        margin-bottom: 30px !important;  
       }
       .hero-btns a {
         width: 100% !important;
-        max-width: 320px !important;      
-        text-align: center !important;    
+        max-width: 320px !important;   
+        text-align: center !important;  
         box-sizing: border-box !important;
       }
 
@@ -220,22 +196,10 @@
       }
       .hero-overlay-card strong { font-size: 18px !important; }
       .hero-overlay-card p { font-size: 14px !important; }
-
-      .cards-grid { grid-template-columns: 1fr !important; }
-      .step-grid { grid-template-columns: 1fr !important; }
-      section { padding: 40px 0 !important; }
-      .container { padding: 0 20px !important; }
-
-      .contact-wrapper {
-        padding: 20px !important;
-        margin: 0 10px !important;
-      }
     }
 
-    /* RESPONSIVE DESIGN - Kleine Phones bis 640px */
     @media (max-width: 640px) {
       .cards-grid { grid-template-columns: 1fr; }
-      .step-grid { grid-template-columns: 1fr; }
       section { padding: 40px 0; }
       .container { padding: 0 20px; }
     }
@@ -243,6 +207,7 @@
 </head>
 <body>
 
+  <!-- NAVIGATION -->
   <nav>
     <a href="#home" class="nav-logo">
       <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
@@ -259,6 +224,7 @@
     </ul>
   </nav>
 
+  <!-- HERO SECTION -->
   <section id="home">
     <div class="hero-left">
       <div class="hero-tag">
@@ -266,7 +232,7 @@
       </div>
       <h1>Unterstützung, die von Herzen kommt.</h1>
       <p class="hero-desc">
-        Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite – mit Geduld, Zeit und einem offenen Ohr. Damit Sie sich wieder auf das konzentrieren können, was wirklich wichtig ist.
+        Es sind die kleinen Dinge, die den Alltag lebenswert machen. Wenn tägliche Aufgaben zur Last werden, bin ich an Ihrer Seite – mit Geduld, Zeit und einem offenen Ohr. Damit Sie sich wieder auf das konzentrieren können, was Ihnen Freude macht.
       </p>
       <div class="hero-btns">
         <a href="#kontakt" class="btn-primary">Mich unverbindlich kennenlernen</a>
@@ -287,6 +253,7 @@
     </div>
   </section>
 
+ <!-- LEISTUNGEN -->
   <section id="leistungen">
     <div class="container">
       <span class="section-tag">Mein Angebot</span>
@@ -295,24 +262,28 @@
       
       <div class="cards-grid">
         
+        <!-- Karte 1 -->
         <div class="card reveal">
           <div class="card-icon">🏠</div>
           <h3>Ein Zuhause zum Wohlfühlen</h3>
           <p>Ich unterstütze Sie dabei, dass Ihr Zuhause genau der Ort bleibt, an dem Sie sich entspannen können – ganz in Ihrem Tempo und nach Ihren Wünschen.</p>
         </div>
         
+        <!-- Karte 2 -->
         <div class="card reveal">
           <div class="card-icon">🚶</div>
           <h3>Sicher & Gemeinsam unterwegs</h3>
           <p>Egal ob Arztbesuche, Behördengänge oder ein entspannter Spaziergang: Ich begleite Sie verlässlich, damit Sie sich nie gehetzt oder unsicher fühlen müssen.</p>
         </div>
         
+        <!-- Karte 3 -->
         <div class="card reveal">
           <div class="card-icon">☕</div>
           <h3>Zeit für das Wesentliche</h3>
           <p>Manchmal sind es die kleinen Dinge, die zählen. Ich nehme Ihnen den Druck des Alltags ab, damit Sie mehr Zeit für Hobbys, Gespräche oder einfach zum Durchatmen haben.</p>
         </div>
 
+        <!-- Karte 4 -->
         <div class="card reveal">
           <div class="card-icon">🕊️</div>
           <h3>Sterbe- & Trauerbegleitung</h3>
@@ -323,6 +294,7 @@
     </div>
   </section>
 
+  <!-- ÜBER MICH -->
   <section id="ueber-mich" style="background: #fdfaf6;">
     <div class="container" style="max-width: 800px; text-align: center;">
       <span class="section-tag">Über mich</span>
@@ -331,11 +303,12 @@
         Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist für mich keine bloße Dienstleistung, sondern eine Herzensangelegenheit. 
       </p>
       <p style="color: var(--text-muted);">
-        Mir ist es wichtig, dass Sie sich nicht nur unterstützt, sondern sicher und wertgeschätzt fühlen. Ich kenne die Region und die Menschen hier – und genau deshalb weiß ich, wie wichtig ein gutes Miteinander ist.
+        Mir ist es wichtig, dass Sie sich nicht nur unterstützt, sondern sicher und wertgeschätzt fühlen. Ich kenne die Region und die Menschen hier – und genau deshalb weiß ich, wie wichtig ein verlässlicher Ansprechpartner an der Seite ist. Lassen Sie uns gerne bei einem Gespräch schauen, wie ich Ihren Alltag erleichtern kann.
       </p>
     </div>
   </section>
 
+  <!-- ABLAUF (Jetzt sauber in 3 Spalten nebeneinander) -->
   <section id="ablauf">
     <div class="container">
       <span class="section-tag">Der Weg zu mir</span>
@@ -357,6 +330,7 @@
     </div>
   </section>
   
+  <!-- NACHBARSCHAFTSHILFE -->
   <section id="nachbarschaftshilfe">
     <div class="container">
       <div class="two-col">
@@ -388,66 +362,76 @@
     </div>
   </section>
 
+  <!-- KONTAKT -->
   <section id="kontakt">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-text">
-          <span class="section-tag">Kontakt</span>
-          <h2>Lassen Sie uns sprechen</h2>
-          <p class="lead">
-            Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen, um in Ruhe über Ihre Wünsche zu sprechen.
-          </p>
-        </div>
-
-        <div class="contact-wrapper">
-          <form method="POST" id="contact-form">
-            <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
-            
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-            <div class="form-group">
-              <label for="name">Vor- und Zuname</label>
-              <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Telefonnummer</label>
-              <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-Mail-Adresse</label>
-              <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
-              <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
-            </div>
-            
-            <div id="form-error" style="color: #d63031; display: none; margin: 15px 0; font-weight: 600; text-align: center; background: #fff1f1; padding: 10px; border-radius: 8px;"></div>
-            
-            <button type="submit" id="submit-btn" class="btn-submit">Jetzt Erstgespräch anfragen</button>
-
-            <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
-              Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
-            </p>
-
-            <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
-          </form>
-        </div>
+  <div class="container">
+    
+    <div class="contact-grid">
+      
+      <div class="contact-text">
+        <span class="section-tag">Kontakt</span>
+        <h2>Lassen Sie uns sprechen</h2>
+        <p class="lead">
+          Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen, um in Ruhe über Ihre Wünsche zu sprechen.
+        </p>
       </div>
+
+      <div class="contact-wrapper">
+        <form method="POST" id="contact-form">
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
+          
+          <!-- Spam-Schutz (Honeypot) -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <div class="form-group">
+            <label for="name">Vor- und Zuname</label>
+            <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefonnummer</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
+            <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
+          </div>
+          
+          <button type="submit" id="submit-btn" class="btn-submit">Jetzt Erstgespräch anfragen</button>
+
+          <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
+            Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
+          </p>
+
+          <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
+        </form>
+      </div>
+
     </div>
+  </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-links">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="qualifikationen.html">Qualifikationen</a>
+    <div class="container">
+      <p style="margin-top: 15px; font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+        <a href="impressum.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Impressum</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="datenschutz.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Datenschutz</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="qualifikationen.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Qualifikationen</a>
+      </p>
     </div>
   </footer>
 
+  <!-- Scroll-Animation Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const observer = new IntersectionObserver((entries) => {
@@ -469,78 +453,74 @@
     });
   </script>
 
+  <!-- Kontaktformular Script (Web3Forms) -->
   <script>
-    const form = document.getElementById('contact-form');
-    const result = document.getElementById('form-result');
-    const errorDiv = document.getElementById('form-error');
-    const submitBtn = document.getElementById('submit-btn');
+  const form = document.getElementById('contact-form');
+  const result = document.getElementById('form-result');
+  const submitBtn = document.getElementById('submit-btn');
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Fehler und Ergebnisse zurücksetzen
-        errorDiv.style.display = "none";
-        result.style.display = "none";
+  form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        
-        // Validierung (RegEx)
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        // Erlaubt Zahlen, +, -, /, Leerzeichen, Klammern, mind. 6 Zeichen
-        const phonePattern = /^(0|\+49)[\d\s\-\/\(\)]{5,}$/; 
+      // 1. Validierung
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      
+      // E-Mail Check: Einfacher Check auf @ und .
+      if (!email.includes('@') || !email.includes('.')) {
+          result.style.display = "block";
+          result.style.color = "red";
+          result.innerText = "Bitte geben Sie eine gültige E-Mail-Adresse ein (muss '@' und einen Punkt enthalten).";
+          return; // Abbruch
+      }
 
-        if (!emailPattern.test(email)) {
-            errorDiv.innerText = "Bitte geben Sie eine gültige E-Mail-Adresse ein (z.B. name@beispiel.de).";
-            errorDiv.style.display = "block";
-            return;
-        }
+      // Telefon Check: Muss mit 0 oder +49 beginnen
+      if (!phone.startsWith('0') && !phone.startsWith('+49')) {
+          result.style.display = "block";
+          result.style.color = "red";
+          result.innerText = "Die Telefonnummer muss mit '0' oder '+49' beginnen.";
+          return; // Abbruch
+      }
 
-        if (!phonePattern.test(phone)) {
-            errorDiv.innerText = "Bitte überprüfen Sie Ihre Telefonnummer.";
-            errorDiv.style.display = "block";
-            return;
-        }
+      // 2. Wenn Validierung erfolgreich, sende Formular
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Wird gesendet...";
+      result.style.display = "block";
+      result.style.color = "#333";
+      result.innerText = "Bitte einen Moment Geduld...";
 
-        // Senden
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-        
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Wird gesendet...";
-        result.style.display = "block";
-        result.style.color = "#333";
-        result.innerText = "Bitte einen Moment Geduld...";
-
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let data = await response.json();
-            if (response.status == 200) {
-                result.style.color = "green";
-                result.innerText = "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.";
-                form.reset();
-            } else {
-                result.style.color = "red";
-                result.innerText = data.message;
-            }
-        })
-        .catch(error => {
-            result.style.color = "red";
-            result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuchen Sie es später noch einmal.";
-        })
-        .then(() => {
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Jetzt Erstgespräch anfragen";
-        });
-    });
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: json
+      })
+      .then(async (response) => {
+          let data = await response.json();
+          if (response.status == 200) {
+              result.style.color = "green";
+              result.innerText = "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.";
+              form.reset();
+          } else {
+              result.style.color = "red";
+              result.innerText = data.message;
+          }
+      })
+      .catch(error => {
+          result.style.color = "red";
+          result.innerText = "Huch, da ist etwas schiefgelaufen. Bitte versuchen Sie es später noch einmal.";
+      })
+      .then(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Jetzt Erstgespräch anfragen";
+      });
+  });
   </script>
 </body>
 </html>
