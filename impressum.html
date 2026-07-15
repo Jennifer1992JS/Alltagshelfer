@@ -3,96 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alltagsfreund Jenny – Haushalt & Nachbarschaftshilfe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Impressum – Alltagsfreund Jenny</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --v:#6b21d6; --v-d:#531aab; --p:#d946a8; --warm:#fdf4ff; --cream:#fff9fe;
-      --text:#2d1a4a; --text-s:#5a3f8a; --border:#e9d5f7;
+      --primary: #704882;
+      --primary-dark: #55147a;
+      --accent: #d6c1cb;
+      --grad: linear-gradient(135deg, #2f1f47, #4b1252);
+      --bg-warm: #c2a5bb;
+      --text: #2b143b;
+      --text-muted: #362357;
+      --border: #eee1f5;
+      --white: #fff;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); line-height:1.7; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+    
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      font-family: 'DM Sans', sans-serif; 
+      background-color: #fdfafb;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%239b5de5' stroke-width='0.8'%3E%3Crect x='30' y='30' width='160' height='160' stroke-opacity='0.1' transform='rotate(25 110 110)'/%3E%3Crect x='140' y='120' width='140' height='140' stroke-opacity='0.06' transform='rotate(45 210 190)'/%3E%3Crect x='20' y='180' width='110' height='110' stroke-opacity='0.05' transform='rotate(-15 75 235)'/%3E%3Crect x='180' y='20' width='120' height='120' stroke-opacity='0.07' transform='rotate(55 240 80)'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(135deg, rgba(155, 93, 229, 0.07) 0%, rgba(243, 232, 255, 0.4) 50%, #fdfafb 100%);
+      background-attachment: fixed;
+      color: var(--text); 
+      font-size: 18px; 
+      line-height: 1.7; 
+    }
 
-    /* NAV */
-    nav { position:fixed; top:0; width:100%; z-index:100; background:rgba(255,249,254,.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); height:70px; display:flex; align-items:center; }
-    .nav-inner { display:flex; justify-content:space-between; align-items:center; width:100%; }
-    .nav-cta { background:var(--v); color:#fff; padding:10px 20px; border-radius:50px; text-decoration:none; font-weight:700; font-size:14px; }
+    /* UNTERSEITEN NAVIGATION */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
+    .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
+    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
+    
+    .btn-back { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 16px; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 100px; transition: all .2s; background: #fff; }
+    .btn-back:hover { background: var(--grad); color: #fff; border-color: transparent; transform: translateY(-1px); }
 
-    /* HERO */
-    #home { padding-top: 120px; padding-bottom: 80px; display:grid; grid-template-columns: 1fr 1fr; align-items:center; gap: 60px; }
-    h1 { font-family:'Playfair Display',serif; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; margin-bottom: 20px; }
-    .hero-img { width:100%; border-radius:24px; background: #ddd; min-height: 400px; }
+    /* INHALTS-CONTAINER */
+    .content-page { padding: 60px 20px; min-height: calc(100vh - 210px); }
+    .content-card { background: #fff; border: 1px solid var(--border); padding: 52px; border-radius: 24px; box-shadow: 0 4px 20px rgba(126,72,144,0.05); max-width: 900px; margin: 0 auto; }
+    
+    h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--text); margin-bottom: 30px; border-bottom: 2px solid var(--border); padding-bottom: 15px; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text); margin-top: 35px; margin-bottom: 15px; }
+    p { margin-bottom: 15px; color: var(--text-muted); }
+    ul { margin-bottom: 20px; padding-left: 20px; color: var(--text-muted); }
+    li { margin-bottom: 8px; }
 
-    /* SECTIONS */
-    section { padding: 80px 0; }
-    h2 { font-family:'Playfair Display',serif; font-size: 36px; margin-bottom: 40px; text-align: center; }
+    /* FOOTER */
+    footer { background: var(--text); color: #fff; padding: 30px 0; text-align: center; font-size: 14px; margin-top: 60px; }
+    footer p { opacity: 0.7; margin: 0; }
 
-    /* GRID FIX: Cards */
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .card { background: #fff; padding: 30px; border-radius: 20px; border: 1px solid var(--border); }
-
-    /* KONTAKTFORMULAR */
-    .contact-form { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 20px; border: 1px solid var(--border); }
-    .form-group { margin-bottom: 20px; }
-    label { display: block; margin-bottom: 8px; font-weight: 600; }
-    input, textarea { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; }
-    .submit-btn { background: var(--v); color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: 700; cursor: pointer; width: 100%; }
-
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-      #home { grid-template-columns: 1fr; padding-top: 100px; }
-      .container { padding: 0 20px; }
-      h1 { font-size: 32px; }
+    /* HANDY ANPASSUNGEN */
+    @media (max-width: 768px) {
+      nav { height: auto !important; padding: 16px !important; flex-direction: column !important; gap: 16px !important; }
+      .nav-logo img { height: 50px !important; }
+      .nav-logo-text { font-size: 18px !important; }
+      .nav-logo-text small { font-size: 12px !important; }
+      .btn-back { width: 100% !important; text-align: center; padding: 10px !important; font-size: 14px; }
+      .content-card { padding: 25px !important; }
+      h1 { font-size: 30px !important; }
+      h2 { font-size: 22px !important; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="container nav-inner">
-      <a href="#" style="font-weight:700; text-decoration:none; color:var(--text);">Alltagsfreund Jenny</a>
-      <a href="#kontakt" class="nav-cta">Kontakt</a>
-    </div>
+    <a href="index.html" class="nav-logo">
+      <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
+      <div class="nav-logo-text">
+        <strong>Alltagsfreund Jenny</strong>
+        <small>Haushalt & Nachbarschaftshilfe</small>
+      </div>
+    </a>
+    <a href="index.html" class="btn-back">← Zurück zur Startseite</a>
   </nav>
 
-  <header id="home">
-    <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
-        <div class="hero-text">
-            <h1>Unterstützung, die von Herzen kommt.</h1>
-            <p>Ich bin für dich da – zuverlässig, nah und mit Zeit für das Wesentliche.</p>
-        </div>
-        <div class="hero-img"></div>
-    </div>
-  </header>
+  <main class="content-page">
+    <div class="content-card">
+      <h1>Impressum</h1>
+      
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        Jenny Marion Eckardt<br>
+        Alltagsfreund Jenny<br>
+        Burkhardtsdorfer Straße 209<br>
+        09217 Burgstädt
+      </p>
 
-  <section id="kontakt">
-    <div class="container">
-      <h2>Lass uns sprechen</h2>
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <!-- Web3Forms Access Key -->
-        <input type="hidden" name="access_key" value="DEIN-ACCESS-KEY">
-        
-        <div class="form-group">
-          <label>Name</label>
-          <input type="text" name="name" required>
-        </div>
-        <div class="form-group">
-          <label>E-Mail</label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label>Nachricht</label>
-          <textarea name="message" rows="4" required></textarea>
-        </div>
-        
-        <!-- Honeypot zur Spamerkennung -->
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-        
-        <button type="submit" class="submit-btn">Jetzt Erstgespräch anfragen</button>
-      </form>
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: 0157/58348366<br>
+        E-Mail: jennyeckardt[at]outlook.de
+      </p>
+
+      <h2>Aufsichtsbehörde</h2>
+      <p>[Falls zutreffend, z.B. das zuständige Landratsamt/Gesundheitsamt eintragen, ansonsten diesen Punkt löschen]</p>
+
+      <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+      <p>Angebote zur Unterstützung im Alltag vor Ort gemäß § 45a SGB XI (Sachsen).</p>
+
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+      <p>
+        Jenny Marion Eckardt<br>
+         Burkhardtsdorfer Straße 209<br>
+        09217 Burgstädt
+      </p>
     </div>
-  </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten.</p>
+  </footer>
 
 </body>
 </html>
