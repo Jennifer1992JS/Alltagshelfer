@@ -202,28 +202,45 @@
 
 
       /* ÜBER MICH – MOBILE */
-      #ueber-mich {
-        min-height: auto !important;
-        padding: 40px 0 !important;
-        background-position: 68% center !important;
-      }
+#ueber-mich {
+  min-height: 600px !important;
+  padding: 45px 0 !important;
+  background-position: 72% top !important;
+  background-size: cover !important;
+  display: flex !important;
+  align-items: flex-end !important;
+}
 
-      #ueber-mich > div {
-        padding: 0 20px !important;
-      }
+#ueber-mich > div {
+  padding: 0 16px !important;
+}
 
-      #ueber-mich > div > div {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 30px 22px !important;
-      }
-    }
+#ueber-mich > div > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 26px 20px !important;
+  margin: 0 auto !important;
+  background: rgba(255,255,255,0.82) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  border-radius: 20px !important;
+}
 
-    @media (max-width: 640px) {
-      .cards-grid { grid-template-columns: 1fr; }
-      section { padding: 40px 0; }
-      .container { padding: 0 20px; }
-    }
+#ueber-mich h2 {
+  font-size: 27px !important;
+  margin-bottom: 12px !important;
+}
+
+#ueber-mich .lead {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 20px !important;
+}
+
+#ueber-mich > div > div > p:last-child {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
   </style>
 </head>
 <body>
