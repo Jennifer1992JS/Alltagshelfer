@@ -163,6 +163,7 @@
         margin-top: 25px !important;   
         margin-bottom: 30px !important;  
       }
+
       .hero-btns a {
         width: 100% !important;
         max-width: 320px !important;   
@@ -178,6 +179,7 @@
         margin-top: 12px !important;
         width: 100% !important;
       }
+
       .trust-pill {
         width: 100% !important;
         max-width: 320px !important;
@@ -194,8 +196,27 @@
         width: auto !important;
         padding: 15px !important;
       }
+
       .hero-overlay-card strong { font-size: 18px !important; }
       .hero-overlay-card p { font-size: 14px !important; }
+
+
+      /* ÜBER MICH – MOBILE */
+      #ueber-mich {
+        min-height: auto !important;
+        padding: 40px 0 !important;
+        background-position: 68% center !important;
+      }
+
+      #ueber-mich > div {
+        padding: 0 20px !important;
+      }
+
+      #ueber-mich > div > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 30px 22px !important;
+      }
     }
 
     @media (max-width: 640px) {
@@ -295,18 +316,53 @@
   </section>
 
   <!-- ÜBER MICH -->
-  <section id="ueber-mich" style="background-image: linear-gradient(rgba(253,250,246,0.32), rgba(253,250,246,0.32)), url('./assets/Sehrgut.JPG'); background-size: cover; background-position: center 35%; background-repeat: no-repeat;">
-    <div class="container" style="max-width: 800px; text-align: center; background: rgba(255,255,255,0.78); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.65); border-radius: 24px; padding: 50px 55px; box-shadow: 0 12px 35px rgba(43,20,59,0.10);">
+<!-- ÜBER MICH -->
+<section id="ueber-mich" style="
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  padding: 70px 0;
+  background-image:
+    linear-gradient(rgba(253,250,246,0.12), rgba(253,250,246,0.12)),
+    url('./assets/Sehrgut.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+">
+  <div style="
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 52px;
+  ">
+    <div style="
+      width: 700px;
+      max-width: 100%;
+      background: rgba(255,255,255,0.74);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 24px;
+      padding: 44px 52px;
+      box-shadow: 0 14px 38px rgba(43,20,59,0.12);
+      text-align: center;
+    ">
+
       <span class="section-tag">Über mich</span>
+
       <h2>Hallo, ich bin Jenny</h2>
+
       <p class="lead" style="margin: 0 auto 30px auto;">
-        Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist für mich keine bloße Dienstleistung, sondern eine Herzensangelegenheit. 
+        Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist für mich keine bloße Dienstleistung, sondern eine Herzensangelegenheit.
       </p>
+
       <p style="color: var(--text-muted);">
         Mir ist es wichtig, dass Sie sich nicht nur unterstützt, sondern sicher und wertgeschätzt fühlen. Ich kenne die Region und die Menschen hier – und genau deshalb weiß ich, wie wichtig ein verlässlicher Ansprechpartner an der Seite ist. Lassen Sie uns gerne bei einem Gespräch schauen, wie ich Ihren Alltag erleichtern kann.
       </p>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ABLAUF (Jetzt sauber in 3 Spalten nebeneinander) -->
   <section id="ablauf">
