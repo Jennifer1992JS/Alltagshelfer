@@ -96,6 +96,49 @@
     .card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; color: var(--text); }
     .card p { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
 
+    /* ÜBER MICH */
+    .about-section {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      padding: 70px 0;
+      overflow: hidden;
+      background-image:
+        linear-gradient(rgba(253,250,246,0.12), rgba(253,250,246,0.12)),
+        url('./assets/Sehrgut.JPG');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .about-inner {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 52px;
+    }
+
+    .about-card {
+      width: min(700px, 100%);
+      background: rgba(255,255,255,0.74);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 24px;
+      padding: 44px 52px;
+      box-shadow: 0 14px 38px rgba(43,20,59,0.12);
+      text-align: center;
+    }
+
+    .about-card .lead {
+      margin: 0 auto 30px auto;
+    }
+
+    .about-text {
+      color: var(--text-muted);
+    }
+
     /* NACHBARSCHAFTSHILFE */
     #nachbarschaftshilfe { background: var(--bg-warm); }
     .two-col { display: grid; grid-template-columns: 60fr 40fr; gap: 52px; align-items: center; }
@@ -163,7 +206,6 @@
         margin-top: 25px !important;   
         margin-bottom: 30px !important;  
       }
-
       .hero-btns a {
         width: 100% !important;
         max-width: 320px !important;   
@@ -179,7 +221,6 @@
         margin-top: 12px !important;
         width: 100% !important;
       }
-
       .trust-pill {
         width: 100% !important;
         max-width: 320px !important;
@@ -196,51 +237,52 @@
         width: auto !important;
         padding: 15px !important;
       }
-
       .hero-overlay-card strong { font-size: 18px !important; }
       .hero-overlay-card p { font-size: 14px !important; }
 
-
       /* ÜBER MICH – MOBILE */
-#ueber-mich {
-  min-height: 600px !important;
-  padding: 45px 0 !important;
-  background-position: 72% top !important;
-  background-size: cover !important;
-  display: flex !important;
-  align-items: flex-end !important;
-}
+      .about-section {
+        min-height: 620px !important;
+        padding: 40px 0 !important;
+        align-items: flex-end !important;
+        background-position: 72% center !important;
+      }
 
-#ueber-mich > div {
-  padding: 0 16px !important;
-}
+      .about-inner {
+        padding: 0 20px !important;
+      }
 
-#ueber-mich > div > div {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 26px 20px !important;
-  margin: 0 auto !important;
-  background: rgba(255,255,255,0.82) !important;
-  backdrop-filter: blur(5px) !important;
-  -webkit-backdrop-filter: blur(5px) !important;
-  border-radius: 20px !important;
-}
+      .about-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 28px 22px !important;
+        background: rgba(255,255,255,0.82) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+      }
 
-#ueber-mich h2 {
-  font-size: 27px !important;
-  margin-bottom: 12px !important;
-}
+      .about-card h2 {
+        font-size: 27px !important;
+        margin-bottom: 12px !important;
+      }
 
-#ueber-mich .lead {
-  font-size: 16px !important;
-  line-height: 1.6 !important;
-  margin-bottom: 20px !important;
-}
+      .about-card .lead {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+      }
 
-#ueber-mich > div > div > p:last-child {
-  font-size: 15px !important;
-  line-height: 1.6 !important;
-}
+      .about-text {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      section { padding: 40px 0; }
+      .container { padding: 0 20px; }
+    }
   </style>
 </head>
 <body>
@@ -333,53 +375,20 @@
   </section>
 
   <!-- ÜBER MICH -->
-<!-- ÜBER MICH -->
-<section id="ueber-mich" style="
-  min-height: 620px;
-  display: flex;
-  align-items: center;
-  padding: 70px 0;
-  background-image:
-    linear-gradient(rgba(253,250,246,0.12), rgba(253,250,246,0.12)),
-    url('./assets/Sehrgut.JPG');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-">
-  <div style="
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 52px;
-  ">
-    <div style="
-      width: 700px;
-      max-width: 100%;
-      background: rgba(255,255,255,0.74);
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px);
-      border: 1px solid rgba(255,255,255,0.72);
-      border-radius: 24px;
-      padding: 44px 52px;
-      box-shadow: 0 14px 38px rgba(43,20,59,0.12);
-      text-align: center;
-    ">
-
-      <span class="section-tag">Über mich</span>
-
-      <h2>Hallo, ich bin Jenny</h2>
-
-      <p class="lead" style="margin: 0 auto 30px auto;">
-        Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist für mich keine bloße Dienstleistung, sondern eine Herzensangelegenheit.
-      </p>
-
-      <p style="color: var(--text-muted);">
-        Mir ist es wichtig, dass Sie sich nicht nur unterstützt, sondern sicher und wertgeschätzt fühlen. Ich kenne die Region und die Menschen hier – und genau deshalb weiß ich, wie wichtig ein verlässlicher Ansprechpartner an der Seite ist. Lassen Sie uns gerne bei einem Gespräch schauen, wie ich Ihren Alltag erleichtern kann.
-      </p>
-
+  <section id="ueber-mich" class="about-section">
+    <div class="about-inner">
+      <div class="about-card">
+        <span class="section-tag">Über mich</span>
+        <h2>Hallo, ich bin Jenny</h2>
+        <p class="lead">
+          Ich bin hier in Burgstädt zu Hause. Meine Arbeit als Alltagsfreundin ist für mich keine bloße Dienstleistung, sondern eine Herzensangelegenheit.
+        </p>
+        <p class="about-text">
+          Mir ist es wichtig, dass Sie sich nicht nur unterstützt, sondern sicher und wertgeschätzt fühlen. Ich kenne die Region und die Menschen hier – und genau deshalb weiß ich, wie wichtig ein verlässlicher Ansprechpartner an der Seite ist. Lassen Sie uns gerne bei einem Gespräch schauen, wie ich Ihren Alltag erleichtern kann.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- ABLAUF (Jetzt sauber in 3 Spalten nebeneinander) -->
   <section id="ablauf">
