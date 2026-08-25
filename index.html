@@ -97,7 +97,17 @@
     .card p { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
 
     /* TRAUER- & STERBEBEGLEITUNG */
-    #trauerbegleitung { position: relative; min-height: 620px; display: flex; align-items: center; overflow: hidden; background-image: url('./assets/trauer.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+#trauerbegleitung {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-image: url('./assets/trauer.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
     #trauerbegleitung::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(242,235,235,0.98) 0%, rgba(242,235,235,0.92) 38%, rgba(242,235,235,0.45) 58%, rgba(242,235,235,0.04) 78%); }
     .trauer-inner { position: relative; z-index: 1; width: 100%; }
     .trauer-content { max-width: 610px; }
@@ -289,7 +299,13 @@
         line-height: 1.6 !important;
       }
 
-      #trauerbegleitung { min-height: auto; padding: 260px 0 40px; background-position: 72% center; align-items: flex-end; }
+#trauerbegleitung {
+  aspect-ratio: auto;
+  min-height: auto;
+  padding: 260px 0 40px;
+  background-position: 72% center;
+  align-items: flex-end;
+ }
       #trauerbegleitung::before { background: linear-gradient(180deg, rgba(242,235,235,0.02) 0%, rgba(242,235,235,0.72) 45%, rgba(242,235,235,0.98) 68%); }
       .trauer-content { max-width: 100%; background: rgba(242,235,235,0.9); border-radius: 20px; padding: 28px 22px; }
       .trauer-content h2 { font-size: 27px !important; margin-bottom: 12px !important; }
