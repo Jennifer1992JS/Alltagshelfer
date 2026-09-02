@@ -264,15 +264,28 @@
 
       /* ÜBER MICH – MOBILE */
       .about-section {
-        min-height: 620px !important;
-        padding: 40px 0 !important;
-        align-items: flex-end !important;
-        background-position: 72% center !important;
+        min-height: auto !important;
+        padding: 0 0 40px !important;
+        display: block !important;
+        background-image: none !important;
+        overflow: visible !important;
+      }
+
+      .about-section::before {
+        content: '';
+        display: block;
+        height: 420px;
+        background-image: url('./assets/Sehrgut.JPG');
+        background-size: cover;
+        background-position: 72% center;
+        background-repeat: no-repeat;
       }
 
       .about-inner {
         padding: 0 20px !important;
-      }
+        margin-top: -42px;
+        position: relative;
+        z-index: 1;
 
       .about-card {
         width: 100% !important;
