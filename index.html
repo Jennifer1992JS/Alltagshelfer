@@ -1,3 +1,454 @@
+Eingefügter Text(10).txt
+Dokument
+hier die html dazu
+
+so sieht die qualliseite aus, bitte auch die leistungsseite so aufbauen <!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qualifikationen & Nachweise – Alltagsfreund Jenny</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #704882;
+      --primary-dark: #55147a;
+      --primary-light: #b755e0;
+      --accent: #d6c1cb;
+      --grad: linear-gradient(135deg, #2f1f47, #4b1252);
+      --bg-warm: #c2a5bb;
+      --bg-cream: #f2ebeb;
+      --text: #2b143b;
+      --text-muted: #362357;
+      --border: #eee1f5;
+      --white: #fff;
+    }
+    
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      font-family: 'DM Sans', sans-serif; 
+      background-color: #fdfafb;
+      color: var(--text); 
+      font-size: 18px; 
+      line-height: 1.7; 
+    }
+
+    /* NAVIGATION */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
+    .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
+    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
+    .nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 18px; font-weight: 600; padding: 12px 20px; border-radius: 100px; transition: all .2s; }
+    .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
+
+    /* RECHTLICHES / TEXT LAYOUT (Identisch mit Impressum/Datenschutz) */
+    .legal-container { max-width: 800px; margin: 160px auto 80px auto; padding: 0 24px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--text); margin-bottom: 10px; }
+    .subtitle { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; }
+    
+    h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text); margin-top: 40px; margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+    p { margin-bottom: 20px; color: var(--text-muted); }
+    
+    /* QUALIFIKATIONS BOXEN */
+    .cert-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 14px; }
+    .cert-header { display: flex; align-items: center; gap: 12px; }
+    .cert-icon { font-size: 22px; color: var(--primary); }
+    .cert-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text); }
+    .cert-badge { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 100px; border: 1px solid var(--border); width: fit-content; }
+    
+    .cert-img-wrapper { margin-top: 10px; max-width: 260px; width: 100%; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; padding: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.01); }
+    .cert-img { width: 100%; height: auto; display: block; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: #fff; padding: 40px 0; text-align: center; font-size: 14px; margin-top: auto; }
+    footer p { opacity: 0.7; margin-bottom: 0; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+
+    /* RESPONSIVE DESIGN - SMARTPHONE HUB */
+    @media (max-width: 768px) {
+      nav { height: auto !important; padding: 12px 16px !important; flex-direction: column !important; gap: 12px !important; position: sticky !important; }
+      .nav-logo img { height: 45px !important; }
+      .nav-logo-text { font-size: 18px !important; }
+      .nav-logo-text small { font-size: 12px !important; letter-spacing: 0px; }
+      .nav-links { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 4px !important; width: 100%; padding: 0; }
+      .nav-links a { font-size: 11px !important; padding: 6px 2px !important; text-align: center; border-radius: 6px; display: block; white-space: nowrap; }
+      
+      .legal-container { margin-top: 40px; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html#home" class="nav-logo">
+      <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
+      <div class="nav-logo-text">
+        <strong>Alltagsfreund Jenny</strong>
+        <small>Haushalt & Nachbarschaftshilfe</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Start</a></li>
+      <li><a href="index.html#leistungen">Leistungen</a></li>
+      <li><a href="index.html#nachbarschaftshilfe">NBH</a></li>
+      <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main class="legal-container">
+    <h1>Qualifikationen & Nachweise</h1>
+    <p class="subtitle">Hier finden Sie alle offiziellen Zertifikate und Nachweise über meine Aus- und Weiterbildungen, die mich für die zuverlässige und professionelle Begleitung im Alltag qualifizieren.</p>
+    
+    <h2>Fachliche Qualifikationen</h2>
+
+    <div class="cert-card">
+      <div class="cert-header">
+        <span class="cert-icon">✓</span>
+        <div class="cert-title">Betreuungskraft gemäß §§ 43b, 53b SGB XI</div>
+      </div>
+      <p>Qualifizierung zur Betreuung und Aktivierung von Menschen mit Unterstützungsbedarf im Alltag.</p>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-header">
+        <span class="cert-icon">✓</span>
+        <div class="cert-title">Sterbe- und Trauerbegleitung</div>
+      </div>
+      <p>Weiterbildung mit Grundlagen der Sterbebegleitung, Palliative Care, Hospizbewegung, Trauerarbeit und dem Umgang mit Abschied.</p>
+    </div>
+
+    <h2>Weitere Zertifikate & Kurse</h2>
+    
+    <div class="cert-card">
+      <div class="cert-header">
+        <span class="cert-icon">✓</span>
+        <div class="cert-title">Zertifizierter Erste-Hilfe-Kurs</div>
+      </div>
+      <p>Ausgebildet für Notfälle im Alltag – für ein sicheres Gefühl bei jeder Begleitung. Ermächtigt im Auftrag der Berufsgenossenschaften (BG) und Unfallkassen.</p>
+      <div class="cert-badge">Kennziffer: 8.0187</div>
+      
+      <div class="cert-img-wrapper">
+        <img src="assets/erstehilfe.png" alt="PRIMEROS Erste Hilfe Zertifikat Siegel" class="cert-img">
+      </div>
+    </div>
+
+    <h2>Nachbarschaftshilfe & Anerkennung</h2>
+    <p>
+      Um meine Leistungen offiziell und unkompliziert im Rahmen der Nachbarschaftshilfe über die Pflegekassen (Entlastungsbetrag nach § 45b SGB XI) abrechnen zu können, absolviere ich alle gesetzlich vorgeschriebenen Schulungen und Qualifikationskurse des Landes Sachsen.
+    </p>
+    <p>
+      Dadurch wird sichergestellt, dass Sie die maximale finanzielle Entlastung erhalten und gleichzeitig auf eine fachlich fundierte Unterstützung vertrauen können.
+    </p>
+
+    <h2>Transparenz & Vertrauen</h2>
+    <p>
+      Vertrauen ist die wichtigste Basis für eine gelungene Alltagsbegleitung. Alle Original-Zertifikate, Teilnahmebescheinigungen sowie mein aktuelles Führungszeugnis lege ich Ihnen auf Wunsch selbstverständlich gerne bei unserem persönlichen Erstgespräch vor.
+    </p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+        <a href="index.html">Zur Startseite</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="impressum.html">Impressum</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html> das wäre die html von der qualliseite bitte baue leistungen genauso auf  * Serviceangebote für haushaltsnahe Dienstleistungen
+
+  Reinigung und Pflege
+  Wohnung putzen / Wäsche waschen
+  33 € / Stunde
+
+  Einkaufen
+  kleiner Einkauf (ohne Getränke) 25 € / Std.
+  großer Einkauf 30 € / Stunde
+
+  Geschenke einpacken
+  5 € pro Geschenk
+
+20 % der Lohn- und Fahrtkosten können über die
+Steuererklärung zurückerstattet werden.
+
++ Fahrtkosten 0,36 € pro km
+
+
+* Seniorenbetreuung
+  35 € pro Stunde + 0,36 € pro km
+
+  Spazieren / Arzt / Einkauf / Gesellschaft / Aktivitäten
+
+
+* Sterbe- und Trauerbegleitung
+
+  Einzelsitzungen
+  80 € / Stunde + 0,36 € pro km
+
+  Erstgespräch kostenlos
+
+  * Ich lasse dich nicht aus Geldmangel allein.
+    Es gibt die Möglichkeit, die Stunden zu holen. [unklar]
+
+  Trauergruppen
+  20 € pro Person und Sitzung
+
+  → gemeinsames Aufarbeiten in kleinen Gruppen das wären die leistungen, nenne es aber Leistungspreisliste oder so 
+
+Eingefügter Text(20260902-150253).txt
+Dokument
+bitte passe die html so an wie ich dir geschickt habe, leistungen.html ist der unterordner bzw die seite, baue in header und feeder das so ein, achte auf alle anderen anforderungen die gestellt sind 
+
+Eingefügter Text(20260902-150515).txt
+Dokument
+
+ die haupwebsite solltest du passend machen wie wir es oben besprchen haben Dauer: 20 Sek.
+
+Ja, wir halten kurz an und denken es sauber weiter.
+
+Gemerkte Richtung:
+
+    Die Buttons „Kontaktieren Sie mich“ führen später zum bestehenden Web3Forms-Formular – aber wir bauen sie noch nicht ein.
+    Einheitlicher Header und Footer für Startseite, Leistungen, Qualifikationen, Impressum und Datenschutz.
+    Eine eigene Seite leistungen.html, im Stil von Qualifikationen/Impressum: ruhig, klar, ohne Preise.
+    Gruppenbegleitung kommt hinzu. Ich würde sie eher „Gruppenangebote“ oder „Trauergruppen“ nennen – das klingt natürlicher als „Gruppenbetreuung“.
+    Der Nachbarschaftshilfe-Bereich wird größer und eigenständiger, nicht wie ein kleiner Zwischenblock.
+    Emojis fliegen raus. Stattdessen nutzen wir klare Überschriften, dezente Linien, Nummern oder sehr schlichte Symbole.
+    Texte werden kürzer, direkter und weniger werblich.
+
+Für die Nachbarschaftshilfe fände ich beispielsweise diese Tonalität besser:
+
+    Nachbarschaftshilfe in Burgstädt und Umgebung
+
+    Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen, bei Terminen oder einfach dann, wenn Gesellschaft guttut. Was genau ich übernehme, besprechen wir in Ruhe und passend zu Ihrem Alltag.
+
+    Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung über den Entlastungsbetrag möglich sein. Das klären wir gemeinsam vorab.
+
+
+Jen, jetzt ist es die Hauptwebsite, die angepasst wurde. Die ursprüngliche Datei wurde dabei nicht überschrieben. Grundlage war exakt die von dir gelieferte Startseite.
+
+Geändert habe ich:
+
+    Header
+
+        „Leistungen“ führt jetzt auf leistungen.html
+
+        bestehende Navigation bleibt ansonsten erhalten
+
+    Leistungsbereich
+
+        keine Emojis mehr
+
+        deutlich sachlicher formuliert
+
+        Trauergruppen ergänzt
+
+        Nachbarschaftshilfe als eigenes Angebot aufgenommen
+
+        Button zur leistungen.html
+
+    Texte
+
+        Hero deutlich weniger nach KI-Werbetext
+
+        „Über mich“ natürlicher
+
+        Trauerbegleitung ebenfalls zurückhaltender formuliert
+
+    Nachbarschaftshilfe
+
+        deutlich größer und eigenständiger
+
+        mehr konkreter Inhalt
+
+        Unterstützung im Alltag
+
+        persönliche Begleitung
+
+        Hinweis auf den Entlastungsbetrag
+
+        eigener Button zur Leistungsseite
+
+        Bild deutlich größer
+
+    Footer
+
+        jetzt ebenfalls mit Leistungen + Qualifikationen + Impressum + Datenschutz
+
+    Web3Forms
+
+        nicht angefasst
+
+        die spätere CTA-Verknüpfung bleibt für den nächsten Schritt.
+
+Die angepasste Hauptseite
+
+Damit haben wir jetzt sauber getrennt: Startseite = Überblick und Persönlichkeit, Leistungsseite = konkrete Leistungen und Preise. Genau diese Trennung war vorher etwas vermischt.
+
+zu kurz und unpersönlich 
+
+Jen, ja. Genau das war zu dünn. Auf dem Bild wirkt der Bereich dadurch fast wie ein kurzer Werbesatz über einem Hintergrundbild, obwohl gerade dieser Teil viel persönlicher sein sollte.
+
+Ich habe den Bereich jetzt erweitert:
+
+    deutlich mehr persönlicher Inhalt
+
+    erklärt, wann die Begleitung hilfreich sein kann
+
+    stärker auf Zuhören, Aushalten und Dasein ausgerichtet
+
+    kein übertriebenes „Ich rette Ihre Welt“-Marketing
+
+    weiterhin professionell und ruhig
+
+    Button „Mehr zur Trauerbegleitung“ zur Leistungsseite
+
+    auf Mobilgeräten entsprechend angepasst
+
+Der Kern ist jetzt eher:
+
+    Wenn ein geliebter Mensch schwer erkrankt ist, das Leben sich dem Ende nähert oder ein Verlust bereits geschehen ist, verändert sich vieles. In dieser Zeit möchte ich Ihnen einen Raum geben, in dem alles seinen Platz haben darf.
+
+Das passt wesentlich besser zu dem Bild und zur Bedeutung des Angebots.
+
+
+Eingefügter Text(20260902-151757).txt
+Dokument
+prüfe noch mal alles durch, irgendwie sieht das alles nict´ht mehr ordentlich aus viel zu unpersönlich und ki lastig
+
+Jen, ich habe es jetzt noch einmal als komplette Website betrachtet, nicht nur einzelne Textblöcke. Und ja: Dein Eindruck war richtig. Das Problem war weniger das Design als die Sprache und die Art, wie die Inhalte aufeinanderfolgen.
+
+Ein paar Stellen waren sehr typische KI-Webseitensätze, zum Beispiel „In 3 Schritten zur Entlastung“, „Durchstarten“ oder die vielen pauschalen Versprechen. Auch der Hero war zu sehr nach klassischer Dienstleistungs-Landingpage formuliert.
+Ich habe deshalb jetzt die komplette Hauptseite überarbeitet
+
+Beibehalten:
+
+    das bestehende Design
+
+    Farben
+
+    Bilder
+
+    Navigation
+
+    Animationen
+
+    Kontaktformular
+
+    Web3Forms
+
+    Datenschutz-Checkbox
+
+    bestehende technische Funktionalität
+
+Überarbeitet:
+
+    Hero
+
+        weniger Werbespruch
+
+        persönlicher formuliert
+
+        „Kontakt aufnehmen“ statt „Mich unverbindlich kennenlernen“
+
+    Leistungen
+
+        nicht mehr diese generischen „Wie ich Ihnen helfen kann“-Kärtchen
+
+        jetzt konkrete Bereiche:
+
+            Haushalt & Wäsche
+
+            Einkaufen & Besorgungen
+
+            Seniorenbetreuung
+
+            Nachbarschaftshilfe
+
+            Sterbe- & Trauerbegleitung
+
+            Trauergruppen
+
+        Dadurch sind es 6 Karten, also kein einzelnes trauriges Kärtchen mehr in der letzten Reihe.
+
+    Über mich
+
+        wesentlich persönlicher
+
+        mehr Jenny, weniger Unternehmensbroschüre
+
+        ohne irgendwelche persönlichen Eigenschaften zu erfinden, die wir nicht kennen.
+
+    Ablauf
+
+        „In 3 Schritten zur Entlastung“ ist raus.
+
+        „Durchstarten“ ebenfalls. Das war für eine Alltags- und Trauerbegleitung ungefähr so passend wie ein Motivationsseminar im Wartezimmer.
+
+        Jetzt: „So lernen wir uns kennen“ und tatsächlich menschliche Schritte.
+
+    Nachbarschaftshilfe
+
+        bleibt bewusst ein größerer eigener Bereich
+
+        konkreter und wärmer
+
+        nicht nur „Entlastungsbetrag, fertig“
+
+        mehr Fokus darauf, was Jenny tatsächlich für jemanden tun kann.
+
+    Trauer- & Sterbebegleitung
+
+        jetzt deutlich ausführlicher
+
+        persönlicher
+
+        ruhig und menschlich
+
+        nicht kitschig
+
+        nicht nach „Premium-Coaching für schwere Lebenssituationen“
+
+        der Gedanke „manchmal braucht es einfach jemanden, der da ist und die Stille aushält“ kommt jetzt viel stärker heraus.
+
+    Kontakt
+
+        ebenfalls etwas menschlicher formuliert
+
+        aber das Formular selbst habe ich nicht umgebaut.
+
+Und wichtig
+
+Ich habe nicht versucht, die Seite noch „professioneller“ zu machen, indem ich sie mit noch mehr Marketingtext zukleistere.
+
+Das wäre genau der falsche Weg.
+
+Die Seite sollte eher wirken wie:
+
+    „Hier ist Jenny. Das ist, was sie anbietet. So arbeitet sie. Und wenn du Hilfe brauchst, kannst du dich bei ihr melden.“
+
+und nicht wie:
+
+    „Entdecken Sie jetzt Ihre ganzheitliche Lösung für ein erfülltes und selbstbestimmtes Leben.“ 🤦‍♀️
+
+Die aktuelle überarbeitete Datei ist hier:
+
+Die Leistungsseite bleibt davon getrennt. Die Hauptseite verweist lediglich darauf, während dort die konkreten Preise stehen. Die bestehende Kontaktfunktion bleibt ebenfalls erhalten.
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -110,8 +561,9 @@
   background-repeat: no-repeat; }
     #trauerbegleitung::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(242,235,235,0.98) 0%, rgba(242,235,235,0.92) 38%, rgba(242,235,235,0.45) 58%, rgba(242,235,235,0.04) 78%); }
     .trauer-inner { position: relative; z-index: 1; width: 100%; }
-    .trauer-content { max-width: 610px; }
+    .trauer-content { max-width: 680px; }
     .trauer-content .lead { margin-bottom: 0; }
+    .trauer-content .about-text { font-size: 18px; line-height: 1.7; color: var(--text-muted); }
 
     /* ÜBER MICH */
     .about-section {
@@ -324,6 +776,7 @@
       .trauer-content { max-width: 100%; background: rgba(242,235,235,0.9); border-radius: 20px; padding: 28px 22px; }
       .trauer-content h2 { font-size: 27px !important; margin-bottom: 12px !important; }
       .trauer-content .lead { font-size: 16px !important; line-height: 1.6 !important; }
+      .trauer-content .about-text { font-size: 15px !important; line-height: 1.6 !important; }
     }
 
     @media (max-width: 640px) {
@@ -364,25 +817,25 @@
       <div class="hero-tag">
         Alltagshilfe in Burgstädt und Umgebung
       </div>
-      <h1>Unterstützung, die von Herzen kommt.</h1>
+      <h1>Wenn der Alltag schwerer wird, bin ich für Sie da.</h1>
       <p class="hero-desc">
-        Wenn alltägliche Aufgaben schwerer fallen, unterstütze ich Sie dort, wo Sie Hilfe brauchen – im Haushalt, unterwegs oder einfach mit etwas Zeit und Gesellschaft.
+        Nicht immer braucht es viel. Manchmal hilft jemand, der beim Einkaufen mitkommt, im Haushalt unterstützt oder einfach ein bisschen Zeit mitbringt. Genau dabei möchte ich Sie unterstützen.
       </p>
       <div class="hero-btns">
-        <a href="#kontakt" class="btn-primary">Mich unverbindlich kennenlernen</a>
+        <a href="#kontakt" class="btn-primary">Kontakt aufnehmen</a>
         <a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
       </div>
       <div class="trust-row">
-        <div class="trust-pill">✓ Persönlich</div>
+        <div class="trust-pill">✓ Persönlich & nah</div>
         <div class="trust-pill">✓ Zuverlässig</div>
-        <div class="trust-pill">✓ Individuell</div>
+        <div class="trust-pill">✓ So, wie es zu Ihnen passt</div>
       </div>
     </div>
     <div class="hero-right">
       <img src="./assets/Jennymitoma.png" alt="Alltagsfreund Jenny" class="hero-img">
       <div class="hero-overlay-card">
-        <strong>Unterstützung im Alltag</strong>
-        <p>Ob zuhause, beim Einkauf, bei einem Termin oder einfach für etwas Gesellschaft: Wir besprechen gemeinsam, was Sie brauchen.</p>
+        <strong>Alltag gemeinsam leichter machen</strong>
+        <p>Ob zuhause, beim Einkauf, bei einem Termin oder einfach für ein Gespräch: Ich nehme mir Zeit und unterstütze dort, wo Sie mich brauchen.</p>
       </div>
     </div>
   </section>
@@ -391,34 +844,42 @@
   <section id="leistungen">
     <div class="container">
       <span class="section-tag">Mein Angebot</span>
-      <h2>Leistungen im Überblick</h2>
-      <p class="lead">Ob Unterstützung im Haushalt, Begleitung im Alltag oder Trauerbegleitung: Welche Hilfe sinnvoll ist, besprechen wir gemeinsam.</p>
+      <h2>Wobei ich Sie unterstützen kann</h2>
+      <p class="lead">
+        Nicht jeder braucht dieselbe Unterstützung. Deshalb finden wir gemeinsam heraus,
+        was für Sie im Alltag sinnvoll ist.
+      </p>
 
       <div class="cards-grid">
 
         <div class="card reveal">
-          <h3>Haushaltsnahe Dienstleistungen</h3>
-          <p>Unterstützung bei der Reinigung, Wäsche, beim Einkaufen und bei weiteren Aufgaben im Haushalt.</p>
+          <h3>Haushalt &amp; Wäsche</h3>
+          <p>Unterstützung beim Putzen, bei der Wäsche und bei Aufgaben, die im Haushalt gerade zu viel werden.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Einkaufen &amp; Besorgungen</h3>
+          <p>Ich übernehme kleinere oder größere Einkäufe und unterstütze Sie bei Besorgungen, wenn Sie selbst nicht gut dazu kommen.</p>
         </div>
 
         <div class="card reveal">
           <h3>Seniorenbetreuung</h3>
-          <p>Begleitung beim Spaziergang, zum Arzt oder beim Einkauf sowie Zeit für Gespräche und gemeinsame Aktivitäten.</p>
+          <p>Ob Spaziergang, Arzttermin, Einkauf oder gemeinsame Zeit: Ich begleite Sie zuverlässig und ohne Zeitdruck.</p>
         </div>
 
         <div class="card reveal">
           <h3>Nachbarschaftshilfe</h3>
-          <p>Unterstützung zuhause und unterwegs in Burgstädt und Umgebung. Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung über den Entlastungsbetrag möglich sein.</p>
+          <p>Unterstützung in Burgstädt und Umgebung, abgestimmt auf Ihren Alltag und das, wobei Sie gerade Hilfe benötigen.</p>
         </div>
 
         <div class="card reveal">
           <h3>Sterbe- &amp; Trauerbegleitung</h3>
-          <p>Persönliche Begleitung in der letzten Lebensphase und Unterstützung für Angehörige und Menschen in Trauer.</p>
+          <p>Eine persönliche Begleitung für Menschen am Lebensende, Angehörige und Menschen, die einen Verlust verarbeiten.</p>
         </div>
 
         <div class="card reveal">
           <h3>Trauergruppen</h3>
-          <p>Gemeinsames Aufarbeiten und Austausch in kleinen Gruppen.</p>
+          <p>Gemeinsamer Austausch und Aufarbeitung in einer kleinen Gruppe, in der jede Trauer ihren eigenen Platz haben darf.</p>
         </div>
 
       </div>
@@ -434,64 +895,102 @@
     <div class="about-inner">
       <div class="about-card">
         <span class="section-tag">Über mich</span>
-        <h2>Hallo, ich bin Jenny</h2>
+        <h2>Hallo, ich bin Jenny.</h2>
+
         <p class="lead">
-          Ich bin in Burgstädt zu Hause und unterstütze Menschen in ihrem Alltag. Dabei ist mir wichtig, dass die Hilfe zu Ihnen und Ihrer persönlichen Situation passt.
+          Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
+          unterstützen, wo sie gerade Hilfe brauchen.
         </p>
+
         <p class="about-text">
-          Mir ist ein persönlicher und verlässlicher Umgang wichtig. Wir besprechen gemeinsam, wobei Sie Unterstützung brauchen und was für Ihren Alltag sinnvoll ist.
+          Mir ist wichtig, dass sich Unterstützung nicht nach einer fertigen
+          Schablone anfühlt. Jeder Mensch hat seinen eigenen Alltag, seine
+          Gewohnheiten und seine Geschichte. Deshalb nehme ich mir Zeit zum
+          Zuhören und bespreche mit Ihnen in Ruhe, was für Sie passend ist.
+        </p>
+
+        <p class="about-text" style="margin-top: 18px;">
+          Dabei geht es für mich nicht nur darum, eine Aufgabe zu erledigen.
+          Es geht genauso um Vertrauen, einen guten Umgang miteinander und
+          darum, dass Sie sich mit der Unterstützung wohlfühlen.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ABLAUF (Jetzt sauber in 3 Spalten nebeneinander) -->
+  <!-- ABLAUF -->
   <section id="ablauf">
     <div class="container">
-      <span class="section-tag">Der Weg zu mir</span>
-      <h2>In 3 Schritten zur Entlastung</h2>
+      <span class="section-tag">So lernen wir uns kennen</span>
+      <h2>Ganz in Ruhe, Schritt für Schritt</h2>
+
       <div class="step-grid">
+
         <div class="card reveal">
-          <h3>1. Kennenlernen</h3>
-          <p>Wir führen ein kurzes, unverbindliches Gespräch. Dabei finden wir heraus, ob die Chemie stimmt und was Sie genau brauchen.</p>
+          <h3>1. Erstes Gespräch</h3>
+          <p>
+            Wir sprechen darüber, was Sie gerade beschäftigt und wobei Sie
+            Unterstützung suchen. Das erste Gespräch ist unverbindlich.
+          </p>
         </div>
+
         <div class="card reveal">
-          <h3>2. Planen</h3>
-          <p>Wir legen gemeinsam fest, welche Aufgaben ich übernehme. Alles wird individuell auf Ihren Alltag und Ihre Wünsche abgestimmt.</p>
+          <h3>2. Gemeinsam besprechen</h3>
+          <p>
+            Wir schauen, welche Unterstützung zu Ihrem Alltag passt und
+            was ich für Sie übernehmen kann.
+          </p>
         </div>
+
         <div class="card reveal">
-          <h3>3. Durchstarten</h3>
-          <p>Wir legen los. Ich unterstütze Sie verlässlich und wir schauen regelmäßig, ob alles für Sie passt und Sie zufrieden sind.</p>
+          <h3>3. Unterstützung beginnt</h3>
+          <p>
+            Wenn alles passt, vereinbaren wir die nächsten Schritte.
+            Ohne Druck und so, wie es für Sie passt.
+          </p>
         </div>
+
       </div>
     </div>
   </section>
-  
+
   <!-- NACHBARSCHAFTSHILFE -->
   <section id="nachbarschaftshilfe">
     <div class="container">
       <div class="two-col">
+
         <div>
           <span class="section-tag">Nachbarschaftshilfe</span>
           <h2>Nachbarschaftshilfe in Burgstädt und Umgebung</h2>
+
           <p class="lead">
-            Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen, bei Terminen oder einfach dann, wenn Gesellschaft guttut. Was genau ich übernehme, besprechen wir in Ruhe und passend zu Ihrem Alltag.
+            Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen,
+            bei Terminen oder einfach dann, wenn Gesellschaft guttut.
+            Was genau ich übernehme, besprechen wir in Ruhe und passend
+            zu Ihrem Alltag.
           </p>
 
           <ul class="info-list">
+
             <li>
               <span class="info-list-icon">✓</span>
               <div class="info-list-text">
-                <strong>Unterstützung im Alltag</strong>
-                <p>Zum Beispiel beim Einkaufen, bei kleinen Aufgaben im Haushalt oder bei Wegen und Terminen.</p>
+                <strong>Hilfe im Alltag</strong>
+                <p>
+                  Zum Beispiel beim Einkaufen, bei kleinen Aufgaben im Haushalt
+                  oder bei Wegen und Terminen.
+                </p>
               </div>
             </li>
 
             <li>
               <span class="info-list-icon">✓</span>
               <div class="info-list-text">
-                <strong>Persönliche Begleitung</strong>
-                <p>Auch für Gespräche, Spaziergänge oder gemeinsame Aktivitäten nehme ich mir Zeit.</p>
+                <strong>Auch Zeit füreinander</strong>
+                <p>
+                  Ein Spaziergang, ein Gespräch oder eine gemeinsame Aktivität
+                  kann genauso wichtig sein wie praktische Hilfe.
+                </p>
               </div>
             </li>
 
@@ -499,9 +998,14 @@
               <span class="info-list-icon">✓</span>
               <div class="info-list-text">
                 <strong>Entlastungsbetrag</strong>
-                <p>Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung über den Entlastungsbetrag möglich sein. Das klären wir gemeinsam vorab.</p>
+                <p>
+                  Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung
+                  über den Entlastungsbetrag möglich sein. Das klären wir
+                  gemeinsam vorab.
+                </p>
               </div>
             </li>
+
           </ul>
 
           <div style="margin-top: 30px;">
@@ -512,6 +1016,7 @@
         <div>
           <img src="assets/nbh.jpg" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
         </div>
+
       </div>
     </div>
   </section>
@@ -520,9 +1025,34 @@
   <section id="trauerbegleitung">
     <div class="container trauer-inner">
       <div class="trauer-content">
+
         <span class="section-tag">Begleitung</span>
         <h2>Trauer- &amp; Sterbebegleitung</h2>
-        <p class="lead">In schweren Zeiten müssen Sie nicht alles allein tragen. Ich höre zu, nehme mir Zeit und begleite Sie in Ihrem Tempo.</p>
+
+        <p class="lead">
+          Wenn ein Mensch schwer erkrankt ist, das Leben sich dem Ende nähert
+          oder ein geliebter Mensch bereits gegangen ist, verändert sich vieles.
+          In solchen Zeiten möchte ich Sie nicht mit großen Worten begleiten,
+          sondern vor allem mit Zeit, einem offenen Ohr und einem verlässlichen
+          Gegenüber.
+        </p>
+
+        <p class="about-text" style="margin-top: 20px;">
+          Trauer ist bei jedem Menschen anders. Es gibt keinen festen Ablauf
+          und keine richtige oder falsche Art zu trauern. Deshalb entscheiden
+          Sie selbst, was Ihnen guttut und worüber Sie sprechen möchten.
+        </p>
+
+        <p class="about-text" style="margin-top: 18px;">
+          Manchmal braucht es ein Gespräch. Manchmal gemeinsame Zeit oder
+          Unterstützung im Alltag. Und manchmal einfach jemanden, der da ist
+          und die Stille aushält.
+        </p>
+
+        <div style="margin-top: 28px;">
+          <a href="leistungen.html" class="btn-secondary">Mehr zur Begleitung</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -535,9 +1065,9 @@
       
       <div class="contact-text">
         <span class="section-tag">Kontakt</span>
-        <h2>Lassen Sie uns sprechen</h2>
+        <h2>Melden Sie sich gerne bei mir</h2>
         <p class="lead">
-          Schreiben Sie mir unverbindlich eine Nachricht. Ich melde mich bei Ihnen, um in Ruhe über Ihre Wünsche zu sprechen.
+          Schreiben Sie mir gerne, wobei Sie Unterstützung suchen. Wir können dann in Ruhe besprechen, was für Sie passend ist.
         </p>
       </div>
 
@@ -574,10 +1104,10 @@
             <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage an Web3Forms übermittelt werden.</span>
           </label>
           
-          <button type="submit" id="submit-btn" class="btn-submit">Jetzt Erstgespräch anfragen</button>
+          <button type="submit" id="submit-btn" class="btn-submit">Nachricht senden</button>
 
           <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
-            Ihre Daten werden vertraulich behandelt und ausschließlich zur Beantwortung Ihrer Anfrage genutzt.
+            Ihre Angaben werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage verwendet.
           </p>
 
           <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
@@ -672,9 +1202,11 @@
       })
       .then(() => {
           submitBtn.disabled = false;
-          submitBtn.innerText = "Jetzt Erstgespräch anfragen";
+          submitBtn.innerText = "Nachricht senden";
       });
   });
   </script>
 </body>
 </html>
+
+
