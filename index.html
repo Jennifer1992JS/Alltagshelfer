@@ -228,11 +228,18 @@
       justify-content: flex-end;
       position: relative;
       z-index: 1;
+      width: 100%;
+    }
+
+    /* Das Bild liegt bereits als Hintergrund links. Das zweite HTML-Bild
+       wird auf Desktop ausgeblendet, damit es nicht zusätzlich Platz beansprucht. */
+    .two-col > div:last-child {
+      display: none;
     }
 
     .two-col > div:first-child {
       max-width: 650px;
-      width: 100%;
+      width: min(650px, 100%);
       margin-right: 70px;
       padding: 24px 0 24px 28px;
     }
@@ -577,8 +584,13 @@
         gap: 0 !important;
       }
 
+      #nachbarschaftshilfe .two-col > div:last-child {
+        display: none !important;
+      }
+
       #nachbarschaftshilfe .two-col > div:first-child {
         max-width: 100% !important;
+        width: 100% !important;
         margin-right: 0 !important;
         background: #c2a5bb !important;
         padding: 34px 20px 0 !important;
