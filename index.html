@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -52,35 +52,67 @@
     .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
     .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
 
-    /* HERO */
-    #home { display: flex; align-items: stretch; min-height: calc(100vh - 110px); margin-top: 110px; overflow: hidden; }
-    .hero-left { flex: 55; background: var(--bg-warm); padding: 80px 72px 80px 84px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; }
+    /* HERO – großes Farbfoto mit weichem Übergang zur Textfläche */
+    #home {
+      position: relative;
+      min-height: calc(100vh - 110px);
+      margin-top: 110px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background-color: var(--bg-warm);
+      background-image:
+        linear-gradient(90deg,
+          rgba(194,165,187,1) 0%,
+          rgba(194,165,187,0.99) 28%,
+          rgba(194,165,187,0.90) 42%,
+          rgba(194,165,187,0.56) 57%,
+          rgba(194,165,187,0.12) 74%,
+          rgba(194,165,187,0.02) 100%),
+        url('./assets/Jennymitoma.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-left {
+      width: min(1380px, 100%);
+      margin: 0 auto;
+      padding: 90px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
     .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--primary); width: fit-content; }
-    
-    h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.16; color: var(--text); }
+
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.16; color: var(--text); max-width: 820px; }
     h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
-    .hero-desc { font-size: 21px; color: var(--text-muted); max-width: 600px; line-height: 1.78; }
-    
+    .hero-desc { font-size: 21px; color: var(--text-muted); max-width: 650px; line-height: 1.78; }
+
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
     .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all .2s; box-shadow: 0 4px 18px rgba(107,33,214,0.15); }
     .btn-primary:hover { opacity: .95; transform: translateY(-2px); }
     .btn-secondary { background: #fff; color: var(--primary); padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; border: 2px solid var(--primary); transition: all .2s; }
     .btn-secondary:hover { background: #fdfaf6; }
-    
+
     .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
     .trust-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text-muted); }
 
-    .hero-right { flex: 45; position: relative; overflow: hidden; background: #f5f0ff; }
-    .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    
-    .hero-overlay-card { position: absolute; bottom: 30px; left: 30px; right: 30px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); z-index: 2; }
-    .hero-overlay-card strong { display: block; font-size: 22px; color: #333; margin-bottom: 6px; }
-    .hero-overlay-card p { font-size: 16px; color: #555; line-height: 1.5; }
+    .hero-right { display: none; }
+    .hero-img, .hero-overlay-card { display: none; }
 
     /* SEKTIONEN & GRIDS */
     section { padding: 100px 0; scroll-margin-top: 130px; }
     .container { max-width: 1380px; margin: 0 auto; padding: 0 60px; }
     .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
+    .handwritten { font-family: 'Caveat', cursive; font-size: 30px; line-height: 1.15; font-weight: 500; color: #8a68a2; margin: -4px 0 18px; display: block; }
+    .handwritten.small { font-size: 25px; margin: -2px 0 14px; }
+    .hero-handwritten { max-width: 650px; }
     h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 2.8vw, 42px); color: var(--text); line-height: 1.22; margin-bottom: 16px; }
     .lead { font-size: 21px; color: var(--text-muted); max-width: 760px; line-height: 1.8; margin-bottom: 52px; }
 
@@ -159,15 +191,35 @@
       line-height: 1.75;
     }
 
-    /* NACHBARSCHAFTSHILFE */
-    #nachbarschaftshilfe { background: var(--bg-warm); padding: 120px 0; }
-    .two-col { display: grid; grid-template-columns: 58fr 42fr; gap: 70px; align-items: center; }
+    /* NACHBARSCHAFTSHILFE – gleiche Bildsprache wie die Trauersektion, aber in Farbe */
+    #nachbarschaftshilfe {
+      position: relative;
+      min-height: 720px;
+      padding: 120px 0;
+      overflow: hidden;
+      background-color: var(--bg-warm);
+      background-image:
+        linear-gradient(90deg,
+          rgba(194,165,187,1) 0%,
+          rgba(194,165,187,0.98) 28%,
+          rgba(194,165,187,0.88) 43%,
+          rgba(194,165,187,0.52) 59%,
+          rgba(194,165,187,0.10) 76%,
+          rgba(194,165,187,0.02) 100%),
+        url('./assets/nbh.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .two-col { display: block; position: relative; z-index: 1; }
+    .two-col > div:first-child { max-width: 760px; }
     .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
     .info-list li { display: flex; gap: 14px; align-items: flex-start; }
     .info-list-icon { font-size: 18px; color: var(--accent); margin-top: 2px; }
     .info-list-text strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
     .info-list-text p { font-size: 19px; color: var(--text-muted); line-height: 1.6; }
-    .section-side-img { width: 100%; height: 560px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+    .section-side-img { display: none; }
 
     /* KONTAKT FORMULAR */
     #kontakt { padding: 60px 0; background: transparent; }
@@ -208,8 +260,6 @@
     }
 
     @media (max-width: 992px) {
-      #home { flex-direction: column; }
-      .hero-right { height: 450px; width: 100%; }
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
       .step-grid { grid-template-columns: 1fr; }
     }
@@ -257,25 +307,27 @@
         white-space: nowrap !important;
       }
 
-      #home,
-      .two-col {
-        display: flex !important;
-        flex-direction: column !important;
-        margin-top: 0 !important;
+      #home {
+        display: block !important;
         min-height: auto !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+        background-image: url('./assets/Jennymitoma.png') !important;
+        background-size: auto 330px !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+        background-color: var(--bg-warm) !important;
       }
 
       .hero-left {
         width: 100% !important;
-        padding: 48px 20px 42px !important;
+        margin-top: 330px !important;
+        padding: 38px 20px 42px !important;
         gap: 18px !important;
+        background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 18%) !important;
       }
 
-      .hero-right {
-        width: 100% !important;
-        height: 340px !important;
-        position: relative !important;
-      }
+      .hero-right { display: none !important; }
 
       .hero-tag {
         margin: 0 auto !important;
@@ -415,6 +467,10 @@
         box-sizing: border-box !important;
       }
 
+      .handwritten { font-size: 25px !important; line-height: 1.15 !important; margin: -2px 0 14px !important; }
+      .handwritten.small { font-size: 22px !important; margin: -1px 0 12px !important; }
+      .hero-handwritten { text-align: center !important; max-width: 100% !important; }
+
       /* ÜBER MICH */
       .about-section {
         min-height: auto !important;
@@ -468,11 +524,24 @@
 
       /* NACHBARSCHAFTSHILFE */
       #nachbarschaftshilfe {
-        padding: 58px 0 !important;
+        min-height: auto !important;
+        padding: 0 0 58px !important;
+        background-image: url('./assets/nbh.jpg') !important;
+        background-size: auto 300px !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
       }
 
       #nachbarschaftshilfe .two-col {
-        gap: 28px !important;
+        display: block !important;
+        padding-top: 300px !important;
+        gap: 0 !important;
+      }
+
+      #nachbarschaftshilfe .two-col > div:first-child {
+        max-width: 100% !important;
+        background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 16%) !important;
+        padding-top: 34px !important;
       }
 
       #nachbarschaftshilfe .lead {
@@ -492,11 +561,7 @@
         line-height: 1.58 !important;
       }
 
-      .section-side-img {
-        width: 100% !important;
-        height: 300px !important;
-        object-fit: cover !important;
-      }
+      .section-side-img { display: none !important; }
 
       /* TRAUER */
       #trauerbegleitung {
@@ -610,6 +675,7 @@
         Alltagshilfe in Burgstädt und Umgebung
       </div>
       <h1>Wenn der Alltag schwerer wird, bin ich für Sie da.</h1>
+      <span class="handwritten hero-handwritten">Mit Zeit, Ruhe und einem offenen Ohr.</span>
       <p class="hero-desc">
         Nicht immer braucht es viel. Manchmal hilft jemand, der beim Einkaufen mitkommt, im Haushalt unterstützt oder einfach ein bisschen Zeit mitbringt. Genau dabei möchte ich Sie unterstützen.
       </p>
@@ -621,13 +687,6 @@
         <div class="trust-pill">✓ Persönlich & nah</div>
         <div class="trust-pill">✓ Zuverlässig</div>
         <div class="trust-pill">✓ So, wie es zu Ihnen passt</div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <img src="./assets/Jennymitoma.png" alt="Alltagsfreund Jenny" class="hero-img">
-      <div class="hero-overlay-card">
-        <strong>Alltag gemeinsam leichter machen</strong>
-        <p>Ob zuhause, beim Einkauf, bei einem Termin oder einfach für ein Gespräch: Ich nehme mir Zeit und unterstütze dort, wo Sie mich brauchen.</p>
       </div>
     </div>
   </section>
@@ -688,6 +747,7 @@
       <div class="about-card">
         <span class="section-tag">Über mich</span>
         <h2>Hallo, ich bin Jenny.</h2>
+        <span class="handwritten small">Persönlich. Nah. Und so, wie es für Sie passt.</span>
 
         <p class="lead">
           Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
@@ -754,6 +814,7 @@
         <div>
           <span class="section-tag">Nachbarschaftshilfe</span>
           <h2>Nachbarschaftshilfe in Burgstädt und Umgebung</h2>
+          <span class="handwritten small">Hilfe im Alltag darf ganz unkompliziert sein.</span>
 
           <p class="lead">
             Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen,
@@ -820,6 +881,7 @@
 
         <span class="section-tag">Begleitung</span>
         <h2>Trauer- &amp; Sterbebegleitung</h2>
+        <span class="handwritten">Ich bin an Ihrer Seite – in der Zeit, in der Worte manchmal fehlen.</span>
 
         <p class="lead">
           Wenn ein Mensch schwer erkrankt ist, das Leben sich dem Ende nähert
