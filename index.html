@@ -37,7 +37,7 @@
       background-attachment: fixed;
       color: var(--text); 
       font-size: 20px; 
-      line-height: 1.7; 
+      line-height: 1.72; 
     }
 
     /* NAVIGATION */
@@ -54,12 +54,12 @@
 
     /* HERO */
     #home { display: flex; align-items: stretch; min-height: calc(100vh - 110px); margin-top: 110px; overflow: hidden; }
-    .hero-left { flex: 55; background: var(--bg-warm); padding: 60px 52px 60px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; }
+    .hero-left { flex: 55; background: var(--bg-warm); padding: 80px 72px 80px 84px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; }
     .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: var(--primary); width: fit-content; }
     
     h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.16; color: var(--text); }
     h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
-    .hero-desc { font-size: 20px; color: var(--text-muted); max-width: 480px; line-height: 1.78; }
+    .hero-desc { font-size: 21px; color: var(--text-muted); max-width: 600px; line-height: 1.78; }
     
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
     .btn-primary { background: var(--grad); color: #fff; padding: 14px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all .2s; box-shadow: 0 4px 18px rgba(107,33,214,0.15); }
@@ -79,10 +79,10 @@
 
     /* SEKTIONEN & GRIDS */
     section { padding: 100px 0; scroll-margin-top: 130px; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
+    .container { max-width: 1380px; margin: 0 auto; padding: 0 60px; }
     .section-tag { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 16px; border: 1px solid var(--border); }
     h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 2.8vw, 42px); color: var(--text); line-height: 1.22; margin-bottom: 16px; }
-    .lead { font-size: 20px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 52px; }
+    .lead { font-size: 21px; color: var(--text-muted); max-width: 760px; line-height: 1.8; margin-bottom: 52px; }
 
     /* 2er Grid für Leistungen */
     .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -93,8 +93,8 @@
     .card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
     .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(107,33,214,0.1); }
     .card-icon { font-size: 28px; margin-bottom: 16px; display: inline-block; }
-    .card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; color: var(--text); }
-    .card p { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 23px; margin-bottom: 10px; color: var(--text); }
+    .card p { font-size: 19px; color: var(--text-muted); line-height: 1.7; }
 
     /* TRAUER- & STERBEBEGLEITUNG */
 #trauerbegleitung {
@@ -110,9 +110,9 @@
   background-repeat: no-repeat; }
     #trauerbegleitung::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(242,235,235,0.98) 0%, rgba(242,235,235,0.92) 38%, rgba(242,235,235,0.45) 58%, rgba(242,235,235,0.04) 78%); }
     .trauer-inner { position: relative; z-index: 1; width: 100%; }
-    .trauer-content { max-width: 680px; }
+    .trauer-content { max-width: 760px; }
     .trauer-content .lead { margin-bottom: 0; }
-    .trauer-content .about-text { font-size: 18px; line-height: 1.7; color: var(--text-muted); }
+    .trauer-content .about-text { font-size: 20px; line-height: 1.75; color: var(--text-muted); }
 
     /* ÜBER MICH */
     .about-section {
@@ -138,13 +138,13 @@
     }
 
     .about-card {
-      width: min(700px, 100%);
+      width: min(780px, 100%);
       background: rgba(255,255,255,0.74);
       backdrop-filter: blur(7px);
       -webkit-backdrop-filter: blur(7px);
       border: 1px solid rgba(255,255,255,0.72);
       border-radius: 24px;
-      padding: 44px 52px;
+      padding: 52px 60px;
       box-shadow: 0 14px 38px rgba(43,20,59,0.12);
       text-align: center;
     }
@@ -155,26 +155,28 @@
 
     .about-text {
       color: var(--text-muted);
+      font-size: 19px;
+      line-height: 1.75;
     }
 
     /* NACHBARSCHAFTSHILFE */
     #nachbarschaftshilfe { background: var(--bg-warm); padding: 120px 0; }
-    .two-col { display: grid; grid-template-columns: 60fr 40fr; gap: 52px; align-items: center; }
+    .two-col { display: grid; grid-template-columns: 58fr 42fr; gap: 70px; align-items: center; }
     .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
     .info-list li { display: flex; gap: 14px; align-items: flex-start; }
     .info-list-icon { font-size: 18px; color: var(--accent); margin-top: 2px; }
     .info-list-text strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
-    .info-list-text p { font-size: 18px; color: var(--text-muted); line-height: 1.6; }
-    .section-side-img { width: 100%; height: 520px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+    .info-list-text p { font-size: 19px; color: var(--text-muted); line-height: 1.6; }
+    .section-side-img { width: 100%; height: 560px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 
     /* KONTAKT FORMULAR */
     #kontakt { padding: 60px 0; background: transparent; }
-    .contact-grid { display: flex; flex-direction: column; gap: 40px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .contact-grid { display: flex; flex-direction: column; gap: 56px; width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 20px; }
     .contact-text { text-align: center; }
-    .contact-wrapper { width: 100%; max-width: 550px; margin: 0 auto; background: var(--bg-warm); border: 1px solid var(--border); padding: 40px; border-radius: 24px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 16px; color: var(--text); background: var(--white); outline: none; transition: border .2s; }
+    .contact-wrapper { width: 100%; max-width: 650px; margin: 0 auto; background: var(--bg-warm); border: 1px solid var(--border); padding: 48px; border-radius: 24px; }
+    .form-group { margin-bottom: 24px; }
+    .form-group label { display: block; font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .form-group input, .form-group textarea { width: 100%; padding: 15px 18px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 18px; color: var(--text); background: var(--white); outline: none; transition: border .2s; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
     .privacy-consent { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 18px; font-size: 14px; line-height: 1.5; color: var(--text-muted); }
     .privacy-consent input { width: auto; margin-top: 5px; }
@@ -191,9 +193,17 @@
     footer { background: var(--text); color: #fff; padding: 40px 0; text-align: center; font-size: 14px; }
     footer p { opacity: 0.7; }
 
+    @media (min-width: 993px) {
+      h1 { font-size: clamp(42px, 3.5vw, 58px); }
+      h2 { font-size: clamp(34px, 3vw, 46px); }
+      .section-tag { font-size: 12px; }
+      .contact-text h2 { max-width: 620px; }
+      .contact-text .lead { font-size: 21px; max-width: 620px; }
+    }
+
     /* RESPONSIVE DESIGN - PC & INTERMEDIATE */
     @media (min-width: 992px) {
-      .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+      .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(560px, 650px); gap: 100px; align-items: center; }
       .contact-text { text-align: left; }
     }
 
@@ -206,33 +216,99 @@
 
     /* RESPONSIVE DESIGN - SMARTPHONE HUB */
     @media (max-width: 768px) {
-      nav { height: auto !important; padding: 12px 16px !important; flex-direction: column !important; gap: 12px !important; position: sticky !important; }
-      .nav-logo img { height: 45px !important; }
-      .nav-logo-text { font-size: 18px !important; }
-      .nav-logo-text small { font-size: 12px !important; letter-spacing: 0px; }
-      .nav-links { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 4px !important; width: 100%; padding: 0; }
-      .nav-links a { font-size: 11px !important; padding: 6px 2px !important; text-align: center; border-radius: 6px; display: block; white-space: nowrap; }
-      
-      #home, .two-col { display: flex !important; flex-direction: column !important; margin-top: 0 !important; min-height: auto !important; }
-      .hero-left { width: 100% !important; padding: 40px 20px !important; }
-      .hero-right { width: 100% !important; height: 420px !important; position: relative !important; }
-      
-      .hero-tag { margin: 0 auto !important; }
-      h1 { font-size: 28px !important; text-align: center !important; }
-      .hero-desc { font-size: 18px !important; text-align: center !important; max-width: 100% !important; }
-      
+      nav {
+        height: auto !important;
+        padding: 10px 14px 12px !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        position: sticky !important;
+      }
+
+      .nav-logo {
+        gap: 10px !important;
+      }
+
+      .nav-logo img {
+        height: 42px !important;
+      }
+
+      .nav-logo-text {
+        font-size: 17px !important;
+      }
+
+      .nav-logo-text small {
+        font-size: 11px !important;
+        letter-spacing: 0 !important;
+      }
+
+      .nav-links {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 4px !important;
+        width: 100% !important;
+      }
+
+      .nav-links a {
+        font-size: 12px !important;
+        padding: 7px 3px !important;
+        text-align: center !important;
+        border-radius: 7px !important;
+        display: block !important;
+        white-space: nowrap !important;
+      }
+
+      #home,
+      .two-col {
+        display: flex !important;
+        flex-direction: column !important;
+        margin-top: 0 !important;
+        min-height: auto !important;
+      }
+
+      .hero-left {
+        width: 100% !important;
+        padding: 48px 20px 42px !important;
+        gap: 18px !important;
+      }
+
+      .hero-right {
+        width: 100% !important;
+        height: 340px !important;
+        position: relative !important;
+      }
+
+      .hero-tag {
+        margin: 0 auto !important;
+        font-size: 10px !important;
+        padding: 5px 12px !important;
+      }
+
+      h1 {
+        font-size: 30px !important;
+        line-height: 1.18 !important;
+        text-align: center !important;
+      }
+
+      .hero-desc {
+        font-size: 17px !important;
+        line-height: 1.65 !important;
+        text-align: center !important;
+        max-width: 100% !important;
+      }
+
       .hero-btns {
         display: flex !important;
-        flex-direction: column !important; 
+        flex-direction: column !important;
         align-items: center !important;
-        gap: 16px !important;         
-        margin-top: 25px !important;   
-        margin-bottom: 30px !important;  
+        gap: 10px !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
       }
+
       .hero-btns a {
         width: 100% !important;
-        max-width: 320px !important;   
-        text-align: center !important;  
+        max-width: 300px !important;
+        text-align: center !important;
         box-sizing: border-box !important;
       }
 
@@ -240,33 +316,109 @@
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 10px !important;
-        margin-top: 12px !important;
+        gap: 7px !important;
+        margin-top: 6px !important;
         width: 100% !important;
       }
+
       .trust-pill {
         width: 100% !important;
-        max-width: 320px !important;
-        text-align: center !important;
+        max-width: 300px !important;
         justify-content: center !important;
+        padding: 6px 10px !important;
+        font-size: 11px !important;
         box-sizing: border-box !important;
       }
 
       .hero-overlay-card {
         position: absolute !important;
-        bottom: 15px !important;
-        left: 15px !important;
-        right: 15px !important;
+        bottom: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
         width: auto !important;
-        padding: 15px !important;
+        padding: 13px !important;
       }
-      .hero-overlay-card strong { font-size: 18px !important; }
-      .hero-overlay-card p { font-size: 14px !important; }
 
-      /* ÜBER MICH – MOBILE */
+      .hero-overlay-card strong {
+        font-size: 17px !important;
+      }
+
+      .hero-overlay-card p {
+        font-size: 13px !important;
+      }
+
+      section {
+        padding: 58px 0 !important;
+        scroll-margin-top: 125px !important;
+      }
+
+      .container {
+        padding: 0 20px !important;
+      }
+
+      .section-tag {
+        font-size: 10px !important;
+        padding: 5px 11px !important;
+        margin-bottom: 12px !important;
+      }
+
+      h2 {
+        font-size: 29px !important;
+        line-height: 1.22 !important;
+        margin-bottom: 13px !important;
+      }
+
+      .lead {
+        font-size: 17px !important;
+        line-height: 1.65 !important;
+        margin-bottom: 30px !important;
+      }
+
+      .cards-grid,
+      .step-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      .card {
+        padding: 24px 22px !important;
+        border-radius: 17px !important;
+      }
+
+      .card h3 {
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 8px !important;
+      }
+
+      .card p {
+        font-size: 16px !important;
+        line-height: 1.62 !important;
+      }
+
+      /* The services button gets its own predictable mobile box. */
+      #leistungen > .container > div:last-child {
+        margin-top: 24px !important;
+      }
+
+      #leistungen .btn-secondary {
+        display: block !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        padding: 13px 18px !important;
+        font-size: 16px !important;
+        line-height: 1.35 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        border-radius: 999px !important;
+        box-sizing: border-box !important;
+      }
+
+      /* ÜBER MICH */
       .about-section {
         min-height: auto !important;
-        padding: 0 0 40px !important;
+        padding: 0 0 42px !important;
         display: block !important;
         background-image: none !important;
         overflow: visible !important;
@@ -275,7 +427,7 @@
       .about-section::before {
         content: '';
         display: block;
-        height: 420px;
+        height: 300px;
         background-image: url('./assets/Sehrgut.JPG');
         background-size: cover;
         background-position: 72% center;
@@ -284,16 +436,16 @@
 
       .about-inner {
         padding: 0 20px !important;
-        margin-top: -42px;
+        margin-top: -34px !important;
         position: relative;
         z-index: 1;
       }
-      
+
       .about-card {
         width: 100% !important;
         max-width: 100% !important;
-        padding: 28px 22px !important;
-        background: rgba(255,255,255,0.82) !important;
+        padding: 26px 22px !important;
+        background: rgba(255,255,255,0.92) !important;
         backdrop-filter: blur(5px) !important;
         -webkit-backdrop-filter: blur(5px) !important;
       }
@@ -306,31 +458,122 @@
       .about-card .lead {
         font-size: 16px !important;
         line-height: 1.6 !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 18px !important;
       }
 
       .about-text {
         font-size: 15px !important;
-        line-height: 1.6 !important;
+        line-height: 1.62 !important;
       }
 
-#trauerbegleitung {
-  aspect-ratio: auto;
-  min-height: auto;
-  padding: 260px 0 40px;
-  background-position: 72% center;
-  align-items: flex-end;
- }
-      #trauerbegleitung::before { background: linear-gradient(180deg, rgba(242,235,235,0.02) 0%, rgba(242,235,235,0.72) 45%, rgba(242,235,235,0.98) 68%); }
-      .trauer-content { max-width: 100%; background: rgba(242,235,235,0.9); border-radius: 20px; padding: 28px 22px; }
-      .trauer-content h2 { font-size: 27px !important; margin-bottom: 12px !important; }
-      .trauer-content .lead { font-size: 16px !important; line-height: 1.6 !important; }
-      .trauer-content .about-text { font-size: 15px !important; line-height: 1.6 !important; }
+      /* NACHBARSCHAFTSHILFE */
+      #nachbarschaftshilfe {
+        padding: 58px 0 !important;
+      }
+
+      #nachbarschaftshilfe .two-col {
+        gap: 28px !important;
+      }
+
+      #nachbarschaftshilfe .lead {
+        margin-bottom: 24px !important;
+      }
+
+      .info-list {
+        gap: 16px !important;
+      }
+
+      .info-list-text strong {
+        font-size: 17px !important;
+      }
+
+      .info-list-text p {
+        font-size: 15px !important;
+        line-height: 1.58 !important;
+      }
+
+      .section-side-img {
+        width: 100% !important;
+        height: 300px !important;
+        object-fit: cover !important;
+      }
+
+      /* TRAUER */
+      #trauerbegleitung {
+        aspect-ratio: auto !important;
+        min-height: auto !important;
+        padding: 250px 0 42px !important;
+        background-position: 72% center !important;
+        align-items: flex-end !important;
+      }
+
+      #trauerbegleitung::before {
+        background: linear-gradient(
+          180deg,
+          rgba(242,235,235,0.02) 0%,
+          rgba(242,235,235,0.68) 45%,
+          rgba(242,235,235,0.98) 68%
+        ) !important;
+      }
+
+      .trauer-content {
+        max-width: 100% !important;
+        background: rgba(242,235,235,0.94) !important;
+        border-radius: 18px !important;
+        padding: 26px 22px !important;
+      }
+
+      .trauer-content h2 {
+        font-size: 27px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .trauer-content .lead {
+        font-size: 16px !important;
+        line-height: 1.62 !important;
+      }
+
+      .trauer-content .about-text {
+        font-size: 15px !important;
+        line-height: 1.62 !important;
+      }
+
+      .trauer-content .btn-secondary {
+        display: inline-block !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        white-space: normal !important;
+        text-align: center !important;
+      }
+
+      /* CONTACT */
+      .contact-grid {
+        gap: 30px !important;
+      }
+
+      .contact-wrapper {
+        max-width: 100% !important;
+        padding: 28px 22px !important;
+        border-radius: 18px !important;
+      }
+
+      .form-group {
+        margin-bottom: 18px !important;
+      }
+
+      .form-group label {
+        font-size: 16px !important;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        font-size: 16px !important;
+        padding: 13px 14px !important;
+      }
     }
 
     @media (max-width: 640px) {
       .cards-grid { grid-template-columns: 1fr; }
-      section { padding: 40px 0; }
       .container { padding: 0 20px; }
     }
 
