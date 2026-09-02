@@ -1,1 +1,643 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leistungs- und Preisliste – Alltagsfreund Jenny</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #704882;
+      --primary-dark: #55147a;
+      --primary-light: #b755e0;
+      --accent: #d6c1cb;
+      --grad: linear-gradient(135deg, #2f1f47, #4b1252);
+      --bg-warm: #c2a5bb;
+      --bg-cream: #f2ebeb;
+      --text: #2b143b;
+      --text-muted: #362357;
+      --border: #eee1f5;
+      --white: #fff;
+    }
+    
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body { 
+      font-family: 'DM Sans', sans-serif; 
+      background-color: #fdfafb;
+      color: var(--text); 
+      font-size: 18px; 
+      line-height: 1.7; 
+    }
 
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255,253,253,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      height: 110px;
+      padding: 0 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 80px;
+      width: auto;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .nav-logo-text strong {
+      display: block;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-logo-text small {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: .8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 18px;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 100px;
+      transition: all .2s;
+    }
+
+    .nav-cta {
+      background: var(--grad) !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+    }
+
+    /* SEITENLAYOUT */
+    .legal-container {
+      max-width: 800px;
+      margin: 160px auto 80px auto;
+      padding: 0 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--text);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+
+    /* LEISTUNGS-KARTEN */
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+
+    .service-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .service-icon {
+      font-size: 22px;
+      color: var(--primary);
+      line-height: 1.4;
+    }
+
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .service-description {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* PREISLISTE */
+    .price-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .price-name {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .price {
+      color: var(--primary-dark);
+      font-weight: 700;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* ZUSATZINFORMATION */
+    .info-box {
+      background: #f5f0ff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 20px;
+    }
+
+    .info-box p {
+      margin-bottom: 0;
+    }
+
+    .info-box strong {
+      color: var(--text);
+    }
+
+    /* TRAUERGRUPPEN */
+    .group-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .group-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .group-list li::before {
+      content: '•';
+      position: absolute;
+      left: 2px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--text);
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+      margin-top: auto;
+    }
+
+    footer p {
+      opacity: 0.7;
+      margin-bottom: 0;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+
+      nav {
+        height: auto !important;
+        padding: 12px 16px !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        position: sticky !important;
+      }
+
+      .nav-logo img {
+        height: 45px !important;
+      }
+
+      .nav-logo-text {
+        font-size: 18px !important;
+      }
+
+      .nav-logo-text small {
+        font-size: 12px !important;
+        letter-spacing: 0px;
+      }
+
+      .nav-links {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 4px !important;
+        width: 100%;
+        padding: 0;
+      }
+
+      .nav-links a {
+        font-size: 11px !important;
+        padding: 6px 2px !important;
+        text-align: center;
+        border-radius: 6px;
+        display: block;
+        white-space: nowrap;
+      }
+
+      .legal-container {
+        margin-top: 40px;
+        margin-bottom: 50px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .service-card {
+        padding: 22px;
+      }
+
+      .service-title {
+        font-size: 20px;
+      }
+
+      .price-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+      }
+
+      .price {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html#home" class="nav-logo">
+      <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
+
+      <div class="nav-logo-text">
+        <strong>Alltagsfreund Jenny</strong>
+        <small>Haushalt & Nachbarschaftshilfe</small>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html#home">Start</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="index.html#nachbarschaftshilfe">NBH</a></li>
+      <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- INHALT -->
+  <main class="legal-container">
+
+    <h1>Leistungs- und Preisliste</h1>
+
+    <p class="subtitle">
+      Hier finden Sie einen Überblick über meine Leistungen und die dazugehörigen Preise.
+      Wenn Sie Fragen zu einem Angebot haben oder sich nicht sicher sind, welche Unterstützung
+      für Sie passend ist, können wir dies gerne in einem persönlichen Gespräch besprechen.
+    </p>
+
+
+    <!-- HAUSHALTSNAHE DIENSTLEISTUNGEN -->
+    <h2>Haushaltsnahe Dienstleistungen</h2>
+
+    <div class="service-card">
+
+      <div class="service-header">
+        <span class="service-icon">✓</span>
+        <div class="service-title">
+          Reinigung, Pflege & Unterstützung im Haushalt
+        </div>
+      </div>
+
+      <p class="service-description">
+        Unterstützung bei alltäglichen Aufgaben rund um den Haushalt.
+      </p>
+
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-name">
+            Wohnung putzen / Wäsche waschen
+          </div>
+          <div class="price">
+            33 € / Stunde
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-name">
+            Kleiner Einkauf (ohne Getränke)
+          </div>
+          <div class="price">
+            25 € / Stunde
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-name">
+            Großer Einkauf
+          </div>
+          <div class="price">
+            30 € / Stunde
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-name">
+            Geschenke einpacken
+          </div>
+          <div class="price">
+            5 € / Geschenk
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info-box">
+        <p>
+          <strong>Steuerliche Entlastung:</strong><br>
+          20 % der Lohn- und Fahrtkosten können über die Steuererklärung
+          zurückerstattet werden.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <p>
+          <strong>Fahrtkosten:</strong>
+          0,36 € pro km
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- SENIORENBETREUUNG -->
+    <h2>Seniorenbetreuung</h2>
+
+    <div class="service-card">
+
+      <div class="service-header">
+        <span class="service-icon">✓</span>
+        <div class="service-title">
+          Begleitung und Betreuung im Alltag
+        </div>
+      </div>
+
+      <p class="service-description">
+        Zeit und Unterstützung für alltägliche Wege, Aktivitäten und gemeinsame
+        Unternehmungen.
+      </p>
+
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-name">
+            Seniorenbetreuung
+          </div>
+          <div class="price">
+            35 € / Stunde
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-name">
+            Fahrtkosten
+          </div>
+          <div class="price">
+            0,36 € / km
+          </div>
+        </div>
+
+      </div>
+
+      <ul class="group-list">
+        <li>Spazieren gehen</li>
+        <li>Begleitung zu Arztterminen</li>
+        <li>Begleitung beim Einkauf</li>
+        <li>Gesellschaft und Gespräche</li>
+        <li>Gemeinsame Aktivitäten</li>
+      </ul>
+
+    </div>
+
+
+    <!-- STERBE- UND TRAUERBEGLEITUNG -->
+    <h2>Sterbe- und Trauerbegleitung</h2>
+
+    <div class="service-card">
+
+      <div class="service-header">
+        <span class="service-icon">✓</span>
+        <div class="service-title">
+          Persönliche Begleitung in schweren Zeiten
+        </div>
+      </div>
+
+      <p class="service-description">
+        Individuelle Begleitung für Menschen in der letzten Lebensphase
+        sowie für Angehörige und Menschen in Trauer.
+      </p>
+
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-name">
+            Einzelsitzung
+          </div>
+          <div class="price">
+            80 € / Stunde
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-name">
+            Fahrtkosten
+          </div>
+          <div class="price">
+            0,36 € / km
+          </div>
+        </div>
+
+        <div class="price-row">
+          <div class="price-name">
+            Erstgespräch
+          </div>
+          <div class="price">
+            Kostenlos
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info-box">
+        <p>
+          <strong>Begleitung soll nicht am Geld scheitern.</strong><br>
+          Wenn die Kosten für eine Begleitung für Sie eine Schwierigkeit darstellen,
+          sprechen Sie mich bitte darauf an. Welche Möglichkeiten im Einzelfall
+          bestehen, können wir gemeinsam besprechen.
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- TRAUERGRUPPEN -->
+    <h2>Trauergruppen</h2>
+
+    <div class="service-card">
+
+      <div class="service-header">
+        <span class="service-icon">✓</span>
+        <div class="service-title">
+          Gemeinsame Trauerarbeit in kleinen Gruppen
+        </div>
+      </div>
+
+      <p class="service-description">
+        Die Trauergruppen bieten Raum für Austausch und gemeinsames Aufarbeiten
+        in einer kleinen Gruppe.
+      </p>
+
+      <div class="price-list">
+
+        <div class="price-row">
+          <div class="price-name">
+            Teilnahme pro Person und Sitzung
+          </div>
+          <div class="price">
+            20 €
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- HINWEIS -->
+    <h2>Persönliche Beratung</h2>
+
+    <p>
+      Nicht jede Situation lässt sich in einer Preisliste abbilden.
+      Wenn Sie unsicher sind, welche Leistung für Sie oder Ihre Angehörigen
+      passend ist, können wir die Möglichkeiten gerne gemeinsam besprechen.
+    </p>
+
+    <p>
+      Das Erstgespräch im Bereich der Sterbe- und Trauerbegleitung ist kostenlos.
+      So können wir uns zunächst kennenlernen und in Ruhe schauen,
+      was Sie benötigen.
+    </p>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <p style="font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+
+        <a href="index.html">Zur Startseite</a>
+
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+
+        <a href="impressum.html">Impressum</a>
+
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+
+        <a href="datenschutz.html">Datenschutz</a>
+
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+
+        <a href="qualifikationen.html">Qualifikationen</a>
+
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
