@@ -200,29 +200,40 @@
       line-height: 1.75;
     }
 
-    /* NACHBARSCHAFTSHILFE – Foto links, Text rechts, weich ausgeblendet */
+    /* NACHBARSCHAFTSHILFE – NBH.png: Bild links / Text rechts mit weichem Übergang */
     #nachbarschaftshilfe {
       position: relative;
       min-height: 720px;
-      padding: 120px 0;
+      padding: 110px 0;
       overflow: hidden;
       background-color: var(--bg-warm);
       background-image:
         linear-gradient(90deg,
-          rgba(194,165,187,0.02) 0%,
-          rgba(194,165,187,0.06) 24%,
-          rgba(194,165,187,0.28) 42%,
-          rgba(194,165,187,0.68) 60%,
-          rgba(194,165,187,0.92) 78%,
-          rgba(194,165,187,0.98) 100%),
+          rgba(194,165,187,0.00) 0%,
+          rgba(194,165,187,0.03) 30%,
+          rgba(194,165,187,0.16) 43%,
+          rgba(194,165,187,0.52) 53%,
+          rgba(194,165,187,0.82) 64%,
+          rgba(194,165,187,0.96) 76%,
+          rgba(194,165,187,1) 100%),
         url('./assets/NBH.png');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
     }
 
-    .two-col { display: flex; justify-content: flex-end; position: relative; z-index: 1; }
-    .two-col > div:first-child { max-width: 700px; width: 100%; }
+    .two-col {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .two-col > div:first-child {
+      max-width: 690px;
+      width: 100%;
+      margin-right: 35px;
+    }
     .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
     .info-list li { display: flex; gap: 14px; align-items: flex-start; }
     .info-list-icon { font-size: 18px; color: var(--accent); margin-top: 2px; }
@@ -547,7 +558,7 @@
       #nachbarschaftshilfe {
         min-height: auto !important;
         padding: 0 0 58px !important;
-        background-image: url('./assets/nbh.jpg') !important;
+        background-image: url('./assets/NBH.png') !important;
         background-size: auto 300px !important;
         background-position: center top !important;
         background-repeat: no-repeat !important;
@@ -669,7 +680,7 @@
       .about-section { background-image: linear-gradient(90deg, rgba(253,250,251,0.96) 0%, rgba(253,250,251,0.82) 52%, rgba(253,250,251,0.25) 100%), url('./assets/Sehrgut.JPG'); }
       .about-inner { padding: 0 32px; }
       .about-card { max-width: 650px; }
-      #nachbarschaftshilfe { background-image: linear-gradient(90deg, rgba(194,165,187,0.18) 0%, rgba(194,165,187,0.68) 50%, rgba(194,165,187,0.98) 100%), url('./assets/nbh.jpg'); }
+      #nachbarschaftshilfe { background-image: linear-gradient(90deg, rgba(194,165,187,0.05) 0%, rgba(194,165,187,0.35) 45%, rgba(194,165,187,0.88) 68%, rgba(194,165,187,0.98) 100%), url('./assets/NBH.png'); }
       .two-col { justify-content: flex-end; }
       .two-col > div:first-child { max-width: 650px; }
       .trauer-inner { padding-left: 0; }
