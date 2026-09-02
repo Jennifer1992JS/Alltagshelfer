@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -52,7 +53,7 @@
     .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
     .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
 
-    /* HERO – Foto links, Text rechts, weicher Übergang via Maske */
+    /* HERO – Foto links, Text rechts, weicher Übergang */
     #home {
       position: relative;
       min-height: calc(100vh - 110px);
@@ -64,24 +65,32 @@
     }
 
     #home::before {
-      content: "";
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0 auto 0 0;
+      width: 68%;
       background-image: url('./assets/Jennymitoma.png');
-      background-size: auto 100%;
+      background-size: contain;
       background-position: left center;
       background-repeat: no-repeat;
-      -webkit-mask-image: linear-gradient(90deg, #000 45%, transparent 75%);
-      mask-image: linear-gradient(90deg, #000 45%, transparent 75%);
-      z-index: 1;
+      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+      mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+      z-index: 0;
     }
 
-    #home > * {
-      position: relative;
-      z-index: 2;
+    #home::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        rgba(194,165,187,0.02) 0%,
+        rgba(194,165,187,0.08) 34%,
+        rgba(194,165,187,0.28) 50%,
+        rgba(194,165,187,0.72) 68%,
+        rgba(194,165,187,0.96) 84%,
+        rgba(194,165,187,1) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hero-left {
@@ -141,18 +150,17 @@
     .card p { font-size: 19px; color: var(--text-muted); line-height: 1.7; }
 
     /* TRAUER- & STERBEBEGLEITUNG */
-    #trauerbegleitung {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      min-height: 0;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background-image: url('./assets/trauer.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+#trauerbegleitung {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-image: url('./assets/trauer.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
     #trauerbegleitung::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(242,235,235,0.98) 0%, rgba(242,235,235,0.92) 38%, rgba(242,235,235,0.45) 58%, rgba(242,235,235,0.04) 78%); }
     .trauer-inner { position: relative; z-index: 1; width: 100%; padding-left: 0; }
     .trauer-content { max-width: 760px; }
@@ -210,40 +218,45 @@
       line-height: 1.75;
     }
 
-    /* NACHBARSCHAFTSHILFE – Foto links, Text rechts, weicher Übergang via Maske */
+    /* NACHBARSCHAFTSHILFE – Foto links, Text rechts, weich ausgeblendet */
     #nachbarschaftshilfe {
       position: relative;
       min-height: 720px;
       padding: 120px 0;
       overflow: hidden;
       background-color: var(--bg-warm);
-      display: flex;
-      align-items: center;
     }
 
     #nachbarschaftshilfe::before {
-      content: "";
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0 auto 0 0;
+      width: 68%;
       background-image: url('./assets/NBH.png');
-      background-size: auto 100%;
+      background-size: contain;
       background-position: left center;
       background-repeat: no-repeat;
-      -webkit-mask-image: linear-gradient(90deg, #000 45%, transparent 75%);
-      mask-image: linear-gradient(90deg, #000 45%, transparent 75%);
+      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+      mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+      z-index: 0;
+    }
+
+    #nachbarschaftshilfe::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        rgba(194,165,187,0.02) 0%,
+        rgba(194,165,187,0.08) 34%,
+        rgba(194,165,187,0.28) 50%,
+        rgba(194,165,187,0.72) 68%,
+        rgba(194,165,187,0.96) 84%,
+        rgba(194,165,187,1) 100%);
       z-index: 1;
+      pointer-events: none;
     }
 
-    #nachbarschaftshilfe > * {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-    }
-
-    .two-col { display: flex; justify-content: flex-end; position: relative; z-index: 1; width: 100%; }
+    .two-col { display: flex; justify-content: flex-end; position: relative; z-index: 2; }
     .two-col > div:first-child { max-width: 700px; width: 100%; }
     .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
     .info-list li { display: flex; gap: 14px; align-items: flex-start; }
@@ -350,38 +363,56 @@
         white-space: nowrap !important;
       }
 
-      /* MOBIL: HERO */
       #home {
         display: block !important;
         min-height: auto !important;
         margin-top: 0 !important;
         padding: 0 !important;
+        background-image: none !important;
         background-color: var(--bg-warm) !important;
       }
 
       #home::before {
-        position: relative !important;
-        display: block !important;
         width: 100% !important;
-        height: 320px !important;
-        background-size: cover !important;
-        background-position: center top !important;
-        -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%) !important;
-        mask-image: linear-gradient(180deg, #000 70%, transparent 100%) !important;
+        height: 330px !important;
+        inset: 0 auto auto 0 !important;
+        background-size: contain !important;
+        background-position: left top !important;
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 70%, transparent 100%) !important;
+        mask-image: linear-gradient(90deg, #000 0%, #000 70%, transparent 100%) !important;
+      }
+
+      #home::after {
+        background: linear-gradient(180deg, rgba(194,165,187,0.00) 0%, rgba(194,165,187,0.04) 35%, rgba(194,165,187,0.94) 78%, rgba(194,165,187,1) 100%) !important;
       }
 
       .hero-left {
         width: 100% !important;
-        margin-top: 0 !important;
-        padding: 24px 20px 38px !important;
+        margin-top: 330px !important;
+        padding: 38px 20px 42px !important;
         gap: 18px !important;
-        background: var(--bg-warm) !important;
-        align-items: center !important;
+        background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 18%) !important;
       }
 
-      .hero-left > * { width: 100% !important; }
-      .hero-left .hero-tag, .hero-left .hero-btns, .hero-left .trust-row { align-self: center !important; }
       .hero-right { display: none !important; }
+
+      #nachbarschaftshilfe {
+        background-image: none !important;
+      }
+
+      #nachbarschaftshilfe::before {
+        width: 100% !important;
+        height: 300px !important;
+        inset: 0 auto auto 0 !important;
+        background-size: contain !important;
+        background-position: left top !important;
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%) !important;
+        mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%) !important;
+      }
+
+      #nachbarschaftshilfe::after {
+        background: linear-gradient(180deg, rgba(194,165,187,0.00) 0%, rgba(194,165,187,0.06) 34%, rgba(194,165,187,0.94) 76%, rgba(194,165,187,1) 100%) !important;
+      }
 
       .hero-tag {
         margin: 0 auto !important;
@@ -436,6 +467,23 @@
         box-sizing: border-box !important;
       }
 
+      .hero-overlay-card {
+        position: absolute !important;
+        bottom: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        padding: 13px !important;
+      }
+
+      .hero-overlay-card strong {
+        font-size: 17px !important;
+      }
+
+      .hero-overlay-card p {
+        font-size: 13px !important;
+      }
+
       section {
         padding: 58px 0 !important;
         scroll-margin-top: 125px !important;
@@ -485,6 +533,7 @@
         line-height: 1.62 !important;
       }
 
+      /* The services button gets its own predictable mobile box. */
       #leistungen > .container > div:last-child {
         margin-top: 24px !important;
       }
@@ -558,34 +607,29 @@
         line-height: 1.62 !important;
       }
 
-      /* MOBIL: NACHBARSCHAFTSHILFE */
+      /* NACHBARSCHAFTSHILFE */
       #nachbarschaftshilfe {
         min-height: auto !important;
-        padding: 0 !important;
-        display: block !important;
-        background-color: var(--bg-warm) !important;
+        padding: 0 0 58px !important;
+        background-image: none !important;
       }
 
       #nachbarschaftshilfe::before {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        height: 320px !important;
-        background-size: cover !important;
-        background-position: center top !important;
-        -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%) !important;
-        mask-image: linear-gradient(180deg, #000 70%, transparent 100%) !important;
+        height: 300px !important;
+        background-size: contain !important;
+        background-position: left top !important;
       }
 
       #nachbarschaftshilfe .two-col {
         display: block !important;
-        padding-top: 0 !important;
+        padding-top: 300px !important;
+        gap: 0 !important;
       }
 
       #nachbarschaftshilfe .two-col > div:first-child {
         max-width: 100% !important;
-        background: var(--bg-warm) !important;
-        padding: 24px 20px 38px !important;
+        background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 16%) !important;
+        padding-top: 34px !important;
       }
 
       #nachbarschaftshilfe .lead {
@@ -1105,6 +1149,8 @@
   form.addEventListener('submit', function(e) {
       e.preventDefault();
 
+      // 1. Validierung
+      // Die integrierte Browser-Validierung von type="email" und required übernimmt die Plausibilitätsprüfung.
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
