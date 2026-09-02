@@ -200,25 +200,26 @@
       line-height: 1.75;
     }
 
-    /* NACHBARSCHAFTSHILFE – NBH.png: Bild links / Text rechts mit weichem Übergang */
+    /* NACHBARSCHAFTSHILFE – Bild links, Text klar rechts */
     #nachbarschaftshilfe {
       position: relative;
       min-height: 720px;
       padding: 110px 0;
       overflow: hidden;
-      background-color: var(--bg-warm);
+      background-color: #c2a5bb;
       background-image:
         linear-gradient(90deg,
-          rgba(194,165,187,0.00) 0%,
-          rgba(194,165,187,0.03) 30%,
-          rgba(194,165,187,0.16) 43%,
-          rgba(194,165,187,0.52) 53%,
-          rgba(194,165,187,0.82) 64%,
-          rgba(194,165,187,0.96) 76%,
-          rgba(194,165,187,1) 100%),
+          rgba(194,165,187,0) 0%,
+          rgba(194,165,187,0) 43%,
+          rgba(194,165,187,0.12) 49%,
+          rgba(194,165,187,0.42) 55%,
+          rgba(194,165,187,0.82) 61%,
+          rgba(194,165,187,0.98) 67%,
+          rgba(194,165,187,1) 72%),
         url('./assets/NBH.png');
-      background-size: cover;
-      background-position: center center;
+      /* Original proportions beibehalten: kein Verzerren des Bildes */
+      background-size: auto 100%;
+      background-position: left center;
       background-repeat: no-repeat;
     }
 
@@ -230,16 +231,21 @@
     }
 
     .two-col > div:first-child {
-      max-width: 690px;
+      max-width: 650px;
       width: 100%;
-      margin-right: 35px;
+      margin-right: 70px;
+      padding: 24px 0 24px 28px;
     }
-    .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
-    .info-list li { display: flex; gap: 14px; align-items: flex-start; }
-    .info-list-icon { font-size: 18px; color: var(--accent); margin-top: 2px; }
-    .info-list-text strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
-    .info-list-text p { font-size: 19px; color: #24102f; line-height: 1.65; }
-    .section-side-img { display: none; }
+
+    .two-col > div:first-child h2,
+    .two-col > div:first-child .lead,
+    .two-col > div:first-child .info-list,
+    .two-col > div:first-child .section-tag,
+    .two-col > div:first-child .handwritten,
+    .two-col > div:first-child > div {
+      position: relative;
+      z-index: 2;
+    }
 
     /* RUHEBEREICH ZWISCHEN NBH UND TRAUER */
     .between-sections {
@@ -554,7 +560,7 @@
         line-height: 1.62 !important;
       }
 
-      /* NACHBARSCHAFTSHILFE */
+      /* NACHBARSCHAFTSHILFE – mobil: Bild oben, Text darunter */
       #nachbarschaftshilfe {
         min-height: auto !important;
         padding: 0 0 58px !important;
@@ -562,6 +568,7 @@
         background-size: auto 300px !important;
         background-position: center top !important;
         background-repeat: no-repeat !important;
+        background-color: #c2a5bb !important;
       }
 
       #nachbarschaftshilfe .two-col {
@@ -572,8 +579,9 @@
 
       #nachbarschaftshilfe .two-col > div:first-child {
         max-width: 100% !important;
-        background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 16%) !important;
-        padding-top: 34px !important;
+        margin-right: 0 !important;
+        background: #c2a5bb !important;
+        padding: 34px 20px 0 !important;
       }
 
       #nachbarschaftshilfe .lead {
@@ -680,7 +688,6 @@
       .about-section { background-image: linear-gradient(90deg, rgba(253,250,251,0.96) 0%, rgba(253,250,251,0.82) 52%, rgba(253,250,251,0.25) 100%), url('./assets/Sehrgut.JPG'); }
       .about-inner { padding: 0 32px; }
       .about-card { max-width: 650px; }
-      #nachbarschaftshilfe { background-image: linear-gradient(90deg, rgba(194,165,187,0.05) 0%, rgba(194,165,187,0.35) 45%, rgba(194,165,187,0.88) 68%, rgba(194,165,187,0.98) 100%), url('./assets/NBH.png'); }
       .two-col { justify-content: flex-end; }
       .two-col > div:first-child { max-width: 650px; }
       .trauer-inner { padding-left: 0; }
@@ -911,7 +918,7 @@
         </div>
 
         <div>
-          <img src="assets/nbh.jpg" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
+          <img src="assets/NBH.png" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
         </div>
 
       </div>
