@@ -71,9 +71,9 @@
           rgba(194,165,187,0.98) 84%,
           rgba(194,165,187,1) 100%),
         url('./assets/Jennymitoma.png');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
+      background-size: cover, auto 100%;
+      background-position: center center, left center;
+      background-repeat: no-repeat, no-repeat;
     }
 
     .hero-left {
@@ -217,9 +217,9 @@
           rgba(194,165,187,0.92) 78%,
           rgba(194,165,187,0.98) 100%),
         url('./assets/NBH.png');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
+      background-size: cover, auto 100%;
+      background-position: center center, left center;
+      background-repeat: no-repeat, no-repeat;
     }
 
     .two-col { display: flex; justify-content: flex-end; position: relative; z-index: 1; }
@@ -336,7 +336,7 @@
         padding: 0 !important;
         background-image: url('./assets/Jennymitoma.png') !important;
         background-size: auto 330px !important;
-        background-position: center top !important;
+        background-position: left top !important;
         background-repeat: no-repeat !important;
         background-color: var(--bg-warm) !important;
       }
@@ -350,6 +350,13 @@
       }
 
       .hero-right { display: none !important; }
+
+      #nachbarschaftshilfe {
+        background-image: linear-gradient(90deg, rgba(194,165,187,0.08) 0%, rgba(194,165,187,0.38) 48%, rgba(194,165,187,0.96) 100%), url('./assets/NBH.png') !important;
+        background-size: cover, auto 100% !important;
+        background-position: center center, left center !important;
+        background-repeat: no-repeat, no-repeat !important;
+      }
 
       .hero-tag {
         margin: 0 auto !important;
@@ -548,10 +555,10 @@
       #nachbarschaftshilfe {
         min-height: auto !important;
         padding: 0 0 58px !important;
-        background-image: url('./assets/nbh.jpg') !important;
-        background-size: auto 300px !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
+        background-image: linear-gradient(90deg, rgba(194,165,187,0.06) 0%, rgba(194,165,187,0.40) 48%, rgba(194,165,187,0.98) 100%), url('./assets/NBH.png') !important;
+        background-size: 100% 100%, 100% auto !important;
+        background-position: center center, left top !important;
+        background-repeat: no-repeat, no-repeat !important;
       }
 
       #nachbarschaftshilfe .two-col {
@@ -665,12 +672,10 @@
     }
 
     @media (max-width: 900px) {
-      #home { background-image: linear-gradient(90deg, rgba(194,165,187,0.30) 0%, rgba(194,165,187,0.78) 58%, rgba(194,165,187,0.98) 100%), url('./assets/Jennymitoma.png'); }
       .hero-left { align-items: flex-end; padding: 80px 32px; }
       .about-section { background-image: linear-gradient(90deg, rgba(253,250,251,0.96) 0%, rgba(253,250,251,0.82) 52%, rgba(253,250,251,0.25) 100%), url('./assets/Sehrgut.JPG'); }
       .about-inner { padding: 0 32px; }
       .about-card { max-width: 650px; }
-      #nachbarschaftshilfe { background-image: linear-gradient(90deg, rgba(194,165,187,0.18) 0%, rgba(194,165,187,0.68) 50%, rgba(194,165,187,0.98) 100%), url('./assets/nbh.jpg'); }
       .two-col { justify-content: flex-end; }
       .two-col > div:first-child { max-width: 650px; }
       .trauer-inner { padding-left: 0; }
