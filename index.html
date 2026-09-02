@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alltagsfreund Jenny – Haushalt & Nachbarschaftshilfe</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --primary: #704882;
@@ -200,59 +201,35 @@
       line-height: 1.75;
     }
 
-    /* NACHBARSCHAFTSHILFE – Bild links, Text klar rechts */
+    /* NACHBARSCHAFTSHILFE – Foto links, Text rechts, weich ausgeblendet */
     #nachbarschaftshilfe {
       position: relative;
       min-height: 720px;
-      padding: 110px 0;
+      padding: 120px 0;
       overflow: hidden;
-      background-color: #c2a5bb;
+      background-color: var(--bg-warm);
       background-image:
         linear-gradient(90deg,
-          rgba(194,165,187,0) 0%,
-          rgba(194,165,187,0) 43%,
-          rgba(194,165,187,0.12) 49%,
-          rgba(194,165,187,0.42) 55%,
-          rgba(194,165,187,0.82) 61%,
-          rgba(194,165,187,0.98) 67%,
-          rgba(194,165,187,1) 72%),
+          rgba(194,165,187,0.02) 0%,
+          rgba(194,165,187,0.06) 24%,
+          rgba(194,165,187,0.28) 42%,
+          rgba(194,165,187,0.68) 60%,
+          rgba(194,165,187,0.92) 78%,
+          rgba(194,165,187,0.98) 100%),
         url('./assets/NBH.png');
-      /* Original proportions beibehalten: kein Verzerren des Bildes */
-      background-size: auto 100%;
-      background-position: left center;
+      background-size: cover;
+      background-position: center center;
       background-repeat: no-repeat;
     }
 
-    .two-col {
-      display: flex;
-      justify-content: flex-end;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-    }
-
-    /* Das Bild liegt bereits als Hintergrund links. Das zweite HTML-Bild
-       wird auf Desktop ausgeblendet, damit es nicht zusätzlich Platz beansprucht. */
-    .two-col > div:last-child {
-      display: none;
-    }
-
-    .two-col > div:first-child {
-      max-width: 650px;
-      width: min(650px, 100%);
-      margin-right: 70px;
-      padding: 24px 0 24px 28px;
-    }
-
-    .two-col > div:first-child h2,
-    .two-col > div:first-child .lead,
-    .two-col > div:first-child .info-list,
-    .two-col > div:first-child .section-tag,
-    .two-col > div:first-child .handwritten,
-    .two-col > div:first-child > div {
-      position: relative;
-      z-index: 2;
-    }
+    .two-col { display: flex; justify-content: flex-end; position: relative; z-index: 1; }
+    .two-col > div:first-child { max-width: 700px; width: 100%; }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+    .info-list li { display: flex; gap: 14px; align-items: flex-start; }
+    .info-list-icon { font-size: 18px; color: var(--accent); margin-top: 2px; }
+    .info-list-text strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 4px; }
+    .info-list-text p { font-size: 19px; color: #24102f; line-height: 1.65; }
+    .section-side-img { display: none; }
 
     /* RUHEBEREICH ZWISCHEN NBH UND TRAUER */
     .between-sections {
@@ -567,15 +544,14 @@
         line-height: 1.62 !important;
       }
 
-      /* NACHBARSCHAFTSHILFE – mobil: Bild oben, Text darunter */
+      /* NACHBARSCHAFTSHILFE */
       #nachbarschaftshilfe {
         min-height: auto !important;
         padding: 0 0 58px !important;
-        background-image: url('./assets/NBH.png') !important;
+        background-image: url('./assets/nbh.jpg') !important;
         background-size: auto 300px !important;
         background-position: center top !important;
         background-repeat: no-repeat !important;
-        background-color: #c2a5bb !important;
       }
 
       #nachbarschaftshilfe .two-col {
@@ -584,16 +560,10 @@
         gap: 0 !important;
       }
 
-      #nachbarschaftshilfe .two-col > div:last-child {
-        display: none !important;
-      }
-
       #nachbarschaftshilfe .two-col > div:first-child {
         max-width: 100% !important;
-        width: 100% !important;
-        margin-right: 0 !important;
-        background: #c2a5bb !important;
-        padding: 34px 20px 0 !important;
+        background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 16%) !important;
+        padding-top: 34px !important;
       }
 
       #nachbarschaftshilfe .lead {
@@ -700,6 +670,7 @@
       .about-section { background-image: linear-gradient(90deg, rgba(253,250,251,0.96) 0%, rgba(253,250,251,0.82) 52%, rgba(253,250,251,0.25) 100%), url('./assets/Sehrgut.JPG'); }
       .about-inner { padding: 0 32px; }
       .about-card { max-width: 650px; }
+      #nachbarschaftshilfe { background-image: linear-gradient(90deg, rgba(194,165,187,0.18) 0%, rgba(194,165,187,0.68) 50%, rgba(194,165,187,0.98) 100%), url('./assets/nbh.jpg'); }
       .two-col { justify-content: flex-end; }
       .two-col > div:first-child { max-width: 650px; }
       .trauer-inner { padding-left: 0; }
@@ -711,10 +682,12 @@
       html.js .reveal { opacity: 1; transform: none; }
     }
   </style>
+
 </head>
 <body>
 
   <!-- NAVIGATION -->
+
   <nav>
     <a href="#home" class="nav-logo">
       <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
@@ -732,6 +705,7 @@
   </nav>
 
   <!-- HERO SECTION -->
+
   <section id="home">
     <div class="hero-left">
       <div class="hero-tag">
@@ -755,6 +729,7 @@
   </section>
 
  <!-- LEISTUNGEN -->
+
   <section id="leistungen">
     <div class="container">
       <span class="section-tag">Mein Angebot</span>
@@ -764,47 +739,49 @@
         was für Sie im Alltag sinnvoll ist.
       </p>
 
-      <div class="cards-grid">
+  <div class="cards-grid">
 
-        <div class="card reveal">
-          <h3>Haushalt &amp; Wäsche</h3>
-          <p>Unterstützung beim Putzen, bei der Wäsche und bei Aufgaben, die im Haushalt gerade zu viel werden.</p>
-        </div>
-
-        <div class="card reveal">
-          <h3>Einkaufen &amp; Besorgungen</h3>
-          <p>Ich übernehme kleinere oder größere Einkäufe und unterstütze Sie bei Besorgungen, wenn Sie selbst nicht gut dazu kommen.</p>
-        </div>
-
-        <div class="card reveal">
-          <h3>Seniorenbetreuung</h3>
-          <p>Ob Spaziergang, Arzttermin, Einkauf oder gemeinsame Zeit: Ich begleite Sie zuverlässig und ohne Zeitdruck.</p>
-        </div>
-
-        <div class="card reveal">
-          <h3>Nachbarschaftshilfe</h3>
-          <p>Unterstützung in Burgstädt und Umgebung, abgestimmt auf Ihren Alltag und das, wobei Sie gerade Hilfe benötigen.</p>
-        </div>
-
-        <div class="card reveal">
-          <h3>Sterbe- &amp; Trauerbegleitung</h3>
-          <p>Eine persönliche Begleitung für Menschen am Lebensende, Angehörige und Menschen, die einen Verlust verarbeiten.</p>
-        </div>
-
-        <div class="card reveal">
-          <h3>Trauergruppen</h3>
-          <p>Gemeinsamer Austausch und Aufarbeitung in einer kleinen Gruppe, in der jede Trauer ihren eigenen Platz haben darf.</p>
-        </div>
-
-      </div>
-
-      <div style="margin-top: 34px; text-align: center;">
-        <a href="leistungen.html" class="btn-secondary">Leistungs- und Preisliste ansehen</a>
-      </div>
+    <div class="card reveal">
+      <h3>Haushalt &amp; Wäsche</h3>
+      <p>Unterstützung beim Putzen, bei der Wäsche und bei Aufgaben, die im Haushalt gerade zu viel werden.</p>
     </div>
+
+    <div class="card reveal">
+      <h3>Einkaufen &amp; Besorgungen</h3>
+      <p>Ich übernehme kleinere oder größere Einkäufe und unterstütze Sie bei Besorgungen, wenn Sie selbst nicht gut dazu kommen.</p>
+    </div>
+
+    <div class="card reveal">
+      <h3>Seniorenbetreuung</h3>
+      <p>Ob Spaziergang, Arzttermin, Einkauf oder gemeinsame Zeit: Ich begleite Sie zuverlässig und ohne Zeitdruck.</p>
+    </div>
+
+    <div class="card reveal">
+      <h3>Nachbarschaftshilfe</h3>
+      <p>Unterstützung in Burgstädt und Umgebung, abgestimmt auf Ihren Alltag und das, wobei Sie gerade Hilfe benötigen.</p>
+    </div>
+
+    <div class="card reveal">
+      <h3>Sterbe- &amp; Trauerbegleitung</h3>
+      <p>Eine persönliche Begleitung für Menschen am Lebensende, Angehörige und Menschen, die einen Verlust verarbeiten.</p>
+    </div>
+
+    <div class="card reveal">
+      <h3>Trauergruppen</h3>
+      <p>Gemeinsamer Austausch und Aufarbeitung in einer kleinen Gruppe, in der jede Trauer ihren eigenen Platz haben darf.</p>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 34px; text-align: center;">
+    <a href="leistungen.html" class="btn-secondary">Leistungs- und Preisliste ansehen</a>
+  </div>
+</div>
+
   </section>
 
   <!-- ÜBER MICH -->
+
   <section id="ueber-mich" class="about-section">
     <div class="about-inner">
       <div class="about-card">
@@ -812,132 +789,138 @@
         <h2>Hallo, ich bin Jenny.</h2>
         <span class="handwritten small">Persönlich. Nah. Und so, wie es für Sie passt.</span>
 
-        <p class="lead">
-          Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
-          unterstützen, wo sie gerade Hilfe brauchen.
-        </p>
+    <p class="lead">
+      Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
+      unterstützen, wo sie gerade Hilfe brauchen.
+    </p>
 
-        <p class="about-text">
-          Mir ist wichtig, dass sich Unterstützung nicht nach einer fertigen
-          Schablone anfühlt. Jeder Mensch hat seinen eigenen Alltag, seine
-          Gewohnheiten und seine Geschichte. Deshalb nehme ich mir Zeit zum
-          Zuhören und bespreche mit Ihnen in Ruhe, was für Sie passend ist.
-        </p>
+    <p class="about-text">
+      Mir ist wichtig, dass sich Unterstützung nicht nach einer fertigen
+      Schablone anfühlt. Jeder Mensch hat seinen eigenen Alltag, seine
+      Gewohnheiten und seine Geschichte. Deshalb nehme ich mir Zeit zum
+      Zuhören und bespreche mit Ihnen in Ruhe, was für Sie passend ist.
+    </p>
 
-        <p class="about-text" style="margin-top: 18px;">
-          Dabei geht es für mich nicht nur darum, eine Aufgabe zu erledigen.
-          Es geht genauso um Vertrauen, einen guten Umgang miteinander und
-          darum, dass Sie sich mit der Unterstützung wohlfühlen.
-        </p>
-      </div>
-    </div>
+    <p class="about-text" style="margin-top: 18px;">
+      Dabei geht es für mich nicht nur darum, eine Aufgabe zu erledigen.
+      Es geht genauso um Vertrauen, einen guten Umgang miteinander und
+      darum, dass Sie sich mit der Unterstützung wohlfühlen.
+    </p>
+  </div>
+</div>
+
   </section>
 
   <!-- ABLAUF -->
+
   <section id="ablauf">
     <div class="container">
       <span class="section-tag">So lernen wir uns kennen</span>
       <h2>Ganz in Ruhe, Schritt für Schritt</h2>
 
-      <div class="step-grid">
+  <div class="step-grid">
 
-        <div class="card reveal">
-          <h3>1. Erstes Gespräch</h3>
-          <p>
-            Wir sprechen darüber, was Sie gerade beschäftigt und wobei Sie
-            Unterstützung suchen. Das erste Gespräch ist unverbindlich.
-          </p>
-        </div>
-
-        <div class="card reveal">
-          <h3>2. Gemeinsam besprechen</h3>
-          <p>
-            Wir schauen, welche Unterstützung zu Ihrem Alltag passt und
-            was ich für Sie übernehmen kann.
-          </p>
-        </div>
-
-        <div class="card reveal">
-          <h3>3. Unterstützung beginnt</h3>
-          <p>
-            Wenn alles passt, vereinbaren wir die nächsten Schritte.
-            Ohne Druck und so, wie es für Sie passt.
-          </p>
-        </div>
-
-      </div>
+    <div class="card reveal">
+      <h3>1. Erstes Gespräch</h3>
+      <p>
+        Wir sprechen darüber, was Sie gerade beschäftigt und wobei Sie
+        Unterstützung suchen. Das erste Gespräch ist unverbindlich.
+      </p>
     </div>
+
+    <div class="card reveal">
+      <h3>2. Gemeinsam besprechen</h3>
+      <p>
+        Wir schauen, welche Unterstützung zu Ihrem Alltag passt und
+        was ich für Sie übernehmen kann.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <h3>3. Unterstützung beginnt</h3>
+      <p>
+        Wenn alles passt, vereinbaren wir die nächsten Schritte.
+        Ohne Druck und so, wie es für Sie passt.
+      </p>
+    </div>
+
+  </div>
+</div>
+
   </section>
 
   <!-- NACHBARSCHAFTSHILFE -->
+
   <section id="nachbarschaftshilfe">
     <div class="container">
       <div class="two-col">
 
-        <div>
-          <span class="section-tag">Nachbarschaftshilfe</span>
-          <h2>Nachbarschaftshilfe in Burgstädt und Umgebung</h2>
-          <span class="handwritten small">Hilfe im Alltag darf ganz unkompliziert sein.</span>
+    <div>
+      <span class="section-tag">Nachbarschaftshilfe</span>
+      <h2>Nachbarschaftshilfe in Burgstädt und Umgebung</h2>
+      <span class="handwritten small">Hilfe im Alltag darf ganz unkompliziert sein.</span>
 
-          <p class="lead">
-            Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen,
-            bei Terminen oder einfach dann, wenn Gesellschaft guttut.
-            Was genau ich übernehme, besprechen wir in Ruhe und passend
-            zu Ihrem Alltag.
-          </p>
+      <p class="lead">
+        Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen,
+        bei Terminen oder einfach dann, wenn Gesellschaft guttut.
+        Was genau ich übernehme, besprechen wir in Ruhe und passend
+        zu Ihrem Alltag.
+      </p>
 
-          <ul class="info-list">
+      <ul class="info-list">
 
-            <li>
-              <span class="info-list-icon">✓</span>
-              <div class="info-list-text">
-                <strong>Hilfe im Alltag</strong>
-                <p>
-                  Zum Beispiel beim Einkaufen, bei kleinen Aufgaben im Haushalt
-                  oder bei Wegen und Terminen.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <span class="info-list-icon">✓</span>
-              <div class="info-list-text">
-                <strong>Auch Zeit füreinander</strong>
-                <p>
-                  Ein Spaziergang, ein Gespräch oder eine gemeinsame Aktivität
-                  kann genauso wichtig sein wie praktische Hilfe.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <span class="info-list-icon">✓</span>
-              <div class="info-list-text">
-                <strong>Entlastungsbetrag</strong>
-                <p>
-                  Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung
-                  über den Entlastungsbetrag möglich sein. Das klären wir
-                  gemeinsam vorab.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-
-          <div style="margin-top: 30px;">
-            <a href="leistungen.html" class="btn-primary">Leistungen ansehen</a>
+        <li>
+          <span class="info-list-icon">✓</span>
+          <div class="info-list-text">
+            <strong>Hilfe im Alltag</strong>
+            <p>
+              Zum Beispiel beim Einkaufen, bei kleinen Aufgaben im Haushalt
+              oder bei Wegen und Terminen.
+            </p>
           </div>
-        </div>
+        </li>
 
-        <div>
-          <img src="assets/NBH.png" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
-        </div>
+        <li>
+          <span class="info-list-icon">✓</span>
+          <div class="info-list-text">
+            <strong>Auch Zeit füreinander</strong>
+            <p>
+              Ein Spaziergang, ein Gespräch oder eine gemeinsame Aktivität
+              kann genauso wichtig sein wie praktische Hilfe.
+            </p>
+          </div>
+        </li>
 
+        <li>
+          <span class="info-list-icon">✓</span>
+          <div class="info-list-text">
+            <strong>Entlastungsbetrag</strong>
+            <p>
+              Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung
+              über den Entlastungsbetrag möglich sein. Das klären wir
+              gemeinsam vorab.
+            </p>
+          </div>
+        </li>
+
+      </ul>
+
+      <div style="margin-top: 30px;">
+        <a href="leistungen.html" class="btn-primary">Leistungen ansehen</a>
       </div>
     </div>
+
+    <div>
+      <img src="assets/nbh.jpg" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
+    </div>
+
+  </div>
+</div>
+
   </section>
 
   <!-- RUHEBEREICH ZWISCHEN NBH UND TRAUER -->
+
   <section class="between-sections" aria-label="Persönliche Unterstützung">
     <div class="between-sections-inner">
       <span class="handwritten">Unterstützung darf auch einfach sein.</span>
@@ -951,104 +934,109 @@
   </section>
 
   <!-- TRAUER- & STERBEBEGLEITUNG -->
+
   <section id="trauerbegleitung">
     <div class="container trauer-inner">
       <div class="trauer-content">
 
-        <span class="section-tag">Begleitung</span>
-        <h2>Trauer- &amp; Sterbebegleitung</h2>
-        <span class="handwritten">Ich bin an Ihrer Seite – in der Zeit, in der Worte manchmal fehlen.</span>
+    <span class="section-tag">Begleitung</span>
+    <h2>Trauer- &amp; Sterbebegleitung</h2>
+    <span class="handwritten">Ich bin an Ihrer Seite – in der Zeit, in der Worte manchmal fehlen.</span>
 
-        <p class="lead">
-          Wenn ein Mensch schwer erkrankt ist, das Leben sich dem Ende nähert
-          oder ein geliebter Mensch bereits gegangen ist, verändert sich vieles.
-          In solchen Zeiten möchte ich Sie nicht mit großen Worten begleiten,
-          sondern vor allem mit Zeit, einem offenen Ohr und einem verlässlichen
-          Gegenüber.
-        </p>
+    <p class="lead">
+      Wenn ein Mensch schwer erkrankt ist, das Leben sich dem Ende nähert
+      oder ein geliebter Mensch bereits gegangen ist, verändert sich vieles.
+      In solchen Zeiten möchte ich Sie nicht mit großen Worten begleiten,
+      sondern vor allem mit Zeit, einem offenen Ohr und einem verlässlichen
+      Gegenüber.
+    </p>
 
-        <p class="about-text" style="margin-top: 20px;">
-          Trauer ist bei jedem Menschen anders. Es gibt keinen festen Ablauf
-          und keine richtige oder falsche Art zu trauern. Deshalb entscheiden
-          Sie selbst, was Ihnen guttut und worüber Sie sprechen möchten.
-        </p>
+    <p class="about-text" style="margin-top: 20px;">
+      Trauer ist bei jedem Menschen anders. Es gibt keinen festen Ablauf
+      und keine richtige oder falsche Art zu trauern. Deshalb entscheiden
+      Sie selbst, was Ihnen guttut und worüber Sie sprechen möchten.
+    </p>
 
-        <p class="about-text" style="margin-top: 18px;">
-          Manchmal braucht es ein Gespräch. Manchmal gemeinsame Zeit oder
-          Unterstützung im Alltag. Und manchmal einfach jemanden, der da ist
-          und die Stille aushält.
-        </p>
+    <p class="about-text" style="margin-top: 18px;">
+      Manchmal braucht es ein Gespräch. Manchmal gemeinsame Zeit oder
+      Unterstützung im Alltag. Und manchmal einfach jemanden, der da ist
+      und die Stille aushält.
+    </p>
 
-        <div style="margin-top: 28px;">
-          <a href="leistungen.html" class="btn-secondary">Mehr zur Begleitung</a>
-        </div>
-
-      </div>
+    <div style="margin-top: 28px;">
+      <a href="leistungen.html" class="btn-secondary">Mehr zur Begleitung</a>
     </div>
+
+  </div>
+</div>
+
   </section>
 
   <!-- KONTAKT -->
+
   <section id="kontakt">
   <div class="container">
-    
-    <div class="contact-grid">
+
+<div class="contact-grid">
+  
+  <div class="contact-text">
+    <span class="section-tag">Kontakt</span>
+    <h2>Melden Sie sich gerne bei mir</h2>
+    <p class="lead">
+      Schreiben Sie mir gerne, wobei Sie Unterstützung suchen. Wir können dann in Ruhe besprechen, was für Sie passend ist.
+    </p>
+  </div>
+
+  <div class="contact-wrapper">
+    <form method="POST" id="contact-form">
+      <!-- Web3Forms Access Key -->
+      <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
       
-      <div class="contact-text">
-        <span class="section-tag">Kontakt</span>
-        <h2>Melden Sie sich gerne bei mir</h2>
-        <p class="lead">
-          Schreiben Sie mir gerne, wobei Sie Unterstützung suchen. Wir können dann in Ruhe besprechen, was für Sie passend ist.
-        </p>
+      <!-- Spam-Schutz (Honeypot) -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+      <div class="form-group">
+        <label for="name">Vor- und Zuname</label>
+        <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
       </div>
 
-      <div class="contact-wrapper">
-        <form method="POST" id="contact-form">
-          <!-- Web3Forms Access Key -->
-          <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
-          
-          <!-- Spam-Schutz (Honeypot) -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-          <div class="form-group">
-            <label for="name">Vor- und Zuname</label>
-            <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Telefonnummer</label>
-            <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">E-Mail-Adresse</label>
-            <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
-            <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
-          </div>
-
-          <label class="privacy-consent" for="privacy">
-            <input type="checkbox" id="privacy" name="privacy" required>
-            <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage an Web3Forms übermittelt werden.</span>
-          </label>
-          
-          <button type="submit" id="submit-btn" class="btn-submit">Nachricht senden</button>
-
-          <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
-            Ihre Angaben werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage verwendet.
-          </p>
-
-          <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
-        </form>
+      <div class="form-group">
+        <label for="phone">Telefonnummer</label>
+        <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
       </div>
 
-    </div>
+      <div class="form-group">
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
+        <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
+      </div>
+
+      <label class="privacy-consent" for="privacy">
+        <input type="checkbox" id="privacy" name="privacy" required>
+        <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage an Web3Forms übermittelt werden.</span>
+      </label>
+      
+      <button type="submit" id="submit-btn" class="btn-submit">Nachricht senden</button>
+
+      <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
+        Ihre Angaben werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage verwendet.
+      </p>
+
+      <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
+    </form>
+  </div>
+
+</div>
+
   </div>
   </section>
 
   <!-- FOOTER -->
+
   <footer>
     <div class="container">
       <p style="margin-top: 15px; font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
@@ -1064,6 +1052,7 @@
   </footer>
 
   <!-- Scroll-Animation Script -->
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.documentElement.classList.add('js');
@@ -1087,6 +1076,7 @@
   </script>
 
   <!-- Kontaktformular Script (Web3Forms) -->
+
   <script>
   const form = document.getElementById('contact-form');
   const result = document.getElementById('form-result');
@@ -1136,5 +1126,6 @@
       });
   });
   </script>
+
 </body>
 </html>
