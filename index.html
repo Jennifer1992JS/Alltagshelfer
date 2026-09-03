@@ -67,14 +67,29 @@
     #home::before {
       content: '';
       position: absolute;
-      inset: 0 auto 0 0;
-      width: 68%;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: auto;
+      aspect-ratio: 1537 / 1023;
       background-image: url('./assets/Jennymitoma.png');
-      background-size: contain;
+      background-size: 100% 100%;
       background-position: left center;
       background-repeat: no-repeat;
-      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
-      mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg,
+        #000 0%,
+        #000 58%,
+        rgba(0,0,0,0.90) 70%,
+        rgba(0,0,0,0.55) 82%,
+        rgba(0,0,0,0.18) 94%,
+        transparent 100%);
+      mask-image: linear-gradient(90deg,
+        #000 0%,
+        #000 58%,
+        rgba(0,0,0,0.90) 70%,
+        rgba(0,0,0,0.55) 82%,
+        rgba(0,0,0,0.18) 94%,
+        transparent 100%);
       z-index: 0;
     }
 
@@ -395,12 +410,23 @@
 
       #home::before {
         width: 100% !important;
-        height: 330px !important;
+        height: 66.56vw !important;
+        aspect-ratio: auto !important;
         inset: 0 auto auto 0 !important;
-        background-size: contain !important;
+        background-size: 100% 100% !important;
         background-position: left top !important;
-        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 70%, transparent 100%) !important;
-        mask-image: linear-gradient(90deg, #000 0%, #000 70%, transparent 100%) !important;
+        -webkit-mask-image: linear-gradient(90deg,
+          #000 0%,
+          #000 62%,
+          rgba(0,0,0,0.86) 74%,
+          rgba(0,0,0,0.45) 88%,
+          transparent 100%) !important;
+        mask-image: linear-gradient(90deg,
+          #000 0%,
+          #000 62%,
+          rgba(0,0,0,0.86) 74%,
+          rgba(0,0,0,0.45) 88%,
+          transparent 100%) !important;
       }
 
       #home::after {
@@ -409,7 +435,7 @@
 
       .hero-left {
         width: 100% !important;
-        margin-top: 330px !important;
+        margin-top: 66.56vw !important;
         padding: 38px 20px 42px !important;
         gap: 18px !important;
         background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 18%) !important;
@@ -770,6 +796,25 @@
       .two-col { justify-content: flex-end; }
       .two-col > div:first-child { max-width: 650px; }
       .trauer-inner { padding-left: 0; }
+    }
+
+    /* FINAL MOBILE HERO OVERRIDES */
+    @media (max-width: 768px) {
+      .hero-left {
+        align-items: center !important;
+        padding: 38px 20px 42px !important;
+      }
+
+      .hero-left > * {
+        width: 100% !important;
+        max-width: 620px !important;
+      }
+
+      .hero-left .hero-tag,
+      .hero-left .hero-btns,
+      .hero-left .trust-row {
+        align-self: center !important;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
