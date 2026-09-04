@@ -200,7 +200,7 @@
           rgba(253,250,251,0.05) 100%),
         url('./assets/Sehrgut.JPG');
       background-size: cover;
-      background-position: center center;
+      background-position: center top;
       background-repeat: no-repeat;
     }
 
@@ -629,7 +629,7 @@
         height: 300px;
         background-image: url('./assets/Sehrgut.JPG');
         background-size: cover;
-        background-position: 72% center;
+        background-position: 72% top;
         background-repeat: no-repeat;
       }
 
@@ -941,7 +941,7 @@
         height: 380px;
         background-image: url('./assets/Sehrgut.JPG');
         background-size: cover;
-        background-position: center 45%;
+        background-position: center top;
         background-repeat: no-repeat;
       }
 
@@ -986,28 +986,29 @@
       }
 
       /* NACHBARSCHAFTSHILFE – Tablet: Collage oben, Text darunter */
-     #nachbarschaftshilfe {
-  min-height: auto;
-  padding: 0 0 72px;
-  background: var(--bg-warm);
-}
+      #nachbarschaftshilfe {
+        min-height: auto;
+        padding: 0 0 72px;
+        background: var(--bg-warm);
+      }
 
-#nachbarschaftshilfe::before {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 390px;
-  aspect-ratio: auto;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-mask-image: none;
-  mask-image: none;
-}
+      #nachbarschaftshilfe::before {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1403 / 1121;
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: no-repeat;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
 
-#nachbarschaftshilfe::after {
-  display: none;
-}
+      #nachbarschaftshilfe::after {
+        display: none;
+      }
+
       .two-col {
         display: block;
       }
