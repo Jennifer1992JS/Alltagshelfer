@@ -787,17 +787,222 @@
       .cards-grid { grid-template-columns: 1fr; }
       .container { padding: 0 20px; }
     }
+    /* TABLET – eigenes Layout, PC und Smartphone bleiben unverändert */
+@media (min-width: 769px) and (max-width: 992px) {
 
-    @media (max-width: 900px) {
-      .hero-left { align-items: flex-end; padding: 80px 32px; }
-      .about-section { background-image: linear-gradient(90deg, rgba(253,250,251,0.96) 0%, rgba(253,250,251,0.82) 52%, rgba(253,250,251,0.25) 100%), url('./assets/Sehrgut.JPG'); }
-      .about-inner { padding: 0 32px; }
-      .about-card { max-width: 650px; }
-      .two-col { justify-content: flex-end; }
-      .two-col > div:first-child { max-width: 650px; }
-      .trauer-inner { padding-left: 0; }
-    }
+  /* NAVIGATION */
+  nav {
+    height: auto;
+    min-height: 90px;
+    padding: 12px 24px;
+    gap: 16px;
+  }
 
+  .nav-logo {
+    flex-shrink: 0;
+    gap: 10px;
+  }
+
+  .nav-logo img {
+    height: 58px;
+  }
+
+  .nav-logo-text {
+    font-size: 18px;
+  }
+
+  .nav-logo-text small {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  .nav-links {
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 8px 9px;
+    white-space: nowrap;
+  }
+
+  /* ALLGEMEINE TABLET-SEKTIONEN */
+  section {
+    padding: 72px 0;
+  }
+
+  .container {
+    padding: 0 36px;
+  }
+
+  /* HERO */
+  #home {
+    min-height: calc(100vh - 90px);
+    margin-top: 90px;
+  }
+
+  #home::before {
+    width: 50%;
+    height: 100%;
+    aspect-ratio: 1537 / 1023;
+    background-size: cover;
+    background-position: left center;
+  }
+
+  #home::after {
+    background: linear-gradient(
+      90deg,
+      rgba(194,165,187,0.02) 0%,
+      rgba(194,165,187,0.18) 34%,
+      rgba(194,165,187,0.60) 52%,
+      rgba(194,165,187,0.92) 70%,
+      rgba(194,165,187,1) 100%
+    );
+  }
+
+  .hero-left {
+    width: 100%;
+    padding: 70px 36px;
+    align-items: flex-end;
+    gap: 18px;
+  }
+
+  .hero-left > * {
+    width: min(520px, 100%);
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .hero-desc {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  /* LEISTUNGEN */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .card {
+    padding: 26px 22px;
+  }
+
+  .card h3 {
+    font-size: 21px;
+  }
+
+  .card p {
+    font-size: 17px;
+  }
+
+  /* ÜBER MICH */
+  .about-section {
+    min-height: 560px;
+    padding: 72px 0;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(253,250,251,1) 0%,
+        rgba(253,250,251,0.96) 34%,
+        rgba(253,250,251,0.72) 54%,
+        rgba(253,250,251,0.18) 78%,
+        rgba(253,250,251,0.05) 100%
+      ),
+      url('./assets/Sehrgut.JPG');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .about-inner {
+    padding: 0 36px;
+  }
+
+  .about-card {
+    max-width: 570px;
+  }
+
+  .about-card .lead {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .about-text {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  /* ABLAUF */
+  .step-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .step-grid .card {
+    padding: 24px 20px;
+  }
+
+  /* NACHBARSCHAFTSHILFE */
+  #nachbarschaftshilfe {
+    min-height: 600px;
+    padding: 90px 0;
+  }
+
+  #nachbarschaftshilfe::before {
+    width: 52%;
+    height: 100%;
+    aspect-ratio: 1403 / 1121;
+    background-size: cover;
+  }
+
+  .two-col {
+    justify-content: flex-end;
+  }
+
+  .two-col > div:first-child {
+    max-width: 570px;
+  }
+
+  .info-list {
+    gap: 16px;
+  }
+
+  .info-list-text p {
+    font-size: 17px;
+  }
+
+  /* TRAUER */
+  #trauerbegleitung {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+
+  .trauer-content {
+    max-width: 590px;
+  }
+
+  .trauer-content .lead {
+    font-size: 18px;
+  }
+
+  .trauer-content .about-text {
+    font-size: 17px;
+  }
+
+  /* KONTAKT */
+  .contact-grid {
+    gap: 48px;
+  }
+
+  .contact-wrapper {
+    padding: 36px;
+  }
+}
+    
     /* FINAL MOBILE HERO OVERRIDES */
     @media (max-width: 768px) {
       .hero-left {
