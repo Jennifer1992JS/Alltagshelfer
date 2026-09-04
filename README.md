@@ -2,7 +2,7 @@ Alltagsfreund Jenny
 
 Website für Alltagsfreund Jenny – Haushalt & Nachbarschaftshilfe.
 
-Die Website stellt das Angebot, die persönliche Vorstellung, Nachbarschaftshilfe und die Kontaktmöglichkeit übersichtlich dar.
+Die Website stellt das Angebot, die persönliche Vorstellung, Nachbarschaftshilfe, Sterbe- und Trauerbegleitung sowie die Kontaktmöglichkeit übersichtlich dar.
 
 Projektstruktur
 
@@ -11,13 +11,16 @@ Projektstruktur
 ├── impressum.html
 ├── datenschutz.html
 ├── qualifikationen.html
+├── leistungen.html
 └── assets/
     ├── logo.png
-    ├── alltagshelfer1r.png
-    ├── nbh.jpg
-    └── Sehrgut.jpg
+    ├── Jennymitoma.png
+    ├── NBH.png
+    ├── Sehrgut.JPG
+    ├── trauer.png
+    └── erstehilfe.png
 
-Die Dateinamen und Pfade müssen mit den tatsächlichen Dateien im assets-Ordner übereinstimmen. Besonders Sehrgut.jpg wird im Bereich „Über mich“ als Hintergrundbild verwendet.
+Die Dateinamen und Pfade müssen mit den tatsächlichen Dateien im assets-Ordner übereinstimmen.
 
 Bereiche der Website
 
@@ -25,13 +28,25 @@ Navigation
 
 Start
 
+Über mich
+
 Leistungen
 
-Nachbarschaftshilfe
+NBH
+
+Trauerbegleitung
 
 Kontakt
 
-Hero / Startbereich
+Die Navigation ist auf Desktop, Tablet und Smartphone responsive umgesetzt.
+
+Über mich / persönlicher Bereich
+
+Der Bereich „Hallo, ich bin Jenny“ stellt Jenny und ihre persönliche Motivation vor.
+
+Als Bild wird assets/Sehrgut.JPG verwendet. Das Foto wird mit einem weichen Übergang in den Hintergrund eingebunden, damit Bild und Text als zusammenhängender Bereich wirken.
+
+Startbereich / Hero
 
 Der Startbereich vermittelt das zentrale Angebot von Alltagsfreund Jenny und enthält:
 
@@ -43,31 +58,39 @@ Call-to-Action-Buttons
 
 Vertrauensmerkmale
 
-bestehendes Bild assets/alltagshelfer1r.png
+das Bild assets/Jennymitoma.png
+
+Das Bild wird als Teil des Hero-Bereichs eingebunden und responsive für Desktop, Tablet und Smartphone angepasst.
 
 Leistungen
 
-Vier Leistungsbereiche:
+Die Website stellt unter anderem folgende Unterstützungsangebote dar:
 
-Ein Zuhause zum Wohlfühlen
+Haushalt & Wäsche
 
-Sicher & Gemeinsam unterwegs
+Einkaufen & Besorgungen
 
-Zeit für das Wesentliche
-
-Sterbe- & Trauerbegleitung
-
-Über mich
-
-Der Bereich „Hallo, ich bin Jenny“ stellt Jenny und ihre persönliche Motivation vor.
-
-Hier wird assets/Sehrgut.jpg als Hintergrundbild verwendet. Der Text liegt auf einer leicht transparenten Fläche, damit das Foto sichtbar bleibt und die Lesbarkeit erhalten wird.
-
-Wichtig: Das Bild wird ausschließlich in diesem Bereich verwendet.
+Seniorenbetreuung
 
 Nachbarschaftshilfe
 
-Informationen zur Nachbarschaftshilfe und Entlastungsleistungen inklusive Bild assets/nbh.jpg.
+Sterbe- & Trauerbegleitung
+
+Trauergruppen
+
+Die ausführlichen Leistungen und Preise befinden sich auf der separaten Seite leistungen.html.
+
+Nachbarschaftshilfe
+
+Der Bereich „Nachbarschaftshilfe in Burgstädt und Umgebung“ beschreibt die praktische Unterstützung im Alltag, Begleitung und mögliche Unterstützung über den Entlastungsbetrag.
+
+Dazu wird assets/NBH.png verwendet.
+
+Trauer- & Sterbebegleitung
+
+Der Bereich beschreibt die persönliche Begleitung von Menschen am Lebensende, Angehörigen und Menschen in Trauer.
+
+Dazu wird assets/trauer.png verwendet.
 
 Kontakt
 
@@ -85,6 +108,34 @@ clientseitiger Validierung
 
 Versand über Web3Forms
 
+Erfolgs- und Fehlermeldungen
+
+Statusanzeige während des Versands
+
+Die Web3Forms-Konfiguration sollte bei einer Veröffentlichung nicht unnötig verändert werden.
+
+Qualifikationen
+
+Die separate Seite qualifikationen.html enthält unter anderem:
+
+Betreuungskraft §§43b, 53b SGB XI
+
+Sterbe- und Trauerbegleitung
+
+Erste-Hilfe-Kurs
+
+Informationen zur Nachbarschaftshilfe und Anerkennung
+
+Das Erste-Hilfe-Zertifikat verwendet assets/erstehilfe.png.
+
+Rechtliche Seiten
+
+Vorhanden sind:
+
+impressum.html
+
+datenschutz.html
+
 Technische Grundlage
 
 Die Website verwendet:
@@ -95,17 +146,19 @@ CSS3
 
 Vanilla JavaScript
 
-Google Fonts
-
-Playfair Display
-
-DM Sans
-
 CSS Custom Properties
 
 Responsive Design
 
 IntersectionObserver für Scroll-Animationen
+
+Google Fonts
+
+Playfair Display
+
+Caveat
+
+DM Sans
 
 Es werden keine Frameworks wie React, Vue oder Bootstrap benötigt.
 
@@ -121,39 +174,27 @@ Danach im Browser:
 
 http://localhost:8000
 
-Bilder
+Bilder und Assets
 
 Alle Bilder werden über relative Pfade aus dem assets-Ordner geladen.
 
 Beispiele:
 
-<img src="./assets/logo.png">
-<img src="./assets/alltagshelfer1r.png">
-<img src="assets/nbh.jpg">
+<img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
+
+<img src="./assets/NBH.png" alt="Nachbarschaftshilfe und Begleitung">
 
 Für den Bereich „Über mich“:
 
-background-image: url("./assets/Sehrgut.jpg");
+background-image: url('./assets/Sehrgut.JPG');
 
-Kontaktformular
+Für den Hero-Bereich:
 
-Das Kontaktformular verwendet Web3Forms für die Übermittlung.
-
-Die Formularlogik befindet sich direkt im HTML und übernimmt unter anderem:
-
-Prüfung der E-Mail-Adresse
-
-Prüfung der Telefonnummer
-
-Statusanzeige während des Versands
-
-Erfolgs- und Fehlermeldungen
-
-Die Web3Forms-Konfiguration sollte bei einer Veröffentlichung nicht unnötig verändert werden.
+background-image: url('./assets/Jennymitoma.png');
 
 Responsive Design
 
-Die Website enthält Breakpoints für:
+Die Website enthält eigene Anpassungen für:
 
 Desktop
 
@@ -161,21 +202,31 @@ Tablet / kleinere Bildschirme
 
 Smartphone
 
-Auf Smartphones werden Navigation, Hero-Bereich, Buttons und Karten automatisch angepasst.
+Die Tablet-Ansicht besitzt ein eigenes Layout, ohne das Desktop-Layout unnötig zu verändern.
 
-Wichtige Hinweise
+Auf Smartphones werden insbesondere Navigation, Hero-Bereich, Buttons, Karten und Bildbereiche angepasst.
 
-Vor einer Veröffentlichung prüfen
+Bei Änderungen sollten alle drei Darstellungsbereiche geprüft werden.
 
-Alle Dateien im richtigen Verzeichnis vorhanden
+Wichtige Hinweise vor einer Veröffentlichung
+
+Vor einem Deployment prüfen:
+
+alle HTML-Dateien vorhanden
+
+assets/ vorhanden
 
 assets/logo.png vorhanden
 
-assets/alltagshelfer1r.png vorhanden
+assets/Jennymitoma.png vorhanden
 
-assets/nbh.jpg vorhanden
+assets/NBH.png vorhanden
 
-assets/Sehrgut.jpg vorhanden
+assets/Sehrgut.JPG vorhanden
+
+assets/trauer.png vorhanden
+
+assets/erstehilfe.png vorhanden
 
 Impressum vorhanden
 
@@ -183,11 +234,21 @@ Datenschutzerklärung vorhanden
 
 Qualifikationen-Seite vorhanden
 
+Leistungs- und Preisliste vorhanden
+
+Navigation auf allen Seiten prüfen
+
+alle Absprünge innerhalb der Startseite prüfen
+
 Kontaktformular testen
 
-Website auf Desktop und Smartphone testen
+Website auf Desktop testen
 
-Bilddarstellung im Bereich „Über mich“ prüfen
+Website auf Tablet testen
+
+Website auf Smartphone testen
+
+Bilddarstellung insbesondere bei „Über mich“, Hero und NBH prüfen
 
 Änderungsprinzip
 
@@ -197,4 +258,25 @@ Insbesondere gilt:
 
 Gezielte Änderungen nur an dem gewünschten Bereich vornehmen und bestehende Funktionalität unverändert lassen.
 
-Das verhindert die klassische Website-Entwicklungsmethode „Ich wollte nur ein Bild ändern und plötzlich funktioniert das Kontaktformular nicht mehr“. 😄
+Vor einer Änderung möglichst genau feststellen, welche CSS-Regel oder welcher HTML-Bereich für das gewünschte Element zuständig ist.
+
+Bei Responsive-Anpassungen immer darauf achten, ob die Änderung nur für Desktop, Tablet oder Smartphone gelten soll.
+
+Das verhindert die klassische Website-Entwicklungsmethode:
+
+„Ich wollte nur ein Bild ändern und plötzlich funktioniert das Kontaktformular nicht mehr.“ 😄
+
+Tests & Qualitätssicherung
+
+Responsive Layout für Desktop, Tablet und Smartphone geprüft
+
+Tablet-Breakpoint im Bereich 769–992 px separat getestet
+
+Smartphone-Ansicht bis 768 px geprüft
+
+Navigation und interne Verlinkungen geprüft
+
+Darstellungsprobleme bei Bildern und Layout-Übergängen gezielt korrigiert
+
+Änderungen am bestehenden Layout möglichst isoliert vorgenommen, damit funktionierende Bereiche nicht unbeabsichtigt verändert werden
+
