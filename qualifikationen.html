@@ -1,168 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qualifikationen & Nachweise – Alltagsfreund Jenny</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --primary: #704882;
-      --primary-dark: #55147a;
-      --primary-light: #b755e0;
-      --accent: #d6c1cb;
-      --grad: linear-gradient(135deg, #2f1f47, #4b1252);
-      --bg-warm: #c2a5bb;
-      --bg-cream: #f2ebeb;
-      --text: #2b143b;
-      --text-muted: #362357;
-      --border: #eee1f5;
-      --white: #fff;
-    }
-    
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body { 
-      font-family: 'DM Sans', sans-serif; 
-      background-color: #fdfafb;
-      color: var(--text); 
-      font-size: 18px; 
-      line-height: 1.7; 
-    }
-
-    /* NAVIGATION */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,253,0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); height: 110px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-    .nav-logo img { height: 80px; width: auto; border-radius: 6px; object-fit: contain; }
-    .nav-logo-text { font-size: 24px; font-weight: 700; line-height: 1.2; }
-    .nav-logo-text strong { display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .nav-logo-text small { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: .8px; }
-    .nav-links { display: flex; gap: 16px; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 18px; font-weight: 600; padding: 12px 20px; border-radius: 100px; transition: all .2s; }
-    .nav-cta { background: var(--grad) !important; color: #fff !important; font-weight: 700 !important; }
-
-    /* RECHTLICHES / TEXT LAYOUT (Identisch mit Impressum/Datenschutz) */
-    .legal-container { max-width: 800px; margin: 160px auto 80px auto; padding: 0 24px; }
-    h1 { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--text); margin-bottom: 10px; }
-    .subtitle { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; }
-    
-    h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text); margin-top: 40px; margin-bottom: 16px; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
-    p { margin-bottom: 20px; color: var(--text-muted); }
-    
-    /* QUALIFIKATIONS BOXEN */
-    .cert-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; gap: 14px; }
-    .cert-header { display: flex; align-items: center; gap: 12px; }
-    .cert-icon { font-size: 22px; color: var(--primary); }
-    .cert-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text); }
-    .cert-badge { display: inline-block; background: #f5f0ff; color: var(--primary); font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 100px; border: 1px solid var(--border); width: fit-content; }
-    
-    .cert-img-wrapper { margin-top: 10px; max-width: 260px; width: 100%; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; padding: 12px; box-shadow: inset 0 0 10px rgba(0,0,0,0.01); }
-    .cert-img { width: 100%; height: auto; display: block; }
-
-    /* FOOTER */
-    footer { background: var(--text); color: #fff; padding: 40px 0; text-align: center; font-size: 14px; margin-top: auto; }
-    footer p { opacity: 0.7; margin-bottom: 0; }
-    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
-
-    /* RESPONSIVE DESIGN - SMARTPHONE HUB */
-    @media (max-width: 768px) {
-      nav { height: auto !important; padding: 12px 16px !important; flex-direction: column !important; gap: 12px !important; position: sticky !important; }
-      .nav-logo img { height: 45px !important; }
-      .nav-logo-text { font-size: 18px !important; }
-      .nav-logo-text small { font-size: 12px !important; letter-spacing: 0px; }
-      .nav-links { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 4px !important; width: 100%; padding: 0; }
-      .nav-links a { font-size: 11px !important; padding: 6px 2px !important; text-align: center; border-radius: 6px; display: block; white-space: nowrap; }
-      
-      .legal-container { margin-top: 40px; }
-      h1 { font-size: 28px; }
-      h2 { font-size: 22px; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <a href="index.html#home" class="nav-logo">
-      <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
-      <div class="nav-logo-text">
-        <strong>Alltagsfreund Jenny</strong>
-        <small>Haushalt & Nachbarschaftshilfe</small>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Start</a></li>
-      <li><a href="index.html#leistungen">Leistungen</a></li>
-      <li><a href="index.html#nachbarschaftshilfe">NBH</a></li>
-      <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
-    </ul>
-  </nav>
-
-  <main class="legal-container">
-    <h1>Qualifikationen & Nachweise</h1>
-    <p class="subtitle">Hier finden Sie alle offiziellen Zertifikate und Nachweise über meine Aus- und Weiterbildungen, die mich für die zuverlässige und professionelle Begleitung im Alltag qualifizieren.</p>
-    
-    <h2>Fachliche Qualifikationen</h2>
-
-    <div class="cert-card">
-      <div class="cert-header">
-        <span class="cert-icon">✓</span>
-        <div class="cert-title">Betreuungskraft gemäß §§ 43b, 53b SGB XI</div>
-      </div>
-      <p>Qualifizierung zur Betreuung und Aktivierung von Menschen mit Unterstützungsbedarf im Alltag.</p>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-header">
-        <span class="cert-icon">✓</span>
-        <div class="cert-title">Sterbe- und Trauerbegleitung</div>
-      </div>
-      <p>Weiterbildung mit Grundlagen der Sterbebegleitung, Palliative Care, Hospizbewegung, Trauerarbeit und dem Umgang mit Abschied.</p>
-    </div>
-
-    <h2>Weitere Zertifikate & Kurse</h2>
-    
-    <div class="cert-card">
-      <div class="cert-header">
-        <span class="cert-icon">✓</span>
-        <div class="cert-title">Zertifizierter Erste-Hilfe-Kurs</div>
-      </div>
-      <p>Ausgebildet für Notfälle im Alltag – für ein sicheres Gefühl bei jeder Begleitung. Ermächtigt im Auftrag der Berufsgenossenschaften (BG) und Unfallkassen.</p>
-      <div class="cert-badge">Kennziffer: 8.0187</div>
-      
-      <div class="cert-img-wrapper">
-        <img src="assets/erstehilfe.png" alt="PRIMEROS Erste Hilfe Zertifikat Siegel" class="cert-img">
-      </div>
-    </div>
-
-    <h2>Nachbarschaftshilfe & Anerkennung</h2>
-    <p>
-      Um meine Leistungen offiziell und unkompliziert im Rahmen der Nachbarschaftshilfe über die Pflegekassen (Entlastungsbetrag nach § 45b SGB XI) abrechnen zu können, absolviere ich alle gesetzlich vorgeschriebenen Schulungen und Qualifikationskurse des Landes Sachsen.
-    </p>
-    <p>
-      Dadurch wird sichergestellt, dass Sie die maximale finanzielle Entlastung erhalten und gleichzeitig auf eine fachlich fundierte Unterstützung vertrauen können.
-    </p>
-
-    <h2>Transparenz & Vertrauen</h2>
-    <p>
-      Vertrauen ist die wichtigste Basis für eine gelungene Alltagsbegleitung. Alle Original-Zertifikate, Teilnahmebescheinigungen sowie mein aktuelles Führungszeugnis lege ich Ihnen auf Wunsch selbstverständlich gerne bei unserem persönlichen Erstgespräch vor.
-    </p>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p style="font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
-        <a href="index.html">Zur Startseite</a>
-        <span style="color: rgba(255,255,255,0.3);">|</span>
-        <a href="impressum.html">Impressum</a>
-        <span style="color: rgba(255,255,255,0.3);">|</span>
-        <a href="datenschutz.html">Datenschutz</a>
-      </p>
-    </div>
-  </footer>
-
-</body>
-</html>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Qualifikationen & Nachweise – Alltagsfreund Jenny</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#704882;--primary-dark:#55147a;--primary-light:#b755e0;--accent:#d6c1cb;--grad:linear-gradient(135deg,#2f1f47,#4b1252);--text:#2b143b;--text-muted:#362357;--border:#eee1f5;--white:#fff}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',sans-serif;background:#fdfafb;color:var(--text);font-size:18px;line-height:1.7}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,253,253,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:110px;padding:0 52px;display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:16px;text-decoration:none}.nav-logo img{height:80px;width:auto;border-radius:6px;object-fit:contain}.nav-logo-text{font-size:24px;font-weight:700;line-height:1.2}.nav-logo-text strong{display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-logo-text small{font-size:15px;color:var(--text-muted);font-weight:500;letter-spacing:.8px}.nav-links{display:flex;gap:10px;list-style:none;align-items:center}.nav-links a{text-decoration:none;color:var(--text-muted);font-size:15px;font-weight:600;padding:10px 13px;border-radius:100px;white-space:nowrap}.nav-links a:hover{color:var(--primary)}.nav-cta{background:var(--grad)!important;color:#fff!important}.legal-container{max-width:800px;margin:160px auto 80px;padding:0 24px}h1{font-family:'Playfair Display',serif;font-size:38px;color:var(--text);margin-bottom:10px}.subtitle{color:var(--text-muted);font-size:18px;margin-bottom:40px}h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--text);margin-top:40px;margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:8px}p{margin-bottom:20px;color:var(--text-muted)}.cert-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:24px;box-shadow:0 4px 6px rgba(0,0,0,.02);display:flex;flex-direction:column;gap:14px}.cert-header{display:flex;align-items:center;gap:12px}.cert-icon{font-size:22px;color:var(--primary)}.cert-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text)}.cert-badge{display:inline-block;background:#f5f0ff;color:var(--primary);font-size:13px;font-weight:700;padding:4px 14px;border-radius:100px;border:1px solid var(--border);width:fit-content}.cert-img-wrapper{margin-top:10px;max-width:260px;width:100%;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;padding:12px}.cert-img{width:100%;height:auto;display:block}footer{background:var(--text);color:#fff;padding:40px 20px;text-align:center;font-size:14px}footer p{opacity:.7;margin:0}footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:900px){.nav-links{gap:5px}.nav-links a{font-size:13px;padding:9px 8px}}@media(max-width:768px){nav{height:auto!important;padding:10px 14px 12px!important;flex-direction:column!important;gap:8px!important;position:sticky!important}.nav-logo{gap:10px}.nav-logo img{height:42px}.nav-logo-text{font-size:17px}.nav-logo-text small{font-size:11px;letter-spacing:0}.nav-links{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:4px!important;width:100%}.nav-links a{font-size:11px!important;padding:7px 2px!important;text-align:center;border-radius:7px;display:block;white-space:nowrap}.legal-container{margin-top:40px}.cert-card{padding:22px}h1{font-size:28px}h2{font-size:22px}}
+</style>
+</head><body>
+<nav><a href="index.html#home" class="nav-logo"><img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo"><div class="nav-logo-text"><strong>Alltagsfreund Jenny</strong><small>Haushalt &amp; Nachbarschaftshilfe</small></div></a><ul class="nav-links"><li><a href="index.html#home">Start</a></li><li><a href="index.html#ueber-mich">Über mich</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="index.html#nachbarschaftshilfe">NBH</a></li><li><a href="index.html#trauerbegleitung">Trauerbegleitung</a></li><li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li></ul></nav>
+<main class="legal-container"><h1>Qualifikationen &amp; Nachweise</h1><p class="subtitle">Hier finden Sie alle offiziellen Zertifikate und Nachweise über meine Aus- und Weiterbildungen, die mich für die zuverlässige und professionelle Begleitung im Alltag qualifizieren.</p>
+<h2>Fachliche Qualifikationen</h2>
+<div class="cert-card"><div class="cert-header"><span class="cert-icon">✓</span><div class="cert-title">Betreuungskraft gemäß §§ 43b, 53b SGB XI</div></div><p>Qualifizierung zur Betreuung und Aktivierung von Menschen mit Unterstützungsbedarf im Alltag.</p></div>
+<div class="cert-card"><div class="cert-header"><span class="cert-icon">✓</span><div class="cert-title">Sterbe- und Trauerbegleitung</div></div><p>Weiterbildung mit Grundlagen der Sterbebegleitung, Palliative Care, Hospizbewegung, Trauerarbeit und dem Umgang mit Abschied.</p></div>
+<h2>Weitere Zertifikate &amp; Kurse</h2>
+<div class="cert-card"><div class="cert-header"><span class="cert-icon">✓</span><div class="cert-title">Zertifizierter Erste-Hilfe-Kurs</div></div><p>Ausgebildet für Notfälle im Alltag – für ein sicheres Gefühl bei jeder Begleitung. Ermächtigt im Auftrag der Berufsgenossenschaften (BG) und Unfallkassen.</p><div class="cert-badge">Kennziffer: 8.0187</div><div class="cert-img-wrapper"><img src="assets/erstehilfe.png" alt="PRIMEROS Erste Hilfe Zertifikat Siegel" class="cert-img"></div></div>
+<h2>Nachbarschaftshilfe &amp; Anerkennung</h2><p>Um meine Leistungen offiziell und unkompliziert im Rahmen der Nachbarschaftshilfe über die Pflegekassen (Entlastungsbetrag nach § 45b SGB XI) abrechnen zu können, absolviere ich alle gesetzlich vorgeschriebenen Schulungen und Qualifikationskurse des Landes Sachsen.</p><p>Dadurch wird sichergestellt, dass Sie die maximale finanzielle Entlastung erhalten und gleichzeitig auf eine fachlich fundierte Unterstützung vertrauen können.</p>
+<h2>Transparenz &amp; Vertrauen</h2><p>Vertrauen ist die wichtigste Basis für eine gelungene Alltagsbegleitung. Alle Original-Zertifikate, Teilnahmebescheinigungen sowie mein aktuelles Führungszeugnis lege ich Ihnen auf Wunsch selbstverständlich gerne bei unserem persönlichen Erstgespräch vor.</p>
+</main>
+<footer><p>© 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten.</p><p style="margin-top:15px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap"><a href="index.html">Startseite</a><span>|</span><a href="leistungen.html">Leistungen</a><span>|</span><a href="qualifikationen.html">Qualifikationen</a><span>|</span><a href="impressum.html">Impressum</a><span>|</span><a href="datenschutz.html">Datenschutz</a></p></footer>
+</body></html>
