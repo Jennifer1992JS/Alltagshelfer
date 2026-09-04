@@ -788,221 +788,310 @@
       .container { padding: 0 20px; }
     }
     /* TABLET – eigenes Layout, PC und Smartphone bleiben unverändert */
-@media (min-width: 769px) and (max-width: 992px) {
+    @media (min-width: 769px) and (max-width: 992px) {
 
-  /* NAVIGATION */
-  nav {
-    height: auto;
-    min-height: 90px;
-    padding: 12px 24px;
-    gap: 16px;
-  }
+      /* NAVIGATION */
+      nav {
+        height: 118px;
+        padding: 10px 24px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+      }
 
-  .nav-logo {
-    flex-shrink: 0;
-    gap: 10px;
-  }
+      .nav-logo {
+        gap: 10px;
+      }
 
-  .nav-logo img {
-    height: 58px;
-  }
+      .nav-logo img {
+        height: 54px;
+      }
 
-  .nav-logo-text {
-    font-size: 18px;
-  }
+      .nav-logo-text {
+        font-size: 18px;
+      }
 
-  .nav-logo-text small {
-    font-size: 11px;
-    letter-spacing: 0;
-  }
+      .nav-logo-text small {
+        font-size: 11px;
+        letter-spacing: 0;
+      }
 
-  .nav-links {
-    gap: 4px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
+      .nav-links {
+        gap: 4px;
+        flex-wrap: nowrap;
+        justify-content: center;
+      }
 
-  .nav-links a {
-    font-size: 13px;
-    padding: 8px 9px;
-    white-space: nowrap;
-  }
+      .nav-links a {
+        font-size: 13px;
+        padding: 7px 9px;
+        white-space: nowrap;
+      }
 
-  /* ALLGEMEINE TABLET-SEKTIONEN */
-  section {
-    padding: 72px 0;
-  }
+      /* ALLGEMEINE TABLET-SEKTIONEN */
+      section {
+        scroll-margin-top: 130px;
+      }
 
-  .container {
-    padding: 0 36px;
-  }
+      .container {
+        padding: 0 36px;
+      }
 
-  /* HERO */
-  #home {
-    min-height: calc(100vh - 90px);
-    margin-top: 90px;
-  }
+      /* HERO – Tablet: Bild oben, Text darunter */
+      #home {
+        display: block;
+        min-height: auto;
+        margin-top: 118px;
+        padding: 0;
+        background: var(--bg-warm);
+      }
 
-  #home::before {
-    width: 50%;
-    height: 100%;
-    aspect-ratio: 1537 / 1023;
-    background-size: cover;
-    background-position: left center;
-  }
+      #home::before {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 390px;
+        aspect-ratio: auto;
+        background-size: cover;
+        background-position: center 42%;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
 
-  #home::after {
-    background: linear-gradient(
-      90deg,
-      rgba(194,165,187,0.02) 0%,
-      rgba(194,165,187,0.18) 34%,
-      rgba(194,165,187,0.60) 52%,
-      rgba(194,165,187,0.92) 70%,
-      rgba(194,165,187,1) 100%
-    );
-  }
+      #home::after {
+        display: none;
+      }
 
-  .hero-left {
-    width: 100%;
-    padding: 70px 36px;
-    align-items: flex-end;
-    gap: 18px;
-  }
+      .hero-left {
+        width: 100%;
+        padding: 54px 36px 58px;
+        align-items: center;
+        gap: 18px;
+        background: var(--bg-warm);
+      }
 
-  .hero-left > * {
-    width: min(520px, 100%);
-  }
+      .hero-left > * {
+        width: min(620px, 100%);
+      }
 
-  h1 {
-    font-size: 42px;
-  }
+      .hero-left .hero-tag,
+      .hero-left .hero-btns,
+      .hero-left .trust-row {
+        align-self: center;
+      }
 
-  .hero-desc {
-    font-size: 18px;
-    line-height: 1.65;
-  }
+      h1 {
+        font-size: 42px;
+        text-align: center;
+      }
 
-  /* LEISTUNGEN */
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
+      .hero-handwritten {
+        text-align: center;
+      }
 
-  .card {
-    padding: 26px 22px;
-  }
+      .hero-desc {
+        font-size: 18px;
+        line-height: 1.65;
+        text-align: center;
+      }
 
-  .card h3 {
-    font-size: 21px;
-  }
+      .hero-btns {
+        justify-content: center;
+      }
 
-  .card p {
-    font-size: 17px;
-  }
+      .trust-row {
+        justify-content: center;
+      }
 
-  /* ÜBER MICH */
-  .about-section {
-    min-height: 560px;
-    padding: 72px 0;
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(253,250,251,1) 0%,
-        rgba(253,250,251,0.96) 34%,
-        rgba(253,250,251,0.72) 54%,
-        rgba(253,250,251,0.18) 78%,
-        rgba(253,250,251,0.05) 100%
-      ),
-      url('./assets/Sehrgut.JPG');
-    background-size: cover;
-    background-position: center center;
-  }
+      /* LEISTUNGEN */
+      #leistungen {
+        padding: 72px 0;
+      }
 
-  .about-inner {
-    padding: 0 36px;
-  }
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
 
-  .about-card {
-    max-width: 570px;
-  }
+      .card {
+        padding: 26px 22px;
+      }
 
-  .about-card .lead {
-    font-size: 18px;
-    line-height: 1.65;
-  }
+      .card h3 {
+        font-size: 21px;
+      }
 
-  .about-text {
-    font-size: 17px;
-    line-height: 1.65;
-  }
+      .card p {
+        font-size: 17px;
+      }
 
-  /* ABLAUF */
-  .step-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
+      /* ÜBER MICH – Tablet: Bild oben, Text sauber darunter */
+      .about-section {
+        min-height: auto;
+        padding: 0 0 72px;
+        display: block;
+        background-image: none;
+        background-color: #fdfafb;
+      }
 
-  .step-grid .card {
-    padding: 24px 20px;
-  }
+      .about-section::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 380px;
+        background-image: url('./assets/Sehrgut.JPG');
+        background-size: cover;
+        background-position: center 45%;
+        background-repeat: no-repeat;
+      }
 
-  /* NACHBARSCHAFTSHILFE */
-  #nachbarschaftshilfe {
-    min-height: 600px;
-    padding: 90px 0;
-  }
+      .about-inner {
+        padding: 0 36px;
+        margin-top: -28px;
+      }
 
-  #nachbarschaftshilfe::before {
-    width: 52%;
-    height: 100%;
-    aspect-ratio: 1403 / 1121;
-    background-size: cover;
-  }
+      .about-card {
+        width: min(620px, 100%);
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 34px 32px;
+        background: rgba(255,255,255,0.96);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      }
 
-  .two-col {
-    justify-content: flex-end;
-  }
+      .about-card .lead {
+        font-size: 18px;
+        line-height: 1.65;
+      }
 
-  .two-col > div:first-child {
-    max-width: 570px;
-  }
+      .about-text {
+        font-size: 17px;
+        line-height: 1.65;
+      }
 
-  .info-list {
-    gap: 16px;
-  }
+      /* ABLAUF */
+      #ablauf {
+        padding: 72px 0;
+      }
 
-  .info-list-text p {
-    font-size: 17px;
-  }
+      .step-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
 
-  /* TRAUER */
-  #trauerbegleitung {
-    aspect-ratio: 16 / 9;
-    min-height: 0;
-  }
+      .step-grid .card {
+        padding: 24px 20px;
+      }
 
-  .trauer-content {
-    max-width: 590px;
-  }
+      /* NACHBARSCHAFTSHILFE – Tablet: Collage oben, Text darunter */
+      #nachbarschaftshilfe {
+        min-height: auto;
+        padding: 0 0 72px;
+        background: var(--bg-warm);
+      }
 
-  .trauer-content .lead {
-    font-size: 18px;
-  }
+      #nachbarschaftshilfe::before {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 390px;
+        aspect-ratio: auto;
+        background-size: contain;
+        background-position: center top;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
 
-  .trauer-content .about-text {
-    font-size: 17px;
-  }
+      #nachbarschaftshilfe::after {
+        display: none;
+      }
 
-  /* KONTAKT */
-  .contact-grid {
-    gap: 48px;
-  }
+      .two-col {
+        display: block;
+      }
 
-  .contact-wrapper {
-    padding: 36px;
-  }
-}
-    
+      .two-col > div:first-child {
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 38px 0 0;
+      }
+
+      .info-list {
+        gap: 16px;
+      }
+
+      .info-list-text p {
+        font-size: 17px;
+      }
+
+      .section-side-img {
+        display: none;
+      }
+
+      /* RUHEBEREICH */
+      .between-sections {
+        padding: 52px 0 58px;
+      }
+
+      .between-sections-inner {
+        padding: 0 36px;
+      }
+
+      /* TRAUER – Tablet: Bild oben, Text darunter */
+      #trauerbegleitung {
+        aspect-ratio: auto;
+        min-height: auto;
+        padding: 0 0 72px;
+        display: block;
+        background-position: center center;
+      }
+
+      #trauerbegleitung::before {
+        position: relative;
+        display: block;
+        height: 390px;
+        background: transparent;
+      }
+
+      .trauer-inner {
+        padding: 0 36px;
+        margin-top: -28px;
+      }
+
+      .trauer-content {
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 34px 32px;
+        background: rgba(242,235,235,0.97);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      }
+
+      .trauer-content .lead {
+        font-size: 18px;
+      }
+
+      .trauer-content .about-text {
+        font-size: 17px;
+      }
+
+      /* KONTAKT */
+      #kontakt {
+        padding: 60px 0;
+      }
+
+      .contact-grid {
+        gap: 48px;
+      }
+
+      .contact-wrapper {
+        padding: 36px;
+      }
+    }
+
     /* FINAL MOBILE HERO OVERRIDES */
     @media (max-width: 768px) {
       .hero-left {
@@ -1052,28 +1141,35 @@
     </ul>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- ÜBER MICH -->
 
-  <section id="home">
-    <div class="hero-left">
-      <div class="hero-tag">
-        Alltagshilfe in Burgstädt und Umgebung
-      </div>
-      <h1>Wenn der Alltag schwerer wird, bin ich für Sie da.</h1>
-      <span class="handwritten hero-handwritten">Mit Zeit, Ruhe und einem offenen Ohr.</span>
-      <p class="hero-desc">
-        Nicht immer braucht es viel. Manchmal hilft jemand, der beim Einkaufen mitkommt, im Haushalt unterstützt oder einfach ein bisschen Zeit mitbringt. Genau dabei möchte ich Sie unterstützen.
-      </p>
-      <div class="hero-btns">
-        <a href="#kontakt" class="btn-primary">Kontakt aufnehmen</a>
-        <a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
-      </div>
-      <div class="trust-row">
-        <div class="trust-pill">✓ Persönlich & nah</div>
-        <div class="trust-pill">✓ Zuverlässig</div>
-        <div class="trust-pill">✓ So, wie es zu Ihnen passt</div>
-      </div>
-    </div>
+  <section id="ueber-mich" class="about-section">
+    <div class="about-inner">
+      <div class="about-card">
+        <span class="section-tag">Über mich</span>
+        <h2>Hallo, ich bin Jenny.</h2>
+        <span class="handwritten small">Persönlich. Nah. Und so, wie es für Sie passt.</span>
+
+    <p class="lead">
+      Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
+      unterstützen, wo sie gerade Hilfe brauchen.
+    </p>
+
+    <p class="about-text">
+      Mir ist wichtig, dass sich Unterstützung nicht nach einer fertigen
+      Schablone anfühlt. Jeder Mensch hat seinen eigenen Alltag, seine
+      Gewohnheiten und seine Geschichte. Deshalb nehme ich mir Zeit zum
+      Zuhören und bespreche mit Ihnen in Ruhe, was für Sie passend ist.
+    </p>
+
+    <p class="about-text" style="margin-top: 18px;">
+      Dabei geht es für mich nicht nur darum, eine Aufgabe zu erledigen.
+      Es geht genauso um Vertrauen, einen guten Umgang miteinander und
+      darum, dass Sie sich mit der Unterstützung wohlfühlen.
+    </p>
+  </div>
+</div>
+
   </section>
 
  <!-- LEISTUNGEN -->
@@ -1128,35 +1224,28 @@
 
   </section>
 
-  <!-- ÜBER MICH -->
+  <!-- HERO SECTION -->
 
-  <section id="ueber-mich" class="about-section">
-    <div class="about-inner">
-      <div class="about-card">
-        <span class="section-tag">Über mich</span>
-        <h2>Hallo, ich bin Jenny.</h2>
-        <span class="handwritten small">Persönlich. Nah. Und so, wie es für Sie passt.</span>
-
-    <p class="lead">
-      Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
-      unterstützen, wo sie gerade Hilfe brauchen.
-    </p>
-
-    <p class="about-text">
-      Mir ist wichtig, dass sich Unterstützung nicht nach einer fertigen
-      Schablone anfühlt. Jeder Mensch hat seinen eigenen Alltag, seine
-      Gewohnheiten und seine Geschichte. Deshalb nehme ich mir Zeit zum
-      Zuhören und bespreche mit Ihnen in Ruhe, was für Sie passend ist.
-    </p>
-
-    <p class="about-text" style="margin-top: 18px;">
-      Dabei geht es für mich nicht nur darum, eine Aufgabe zu erledigen.
-      Es geht genauso um Vertrauen, einen guten Umgang miteinander und
-      darum, dass Sie sich mit der Unterstützung wohlfühlen.
-    </p>
-  </div>
-</div>
-
+  <section id="home">
+    <div class="hero-left">
+      <div class="hero-tag">
+        Alltagshilfe in Burgstädt und Umgebung
+      </div>
+      <h1>Wenn der Alltag schwerer wird, bin ich für Sie da.</h1>
+      <span class="handwritten hero-handwritten">Mit Zeit, Ruhe und einem offenen Ohr.</span>
+      <p class="hero-desc">
+        Nicht immer braucht es viel. Manchmal hilft jemand, der beim Einkaufen mitkommt, im Haushalt unterstützt oder einfach ein bisschen Zeit mitbringt. Genau dabei möchte ich Sie unterstützen.
+      </p>
+      <div class="hero-btns">
+        <a href="#kontakt" class="btn-primary">Kontakt aufnehmen</a>
+        <a href="#leistungen" class="btn-secondary">Leistungen ansehen</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-pill">✓ Persönlich & nah</div>
+        <div class="trust-pill">✓ Zuverlässig</div>
+        <div class="trust-pill">✓ So, wie es zu Ihnen passt</div>
+      </div>
+    </div>
   </section>
 
   <!-- ABLAUF -->
