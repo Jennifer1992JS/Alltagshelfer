@@ -64,33 +64,33 @@
       background-color: var(--bg-warm);
     }
 
-#home::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 68%;
-  background-image: url('./assets/Jennymitoma.png');
-  background-size: 100% 100%;
-  background-position: left center;
-  background-repeat: no-repeat;
-  -webkit-mask-image: linear-gradient(90deg,
-    #000 0%,
-    #000 58%,
-    rgba(0,0,0,0.90) 70%,
-    rgba(0,0,0,0.55) 82%,
-    rgba(0,0,0,0.18) 94%,
-    transparent 100%);
-  mask-image: linear-gradient(90deg,
-    #000 0%,
-    #000 58%,
-    rgba(0,0,0,0.90) 70%,
-    rgba(0,0,0,0.55) 82%,
-    rgba(0,0,0,0.18) 94%,
-    transparent 100%);
-  z-index: 0;
-}
+    #home::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 68%;
+      background-image: url('./assets/Jennymitoma.png');
+      background-size: cover;
+      background-position: left center;
+      background-repeat: no-repeat;
+      -webkit-mask-image: linear-gradient(90deg,
+        #000 0%,
+        #000 58%,
+        rgba(0,0,0,0.90) 70%,
+        rgba(0,0,0,0.55) 82%,
+        rgba(0,0,0,0.18) 94%,
+        transparent 100%);
+      mask-image: linear-gradient(90deg,
+        #000 0%,
+        #000 58%,
+        rgba(0,0,0,0.90) 70%,
+        rgba(0,0,0,0.55) 82%,
+        rgba(0,0,0,0.18) 94%,
+        transparent 100%);
+      z-index: 0;
+    }
 
     #home::after {
       content: '';
@@ -199,7 +199,7 @@
   rgba(253,250,251,0.35) 58%,
   rgba(253,250,251,0.05) 78%,
   rgba(253,250,251,0) 100%
-)
+),
         url('./assets/Sehrgut.JPG');
       background-size: auto 100%;
       background-position: right center;
