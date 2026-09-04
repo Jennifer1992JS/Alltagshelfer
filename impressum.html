@@ -185,10 +185,29 @@
       margin: 0;
     }
 
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-bottom: 12px;
+    }
+
     footer a {
       color: rgba(255,255,255,.7);
       text-decoration: none;
       border: 0;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .footer-links {
+        gap: 6px 14px;
+      }
     }
 
     /* TABLET */
@@ -378,6 +397,13 @@
 
   <!-- FOOTER -->
   <footer>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="qualifikationen.html">Qualifikationen</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
     <p>© 2026 Alltagsfreund Jenny. Alle Rechte vorbehalten.</p>
   </footer>
 
