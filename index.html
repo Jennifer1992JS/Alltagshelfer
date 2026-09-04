@@ -842,41 +842,42 @@
       }
 
       /* HERO – Tablet: Bild oben, Text darunter */
-      #home {
-        display: block;
-        min-height: auto;
-        margin-top: 118px;
-        padding: 0;
-        background: var(--bg-warm);
-      }
 
-      #home::before {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 390px;
-        aspect-ratio: auto;
-        background-size: cover;
-        background-position: center 42%;
-        -webkit-mask-image: none;
-        mask-image: none;
-      }
+#home {
+  min-height: auto;
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-      #home::after {
-        display: none;
-      }
+#home::before {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1537 / 1023;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
 
-      .hero-left {
-        width: 100%;
-        padding: 54px 36px 58px;
-        align-items: center;
-        gap: 18px;
-        background: var(--bg-warm);
-      }
+#home::after {
+  display: none;
+}
 
-      .hero-left > * {
-        width: min(620px, 100%);
-      }
+.hero-left {
+  width: 100%;
+  padding: 58px 36px 70px;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-left > * {
+  width: min(620px, 100%);
+}
 
       .hero-left .hero-tag,
       .hero-left .hero-btns,
