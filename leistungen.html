@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leistungs- und Preisliste – Alltagsfreund Jenny</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --primary: #704882;
@@ -23,19 +23,22 @@
       --border: #eee1f5;
       --white: #fff;
     }
-    
+
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
-    body { 
-      font-family: 'DM Sans', sans-serif; 
+
+    body {
+      font-family: 'DM Sans', sans-serif;
       background-color: #fdfafb;
-      color: var(--text); 
-      font-size: 18px; 
-      line-height: 1.7; 
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     /* NAVIGATION */
@@ -107,17 +110,28 @@
       transition: all .2s;
     }
 
+    .nav-links a:hover {
+      color: var(--primary-dark);
+    }
+
     .nav-cta {
       background: var(--grad) !important;
       color: #fff !important;
       font-weight: 700 !important;
     }
 
-    /* SEITENLAYOUT */
+    .nav-cta:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+    }
+
+    /* SEITENLAYOUT - GLEICH WIE QUALIFIKATIONEN */
     .legal-container {
+      width: 100%;
       max-width: 800px;
       margin: 160px auto 80px auto;
       padding: 0 24px;
+      flex: 1;
     }
 
     h1 {
@@ -132,7 +146,7 @@
       font-size: 18px;
       margin-bottom: 40px;
     }
-    
+
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 26px;
@@ -148,7 +162,7 @@
       color: var(--text-muted);
     }
 
-    /* LEISTUNGS-KARTEN */
+    /* LEISTUNGSKARTEN */
     .service-card {
       background: var(--white);
       border: 1px solid var(--border);
@@ -158,24 +172,12 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     }
 
-    .service-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .service-icon {
-      font-size: 22px;
-      color: var(--primary);
-      line-height: 1.4;
-    }
-
     .service-title {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--text);
+      margin-bottom: 18px;
     }
 
     .service-description {
@@ -183,11 +185,8 @@
       margin-bottom: 20px;
     }
 
-    /* PREISLISTE */
+    /* PREISE */
     .price-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
       border-top: 1px solid var(--border);
     }
 
@@ -212,7 +211,28 @@
       text-align: right;
     }
 
-    /* ZUSATZINFORMATION */
+    /* LEISTUNGSDETAILS */
+    .detail-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .detail-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .detail-list li::before {
+      content: '•';
+      position: absolute;
+      left: 2px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* HINWEISBOX */
     .info-box {
       background: #f5f0ff;
       border: 1px solid var(--border);
@@ -227,27 +247,6 @@
 
     .info-box strong {
       color: var(--text);
-    }
-
-    /* TRAUERGRUPPEN */
-    .group-list {
-      list-style: none;
-      margin-top: 16px;
-    }
-
-    .group-list li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 10px;
-      color: var(--text-muted);
-    }
-
-    .group-list li::before {
-      content: '•';
-      position: absolute;
-      left: 2px;
-      color: var(--primary);
-      font-weight: 700;
     }
 
     /* FOOTER */
@@ -270,9 +269,12 @@
       text-decoration: none;
     }
 
+    footer a:hover {
+      color: #fff;
+    }
+
     /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
-
       nav {
         height: auto !important;
         padding: 12px 16px !important;
@@ -296,7 +298,7 @@
 
       .nav-links {
         display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 4px !important;
         width: 100%;
         padding: 0;
@@ -351,7 +353,6 @@
   <nav>
     <a href="index.html#home" class="nav-logo">
       <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
-
       <div class="nav-logo-text">
         <strong>Alltagsfreund Jenny</strong>
         <small>Haushalt & Nachbarschaftshilfe</small>
@@ -360,8 +361,10 @@
 
     <ul class="nav-links">
       <li><a href="index.html#home">Start</a></li>
+      <li><a href="index.html#ueber-mich">Über mich</a></li>
       <li><a href="leistungen.html">Leistungen</a></li>
       <li><a href="index.html#nachbarschaftshilfe">NBH</a></li>
+      <li><a href="index.html#trauerbegleitung">Trauerbegleitung</a></li>
       <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
   </nav>
@@ -374,8 +377,8 @@
 
     <p class="subtitle">
       Hier finden Sie einen Überblick über meine Leistungen und die dazugehörigen Preise.
-      Wenn Sie Fragen zu einem Angebot haben oder sich nicht sicher sind, welche Unterstützung
-      für Sie passend ist, können wir dies gerne in einem persönlichen Gespräch besprechen.
+      Wenn Sie Fragen zu einem Angebot haben, können wir die passende Unterstützung
+      gerne in einem persönlichen Gespräch besprechen.
     </p>
 
 
@@ -384,19 +387,11 @@
 
     <div class="service-card">
 
-      <div class="service-header">
-        <span class="service-icon">✓</span>
-        <div class="service-title">
-          Reinigung, Pflege & Unterstützung im Haushalt
-        </div>
+      <div class="service-title">
+        Reinigung und Pflege
       </div>
 
-      <p class="service-description">
-        Unterstützung bei alltäglichen Aufgaben rund um den Haushalt.
-      </p>
-
       <div class="price-list">
-
         <div class="price-row">
           <div class="price-name">
             Wohnung putzen / Wäsche waschen
@@ -405,7 +400,18 @@
             33 € / Stunde
           </div>
         </div>
+      </div>
 
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-title">
+        Einkaufen
+      </div>
+
+      <div class="price-list">
         <div class="price-row">
           <div class="price-name">
             Kleiner Einkauf (ohne Getränke)
@@ -423,23 +429,44 @@
             30 € / Stunde
           </div>
         </div>
-
-        <div class="price-row">
-          <div class="price-name">
-            Geschenke einpacken
-          </div>
-          <div class="price">
-            5 € / Geschenk
-          </div>
-        </div>
-
-      <div class="info-box">
-        <p>
-          <strong>Fahrtkosten:</strong>
-          0,36 € pro km
-        </p>
       </div>
 
+    </div>
+
+
+    <div class="service-card">
+
+      <div class="service-title">
+        Geschenke einpacken
+      </div>
+
+      <div class="price-list">
+        <div class="price-row">
+          <div class="price-name">
+            Pro Geschenk
+          </div>
+          <div class="price">
+            5 €
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="info-box">
+      <p>
+        <strong>Steuerliche Entlastung:</strong><br>
+        20 % der Lohn- und Fahrtkosten können über die Steuererklärung
+        zurückerstattet werden.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <p>
+        <strong>Fahrtkosten:</strong>
+        0,36 € pro km
+      </p>
     </div>
 
 
@@ -448,16 +475,12 @@
 
     <div class="service-card">
 
-      <div class="service-header">
-        <span class="service-icon">✓</span>
-        <div class="service-title">
-          Begleitung und Betreuung im Alltag
-        </div>
+      <div class="service-title">
+        Begleitung und Betreuung im Alltag
       </div>
 
       <p class="service-description">
-        Zeit und Unterstützung für alltägliche Wege, Aktivitäten und gemeinsame
-        Unternehmungen.
+        Unterstützung und gemeinsame Zeit im Alltag.
       </p>
 
       <div class="price-list">
@@ -482,11 +505,11 @@
 
       </div>
 
-      <ul class="group-list">
+      <ul class="detail-list">
         <li>Spazieren gehen</li>
-        <li>Begleitung zu Arztterminen</li>
+        <li>Begleitung zum Arzt</li>
         <li>Begleitung beim Einkauf</li>
-        <li>Gesellschaft und Gespräche</li>
+        <li>Gesellschaft</li>
         <li>Gemeinsame Aktivitäten</li>
       </ul>
 
@@ -498,17 +521,9 @@
 
     <div class="service-card">
 
-      <div class="service-header">
-        <span class="service-icon">✓</span>
-        <div class="service-title">
-          Persönliche Begleitung in schweren Zeiten
-        </div>
+      <div class="service-title">
+        Einzelsitzungen
       </div>
-
-      <p class="service-description">
-        Individuelle Begleitung für Menschen in der letzten Lebensphase
-        sowie für Angehörige und Menschen in Trauer.
-      </p>
 
       <div class="price-list">
 
@@ -545,36 +560,30 @@
         <p>
           <strong>Begleitung soll nicht am Geld scheitern.</strong><br>
           Wenn die Kosten für eine Begleitung für Sie eine Schwierigkeit darstellen,
-          sprechen Sie mich bitte darauf an. Welche Möglichkeiten im Einzelfall
-          bestehen, können wir gemeinsam besprechen.
+          sprechen Sie mich bitte darauf an. Die Möglichkeiten im Einzelfall
+          können wir gemeinsam besprechen.
         </p>
       </div>
 
     </div>
 
 
-    <!-- TRAUERGRUPPEN -->
-    <h2>Trauergruppen</h2>
-
+    <!-- TRAUERGRUPPEN / GRUPPENBEGLEITUNG -->
     <div class="service-card">
 
-      <div class="service-header">
-        <span class="service-icon">✓</span>
-        <div class="service-title">
-          Gemeinsame Trauerarbeit in kleinen Gruppen
-        </div>
+      <div class="service-title">
+        Trauergruppen
       </div>
 
       <p class="service-description">
-        Die Trauergruppen bieten Raum für Austausch und gemeinsames Aufarbeiten
-        in einer kleinen Gruppe.
+        Gemeinsames Aufarbeiten in kleinen Gruppen.
       </p>
 
       <div class="price-list">
 
         <div class="price-row">
           <div class="price-name">
-            Teilnahme pro Person und Sitzung
+            Pro Person und Sitzung
           </div>
           <div class="price">
             20 €
@@ -586,7 +595,7 @@
     </div>
 
 
-    <!-- HINWEIS -->
+    <!-- ABSCHLUSS -->
     <h2>Persönliche Beratung</h2>
 
     <p>
@@ -597,8 +606,6 @@
 
     <p>
       Das Erstgespräch im Bereich der Sterbe- und Trauerbegleitung ist kostenlos.
-      So können wir uns zunächst kennenlernen und in Ruhe schauen,
-      was Sie benötigen.
     </p>
 
   </main>
@@ -607,25 +614,17 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-
       <p style="font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
-
-        <a href="index.html">Zur Startseite</a>
-
+        <a href="index.html">Startseite</a>
         <span style="color: rgba(255,255,255,0.3);">|</span>
-
-        <a href="impressum.html">Impressum</a>
-
+        <a href="leistungen.html">Leistungen</a>
         <span style="color: rgba(255,255,255,0.3);">|</span>
-
-        <a href="datenschutz.html">Datenschutz</a>
-
-        <span style="color: rgba(255,255,255,0.3);">|</span>
-
         <a href="qualifikationen.html">Qualifikationen</a>
-
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="impressum.html">Impressum</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="datenschutz.html">Datenschutz</a>
       </p>
-
     </div>
   </footer>
 
