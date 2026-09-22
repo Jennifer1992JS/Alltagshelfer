@@ -757,17 +757,15 @@
 
       .section-side-img { display: none !important; }
 
-      /* TRAUER – NUR MOBILE: Bild oben, Textblock darunter */
+      /* TRAUER – nur Mobile: Bild und Text getrennt, ohne Verzerrung, weicher weißer Übergang */
       #trauerbegleitung {
         aspect-ratio: auto !important;
         min-height: auto !important;
-        height: auto !important;
         padding: 0 0 42px !important;
         display: block !important;
-        position: relative !important;
-        overflow: hidden !important;
         background-image: none !important;
-        background-color: var(--bg-cream) !important;
+        background-color: #fdfafb !important;
+        overflow: visible !important;
       }
 
       #trauerbegleitung::before {
@@ -776,18 +774,32 @@
         inset: auto !important;
         display: block !important;
         width: 100% !important;
-        height: 315px !important;
+        height: calc(100vw * 9 / 16) !important;
         background-image: url('./assets/trauer.png') !important;
         background-size: cover !important;
-        background-position: 68% top !important;
+        background-position: center center !important;
         background-repeat: no-repeat !important;
-        -webkit-mask-image: none !important;
-        mask-image: none !important;
-        z-index: 0 !important;
+        -webkit-mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 12%,
+          rgba(0,0,0,0.55) 28%,
+          rgba(0,0,0,0.85) 42%,
+          #000 55%,
+          #000 100%
+        ) !important;
+        mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 12%,
+          rgba(0,0,0,0.55) 28%,
+          rgba(0,0,0,0.85) 42%,
+          #000 55%,
+          #000 100%
+        ) !important;
       }
 
       #trauerbegleitung .trauer-inner {
-        width: 100% !important;
+        width: auto !important;
+        max-width: none !important;
         padding: 0 20px !important;
         margin: 0 !important;
         position: relative !important;
@@ -797,12 +809,12 @@
       #trauerbegleitung .trauer-content {
         width: 100% !important;
         max-width: none !important;
-        margin: 18px 0 0 !important;
-        padding: 26px 22px !important;
-        background: rgba(255,255,255,0.94) !important;
-        border: 1px solid var(--border) !important;
-        border-radius: 18px !important;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+        margin: -2px 0 0 !important;
+        padding: 28px 20px 26px !important;
+        background: rgba(255,255,255,0.96) !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
       }
 
       #trauerbegleitung .trauer-content h2 {
