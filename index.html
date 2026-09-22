@@ -653,11 +653,25 @@
         position: relative;
         display: block;
         width: 100%;
-        height: 66.56vw;
+        height: calc(100vw * 1023 / 1537);
         background-image: url('./assets/Sehrgut.JPG');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        -webkit-mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%);
+        mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%);
       }
 
       .about-inner {
@@ -703,34 +717,29 @@
         width: 100% !important;
         height: calc(100vw * 1121 / 1403) !important;
         aspect-ratio: 1403 / 1121 !important;
-        inset: 0 auto auto 0 !important;
-        background-size: 100% 100% !important;
+        background-size: cover !important;
         background-position: left top !important;
-        -webkit-mask-image: linear-gradient(
-          90deg,
-          #000 0%,
-          #000 54%,
-          rgba(0,0,0,0.92) 64%,
-          rgba(0,0,0,0.62) 76%,
-          rgba(0,0,0,0.25) 90%,
-          transparent 100%
-        ) !important;
-        mask-image: linear-gradient(
-          90deg,
-          #000 0%,
-          #000 54%,
-          rgba(0,0,0,0.92) 64%,
-          rgba(0,0,0,0.62) 76%,
-          rgba(0,0,0,0.25) 90%,
-          transparent 100%
-        ) !important;
+        -webkit-mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%) !important;
+        mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%) !important;
       }
 
       #nachbarschaftshilfe .two-col {
         display: block !important;
-        padding-top: calc(100vw * 1121 / 1403) !important;
+        padding-top: 0 !important;
         gap: 0 !important;
-      
+      }
 
       #nachbarschaftshilfe .two-col > div:first-child {
         max-width: 100% !important;
@@ -757,82 +766,71 @@
 
       .section-side-img { display: none !important; }
 
-      /* TRAUER – nur Mobile: Bild und Text getrennt, ohne Verzerrung, weicher weißer Übergang */
+      /* TRAUER */
       #trauerbegleitung {
         aspect-ratio: auto !important;
         min-height: auto !important;
         padding: 0 0 42px !important;
         display: block !important;
-        background-image: none !important;
-        background-color: #fdfafb !important;
-        overflow: visible !important;
+        align-items: initial !important;
+        background-color: #f2ebeb !important;
+        background-size: 100% auto !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
       }
 
       #trauerbegleitung::before {
-        content: '' !important;
         position: relative !important;
-        inset: auto !important;
         display: block !important;
         width: 100% !important;
-        height: calc(100vw * 9 / 16) !important;
-        background-image: url('./assets/trauer.png') !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
+        height: calc(100vw * 1023 / 1537) !important;
+        background: transparent !important;
         -webkit-mask-image: linear-gradient(90deg,
           transparent 0%,
-          rgba(0,0,0,0.18) 12%,
-          rgba(0,0,0,0.55) 28%,
-          rgba(0,0,0,0.85) 42%,
-          #000 55%,
-          #000 100%
-        ) !important;
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%) !important;
         mask-image: linear-gradient(90deg,
           transparent 0%,
-          rgba(0,0,0,0.18) 12%,
-          rgba(0,0,0,0.55) 28%,
-          rgba(0,0,0,0.85) 42%,
-          #000 55%,
-          #000 100%
-        ) !important;
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%) !important;
+        pointer-events: none !important;
       }
 
       #trauerbegleitung .trauer-inner {
-        width: auto !important;
-        max-width: none !important;
         padding: 0 20px !important;
-        margin: 0 !important;
-        position: relative !important;
-        z-index: 1 !important;
+        margin-top: 0 !important;
       }
 
-      #trauerbegleitung .trauer-content {
-        width: 100% !important;
-        max-width: none !important;
-        margin: -2px 0 0 !important;
-        padding: 28px 20px 26px !important;
-        background: rgba(255,255,255,0.96) !important;
-        border: 0 !important;
+      .trauer-content {
+        max-width: 100% !important;
+        background: #f2ebeb !important;
         border-radius: 0 !important;
-        box-shadow: none !important;
+        padding: 26px 22px !important;
+        margin-top: 0 !important;
       }
 
-      #trauerbegleitung .trauer-content h2 {
+      .trauer-content h2 {
         font-size: 27px !important;
         margin-bottom: 12px !important;
       }
 
-      #trauerbegleitung .trauer-content .lead {
+      .trauer-content .lead {
         font-size: 16px !important;
         line-height: 1.62 !important;
       }
 
-      #trauerbegleitung .trauer-content .about-text {
+      .trauer-content .about-text {
         font-size: 15px !important;
         line-height: 1.62 !important;
       }
 
-      #trauerbegleitung .trauer-content .btn-secondary {
+      .trauer-content .btn-secondary {
         display: inline-block !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
@@ -1131,26 +1129,45 @@
         min-height: auto;
         padding: 0 0 72px;
         display: block;
-        background-position: center center;
+        background-color: #f2ebeb;
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: no-repeat;
       }
 
       #trauerbegleitung::before {
         position: relative;
         display: block;
-        height: 390px;
+        width: 100%;
+        height: calc(100vw * 1023 / 1537);
         background: transparent;
+        -webkit-mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%);
+        mask-image: linear-gradient(90deg,
+          transparent 0%,
+          rgba(0,0,0,0.18) 7%,
+          rgba(0,0,0,0.55) 16%,
+          rgba(0,0,0,0.88) 27%,
+          #000 38%,
+          #000 100%);
+        pointer-events: none;
       }
 
       .trauer-inner {
         padding: 0 36px;
-        margin-top: -28px;
+        margin-top: 0;
       }
 
       .trauer-content {
         max-width: 620px;
         margin: 0 auto;
         padding: 34px 32px;
-        background: rgba(242,235,235,0.97);
+        background: #f2ebeb;
         border: 1px solid var(--border);
         border-radius: 20px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.06);
