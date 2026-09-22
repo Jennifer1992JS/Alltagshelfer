@@ -655,7 +655,7 @@
         width: 100%;
         height: 66.56vw;
         background-image: url('./assets/Sehrgut.JPG');
-        background-size: cover;
+        background-size: 100% 100%;
         background-position: center center;
         background-repeat: no-repeat;
       }
@@ -700,37 +700,16 @@
       }
 
       #nachbarschaftshilfe::before {
-        width: 100% !important;
-        height: calc(100vw * 1121 / 1403) !important;
-        aspect-ratio: 1403 / 1121 !important;
-        inset: 0 auto auto 0 !important;
-        background-size: 100% 100% !important;
+        height: 300px !important;
+        background-size: contain !important;
         background-position: left top !important;
-        -webkit-mask-image: linear-gradient(
-          90deg,
-          #000 0%,
-          #000 54%,
-          rgba(0,0,0,0.92) 64%,
-          rgba(0,0,0,0.62) 76%,
-          rgba(0,0,0,0.25) 90%,
-          transparent 100%
-        ) !important;
-        mask-image: linear-gradient(
-          90deg,
-          #000 0%,
-          #000 54%,
-          rgba(0,0,0,0.92) 64%,
-          rgba(0,0,0,0.62) 76%,
-          rgba(0,0,0,0.25) 90%,
-          transparent 100%
-        ) !important;
       }
 
       #nachbarschaftshilfe .two-col {
         display: block !important;
-        padding-top: calc(100vw * 1121 / 1403) !important;
+        padding-top: 300px !important;
         gap: 0 !important;
-      
+      }
 
       #nachbarschaftshilfe .two-col > div:first-child {
         max-width: 100% !important;
@@ -757,43 +736,29 @@
 
       .section-side-img { display: none !important; }
 
-      /* TRAUER – Mobile: Bild oben, Text sauber darunter */
+      /* TRAUER */
       #trauerbegleitung {
         aspect-ratio: auto !important;
         min-height: auto !important;
-        padding: 0 0 42px !important;
-        display: block !important;
-        background-image: none !important;
-        background-color: var(--bg-cream) !important;
+        padding: 250px 0 42px !important;
+        background-position: 72% center !important;
+        align-items: flex-end !important;
       }
 
       #trauerbegleitung::before {
-        content: '' !important;
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        height: 315px !important;
-        background-image: url('./assets/trauer.png') !important;
-        background-size: cover !important;
-        background-position: 68% top !important;
-        background-repeat: no-repeat !important;
-      }
-
-      .trauer-inner {
-        padding: 0 20px !important;
-        margin-top: 0 !important;
-        position: relative !important;
-        z-index: 1 !important;
+        background: linear-gradient(
+          180deg,
+          rgba(242,235,235,0.02) 0%,
+          rgba(242,235,235,0.68) 45%,
+          rgba(242,235,235,0.98) 68%
+        ) !important;
       }
 
       .trauer-content {
         max-width: 100% !important;
-        margin: 18px auto 0 !important;
-        background: rgba(242,235,235,0.96) !important;
-        border: 1px solid var(--border) !important;
+        background: rgba(242,235,235,0.94) !important;
         border-radius: 18px !important;
-        padding: 24px 20px !important;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.05) !important;
+        padding: 26px 22px !important;
       }
 
       .trauer-content h2 {
@@ -1173,6 +1138,56 @@
       .hero-left .hero-btns,
       .hero-left .trust-row {
         align-self: center !important;
+      }
+    }
+
+    /* FINAL MOBILE ONLY – TRAUER: Bild oben, Textblock darunter */
+    @media (max-width: 768px) {
+      #trauerbegleitung {
+        display: block !important;
+        position: relative !important;
+        aspect-ratio: auto !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 0 0 42px !important;
+        overflow: hidden !important;
+        background: var(--bg-cream) !important;
+        background-image: none !important;
+      }
+
+      #trauerbegleitung::before {
+        content: '' !important;
+        position: relative !important;
+        inset: auto !important;
+        display: block !important;
+        width: 100% !important;
+        height: 315px !important;
+        background-image: url('./assets/trauer.png') !important;
+        background-size: cover !important;
+        background-position: 68% top !important;
+        background-repeat: no-repeat !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+        z-index: 0 !important;
+      }
+
+      #trauerbegleitung .trauer-inner {
+        width: auto !important;
+        padding: 0 20px !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+
+      #trauerbegleitung .trauer-content {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 18px 0 0 !important;
+        padding: 24px 20px !important;
+        background: rgba(242,235,235,0.96) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 18px !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.05) !important;
       }
     }
 
