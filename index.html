@@ -162,25 +162,26 @@
     .card h3 { font-family: 'Playfair Display', serif; font-size: 23px; margin-bottom: 10px; color: var(--text); }
     .card p { font-size: 19px; color: var(--text-muted); line-height: 1.7; }
 
-    /* TRAUER- & STERBEBEGLEITUNG */
-#trauerbegleitung {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-image: url('./assets/trauer.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+    /* TRAUER- & STERBEBEGLEITUNG (DESKTOP) */
+    #trauerbegleitung {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-image: url('./assets/trauer.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; 
+    }
     #trauerbegleitung::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(242,235,235,0.98) 0%, rgba(242,235,235,0.92) 38%, rgba(242,235,235,0.45) 58%, rgba(242,235,235,0.04) 78%); }
     .trauer-inner { position: relative; z-index: 1; width: 100%; padding-left: 0; }
     .trauer-content { max-width: 760px; }
     .trauer-content .lead { margin-bottom: 0; }
     .trauer-content .about-text { font-size: 20px; line-height: 1.75; color: var(--text-muted); }
 
-    /* ÜBER MICH – Foto rechts, Text links, weich ausgeblendet */
+    /* ÜBER MICH (DESKTOP) */
     .about-section {
       position: relative;
       min-height: 650px;
@@ -192,42 +193,41 @@
       background-image: none;
     }
 
-    /* Desktop: Foto separat, damit die linke Kante weich ausläuft. */
-   .about-section::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 68%;
-  background-image: url('./assets/Sehrgut.JPG');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+    .about-section::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 68%;
+      background-image: url('./assets/Sehrgut.JPG');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
 
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0,0,0,0.18) 12%,
-    rgba(0,0,0,0.55) 28%,
-    rgba(0,0,0,0.85) 42%,
-    #000 55%,
-    #000 100%
-  );
+      -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0,0,0,0.18) 12%,
+        rgba(0,0,0,0.55) 28%,
+        rgba(0,0,0,0.85) 42%,
+        #000 55%,
+        #000 100%
+      );
 
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0,0,0,0.18) 12%,
-    rgba(0,0,0,0.55) 28%,
-    rgba(0,0,0,0.85) 42%,
-    #000 55%,
-    #000 100%
-  );
+      mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0,0,0,0.18) 12%,
+        rgba(0,0,0,0.55) 28%,
+        rgba(0,0,0,0.85) 42%,
+        #000 55%,
+        #000 100%
+      );
 
-  z-index: 0;
-  pointer-events: none;
-}
+      z-index: 0;
+      pointer-events: none;
+    }
 
     .about-inner {
       width: 100%;
@@ -258,7 +258,7 @@
       line-height: 1.75;
     }
 
-    /* NACHBARSCHAFTSHILFE – Originalbild links, weich in den Hintergrund übergehend */
+    /* NACHBARSCHAFTSHILFE (DESKTOP) */
     #nachbarschaftshilfe {
       position: relative;
       min-height: 720px;
@@ -267,8 +267,6 @@
       background-color: var(--bg-warm);
     }
 
-    /* Das Bild bleibt in seinem Original-Seitenverhältnis. Die weiche Kante
-       wird direkt auf dem Bild erzeugt, nicht an einem künstlich begrenzten Container. */
     #nachbarschaftshilfe::before {
       content: '';
       position: absolute;
@@ -391,22 +389,10 @@
         position: sticky !important;
       }
 
-      .nav-logo {
-        gap: 10px !important;
-      }
-
-      .nav-logo img {
-        height: 42px !important;
-      }
-
-      .nav-logo-text {
-        font-size: 17px !important;
-      }
-
-      .nav-logo-text small {
-        font-size: 11px !important;
-        letter-spacing: 0 !important;
-      }
+      .nav-logo { gap: 10px !important; }
+      .nav-logo img { height: 42px !important; }
+      .nav-logo-text { font-size: 17px !important; }
+      .nav-logo-text small { font-size: 11px !important; letter-spacing: 0 !important; }
 
       .nav-links {
         display: grid !important;
@@ -464,57 +450,16 @@
         padding: 38px 20px 42px !important;
         gap: 18px !important;
         background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 18%) !important;
+        align-items: center !important;
       }
 
+      .hero-left > * { width: 100% !important; max-width: 620px !important; }
+      .hero-left .hero-tag, .hero-left .hero-btns, .hero-left .trust-row { align-self: center !important; }
       .hero-right { display: none !important; }
 
-      #nachbarschaftshilfe {
-        background-image: none !important;
-      }
-
-      #nachbarschaftshilfe::before {
-        width: 100% !important;
-        height: 300px !important;
-        aspect-ratio: auto !important;
-        inset: 0 auto auto 0 !important;
-        background-size: contain !important;
-        background-position: left top !important;
-        -webkit-mask-image: linear-gradient(90deg,
-          #000 0%,
-          #000 58%,
-          rgba(0,0,0,0.90) 70%,
-          rgba(0,0,0,0.48) 84%,
-          transparent 100%) !important;
-        mask-image: linear-gradient(90deg,
-          #000 0%,
-          #000 58%,
-          rgba(0,0,0,0.90) 70%,
-          rgba(0,0,0,0.48) 84%,
-          transparent 100%) !important;
-      }
-
-      #nachbarschaftshilfe::after {
-        background: linear-gradient(180deg, rgba(194,165,187,0.00) 0%, rgba(194,165,187,0.06) 34%, rgba(194,165,187,0.94) 76%, rgba(194,165,187,1) 100%) !important;
-      }
-
-      .hero-tag {
-        margin: 0 auto !important;
-        font-size: 10px !important;
-        padding: 5px 12px !important;
-      }
-
-      h1 {
-        font-size: 30px !important;
-        line-height: 1.18 !important;
-        text-align: center !important;
-      }
-
-      .hero-desc {
-        font-size: 17px !important;
-        line-height: 1.65 !important;
-        text-align: center !important;
-        max-width: 100% !important;
-      }
+      .hero-tag { margin: 0 auto !important; font-size: 10px !important; padding: 5px 12px !important; }
+      h1 { font-size: 30px !important; line-height: 1.18 !important; text-align: center !important; }
+      .hero-desc { font-size: 17px !important; line-height: 1.65 !important; text-align: center !important; max-width: 100% !important; }
 
       .hero-btns {
         display: flex !important;
@@ -550,77 +495,18 @@
         box-sizing: border-box !important;
       }
 
-      .hero-overlay-card {
-        position: absolute !important;
-        bottom: 12px !important;
-        left: 12px !important;
-        right: 12px !important;
-        width: auto !important;
-        padding: 13px !important;
-      }
+      section { padding: 58px 0 !important; scroll-margin-top: 125px !important; }
+      .container { padding: 0 20px !important; }
+      .section-tag { font-size: 10px !important; padding: 5px 11px !important; margin-bottom: 12px !important; }
+      h2 { font-size: 29px !important; line-height: 1.22 !important; margin-bottom: 13px !important; }
+      .lead { font-size: 17px !important; line-height: 1.65 !important; margin-bottom: 30px !important; }
 
-      .hero-overlay-card strong {
-        font-size: 17px !important;
-      }
+      .cards-grid, .step-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .card { padding: 24px 22px !important; border-radius: 17px !important; }
+      .card h3 { font-size: 21px !important; line-height: 1.3 !important; margin-bottom: 8px !important; }
+      .card p { font-size: 16px !important; line-height: 1.62 !important; }
 
-      .hero-overlay-card p {
-        font-size: 13px !important;
-      }
-
-      section {
-        padding: 58px 0 !important;
-        scroll-margin-top: 125px !important;
-      }
-
-      .container {
-        padding: 0 20px !important;
-      }
-
-      .section-tag {
-        font-size: 10px !important;
-        padding: 5px 11px !important;
-        margin-bottom: 12px !important;
-      }
-
-      h2 {
-        font-size: 29px !important;
-        line-height: 1.22 !important;
-        margin-bottom: 13px !important;
-      }
-
-      .lead {
-        font-size: 17px !important;
-        line-height: 1.65 !important;
-        margin-bottom: 30px !important;
-      }
-
-      .cards-grid,
-      .step-grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-      }
-
-      .card {
-        padding: 24px 22px !important;
-        border-radius: 17px !important;
-      }
-
-      .card h3 {
-        font-size: 21px !important;
-        line-height: 1.3 !important;
-        margin-bottom: 8px !important;
-      }
-
-      .card p {
-        font-size: 16px !important;
-        line-height: 1.62 !important;
-      }
-
-      /* The services button gets its own predictable mobile box. */
-      #leistungen > .container > div:last-child {
-        margin-top: 24px !important;
-      }
-
+      #leistungen > .container > div:last-child { margin-top: 24px !important; }
       #leistungen .btn-secondary {
         display: block !important;
         width: 100% !important;
@@ -639,239 +525,25 @@
       .handwritten.small { font-size: 22px !important; margin: -1px 0 12px !important; }
       .hero-handwritten { text-align: center !important; max-width: 100% !important; }
 
-      /* ÜBER MICH */
-      .about-section {
-        min-height: auto !important;
-        padding: 0 0 42px !important;
-        display: block !important;
-        background-image: none !important;
-        overflow: visible !important;
-      }
-
-      .about-section::before {
-        content: '';
-        position: relative;
-        display: block;
-        width: 100%;
-        height: calc(100vw * 1023 / 1537);
-        background-image: url('./assets/Sehrgut.JPG');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        -webkit-mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%);
-        mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%);
-      }
-
-      .about-inner {
-        padding: 0 20px !important;
-        margin-top: 10px !important;
-        position: relative;
-        z-index: 1;
-      }
-
-      .about-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 26px 22px !important;
-        background: rgba(255,255,255,0.92) !important;
-        backdrop-filter: blur(5px) !important;
-        -webkit-backdrop-filter: blur(5px) !important;
-      }
-
-      .about-card h2 {
-        font-size: 27px !important;
-        margin-bottom: 12px !important;
-      }
-
-      .about-card .lead {
-        font-size: 16px !important;
-        line-height: 1.6 !important;
-        margin-bottom: 18px !important;
-      }
-
-      .about-text {
-        font-size: 15px !important;
-        line-height: 1.62 !important;
-      }
-
-      /* NACHBARSCHAFTSHILFE */
-      #nachbarschaftshilfe {
-        min-height: auto !important;
-        padding: 0 0 58px !important;
-        background-image: none !important;
-      }
-
-      #nachbarschaftshilfe::before {
-        width: 100% !important;
-        height: calc(100vw * 1121 / 1403) !important;
-        aspect-ratio: 1403 / 1121 !important;
-        background-size: cover !important;
-        background-position: left top !important;
-        -webkit-mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%) !important;
-        mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%) !important;
-      }
-
-      #nachbarschaftshilfe .two-col {
-        display: block !important;
-        padding-top: 0 !important;
-        gap: 0 !important;
-      }
-
-      #nachbarschaftshilfe .two-col > div:first-child {
-        max-width: 100% !important;
-        background: linear-gradient(180deg, rgba(194,165,187,0.96) 0%, rgba(194,165,187,1) 16%) !important;
-        padding-top: 34px !important;
-      }
-
-      #nachbarschaftshilfe .lead {
-        margin-bottom: 24px !important;
-      }
-
-      .info-list {
-        gap: 16px !important;
-      }
-
-      .info-list-text strong {
-        font-size: 17px !important;
-      }
-
-      .info-list-text p {
-        font-size: 15px !important;
-        line-height: 1.58 !important;
-      }
-
-      .section-side-img { display: none !important; }
-
-      /* TRAUER */
-      #trauerbegleitung {
-        aspect-ratio: auto !important;
-        min-height: auto !important;
-        padding: 0 0 42px !important;
-        display: block !important;
-        align-items: initial !important;
-        background-color: #f2ebeb !important;
-        background-size: 100% auto !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
-      }
-
-      #trauerbegleitung::before {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        height: calc(100vw * 1023 / 1537) !important;
-        background: transparent !important;
-        -webkit-mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%) !important;
-        mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%) !important;
-        pointer-events: none !important;
-      }
-
-      #trauerbegleitung .trauer-inner {
-        padding: 0 20px !important;
-        margin-top: 0 !important;
-      }
-
-      .trauer-content {
-        max-width: 100% !important;
-        background: #f2ebeb !important;
-        border-radius: 0 !important;
-        padding: 26px 22px !important;
-        margin-top: 0 !important;
-      }
-
-      .trauer-content h2 {
-        font-size: 27px !important;
-        margin-bottom: 12px !important;
-      }
-
-      .trauer-content .lead {
-        font-size: 16px !important;
-        line-height: 1.62 !important;
-      }
-
-      .trauer-content .about-text {
-        font-size: 15px !important;
-        line-height: 1.62 !important;
-      }
-
-      .trauer-content .btn-secondary {
-        display: inline-block !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        white-space: normal !important;
-        text-align: center !important;
-      }
+      .info-list { gap: 16px !important; }
+      .info-list-text strong { font-size: 17px !important; }
+      .info-list-text p { font-size: 15px !important; line-height: 1.58 !important; }
 
       /* CONTACT */
-      .contact-grid {
-        gap: 30px !important;
-      }
-
-      .contact-wrapper {
-        max-width: 100% !important;
-        padding: 28px 22px !important;
-        border-radius: 18px !important;
-      }
-
-      .form-group {
-        margin-bottom: 18px !important;
-      }
-
-      .form-group label {
-        font-size: 16px !important;
-      }
-
-      .form-group input,
-      .form-group textarea {
-        font-size: 16px !important;
-        padding: 13px 14px !important;
-      }
+      .contact-grid { gap: 30px !important; }
+      .contact-wrapper { max-width: 100% !important; padding: 28px 22px !important; border-radius: 18px !important; }
+      .form-group { margin-bottom: 18px !important; }
+      .form-group label { font-size: 16px !important; }
+      .form-group input, .form-group textarea { font-size: 16px !important; padding: 13px 14px !important; }
     }
 
     @media (max-width: 640px) {
       .cards-grid { grid-template-columns: 1fr; }
       .container { padding: 0 20px; }
     }
-    /* TABLET – eigenes Layout, PC und Smartphone bleiben unverändert */
-    @media (min-width: 769px) and (max-width: 992px) {
 
-      /* NAVIGATION */
+    /* TABLET NAVIGATION & ALLGEMEIN (769px - 992px) */
+    @media (min-width: 769px) and (max-width: 992px) {
       nav {
         height: 118px;
         padding: 10px 24px;
@@ -880,337 +552,224 @@
         gap: 6px;
       }
 
-      .nav-logo {
-        gap: 10px;
-      }
+      .nav-logo { gap: 10px; }
+      .nav-logo img { height: 54px; }
+      .nav-logo-text { font-size: 18px; }
+      .nav-logo-text small { font-size: 11px; letter-spacing: 0; }
 
-      .nav-logo img {
-        height: 54px;
-      }
+      .nav-links { gap: 4px; flex-wrap: nowrap; justify-content: center; }
+      .nav-links a { font-size: 13px; padding: 7px 9px; white-space: nowrap; }
 
-      .nav-logo-text {
-        font-size: 18px;
-      }
+      section { scroll-margin-top: 130px; }
+      .container { padding: 0 36px; }
 
-      .nav-logo-text small {
-        font-size: 11px;
-        letter-spacing: 0;
-      }
-
-      .nav-links {
-        gap: 4px;
-        flex-wrap: nowrap;
-        justify-content: center;
-      }
-
-      .nav-links a {
-        font-size: 13px;
-        padding: 7px 9px;
-        white-space: nowrap;
-      }
-
-      /* ALLGEMEINE TABLET-SEKTIONEN */
-      section {
-        scroll-margin-top: 130px;
-      }
-
-      .container {
-        padding: 0 36px;
-      }
-
-      /* HERO – Tablet: Bild oben, Text darunter */
-
-#home {
-  min-height: auto;
-  margin-top: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-#home::before {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1537 / 1023;
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-mask-image: none;
-  mask-image: none;
-}
-
-#home::after {
-  display: none;
-}
-
-.hero-left {
-  width: 100%;
-  padding: 58px 36px 70px;
-  align-items: center;
-  gap: 18px;
-}
-
-.hero-left > * {
-  width: min(620px, 100%);
-}
-
-      .hero-left .hero-tag,
-      .hero-left .hero-btns,
-      .hero-left .trust-row {
-        align-self: center;
-      }
-
-      h1 {
-        font-size: 42px;
-        text-align: center;
-      }
-
-      .hero-handwritten {
-        text-align: center;
-      }
-
-      .hero-desc {
-        font-size: 18px;
-        line-height: 1.65;
-        text-align: center;
-      }
-
-      .hero-btns {
-        justify-content: center;
-      }
-
-      .trust-row {
-        justify-content: center;
-      }
-
-      /* LEISTUNGEN */
-      #leistungen {
-        padding: 72px 0;
-      }
-
-      .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-      }
-
-      .card {
-        padding: 26px 22px;
-      }
-
-      .card h3 {
-        font-size: 21px;
-      }
-
-      .card p {
-        font-size: 17px;
-      }
-
-      /* ÜBER MICH – Tablet: Bild oben, Text sauber darunter */
-      .about-section {
+      /* HERO TABLET */
+      #home {
         min-height: auto;
-        padding: 0 0 72px;
-        display: block;
-        background-image: none;
-        background-color: #fdfafb;
+        margin-top: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
       }
 
-      .about-section::before {
-        content: '';
+      #home::before {
         position: relative;
         display: block;
         width: 100%;
-        height: calc(100vw * 1023 / 1537);
-        background-image: url('./assets/Sehrgut.JPG');
+        height: auto;
+        aspect-ratio: 1537 / 1023;
         background-size: 100% 100%;
         background-position: center center;
         background-repeat: no-repeat;
+        -webkit-mask-image: none;
+        mask-image: none;
       }
 
-      .about-inner {
-        padding: 0 36px;
-        margin-top: 20px;
-      }
+      #home::after { display: none; }
 
-      .about-card {
-        width: min(620px, 100%);
-        max-width: 620px;
-        margin: 0 auto;
-        padding: 34px 32px;
-        background: rgba(255,255,255,0.96);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      }
-
-      .about-card .lead {
-        font-size: 18px;
-        line-height: 1.65;
-      }
-
-      .about-text {
-        font-size: 17px;
-        line-height: 1.65;
-      }
-
-      /* ABLAUF */
-      #ablauf {
-        padding: 72px 0;
-      }
-
-      .step-grid {
-        grid-template-columns: repeat(3, 1fr);
+      .hero-left {
+        width: 100%;
+        padding: 58px 36px 70px;
+        align-items: center;
         gap: 18px;
       }
 
-      .step-grid .card {
-        padding: 24px 20px;
+      .hero-left > * { width: min(620px, 100%); }
+      .hero-left .hero-tag, .hero-left .hero-btns, .hero-left .trust-row { align-self: center; }
+      h1 { font-size: 42px; text-align: center; }
+      .hero-handwritten { text-align: center; }
+      .hero-desc { font-size: 18px; line-height: 1.65; text-align: center; }
+      .hero-btns { justify-content: center; }
+      .trust-row { justify-content: center; }
+
+      /* LEISTUNGEN TABLET */
+      #leistungen { padding: 72px 0; }
+      .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .card { padding: 26px 22px; }
+      .card h3 { font-size: 21px; }
+      .card p { font-size: 17px; }
+
+      /* ABLAUF TABLET */
+      #ablauf { padding: 72px 0; }
+      .step-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .step-grid .card { padding: 24px 20px; }
+
+      /* RUHEBEREICH TABLET */
+      .between-sections { padding: 52px 0 58px; }
+      .between-sections-inner { padding: 0 36px; }
+
+      /* KONTAKT TABLET */
+      #kontakt { padding: 60px 0; }
+      .contact-grid { gap: 48px; }
+      .contact-wrapper { padding: 36px; }
+    }
+
+    /* ==========================================================================
+       DREI RESPONSIVE BILD/TEXT-BEREICHE (SMARTPHONE & TABLET <= 992px)
+       ========================================================================== */
+    @media (max-width: 992px) {
+
+      /* 1. ÜBER MICH */
+      .about-section {
+        min-height: auto !important;
+        padding: 0 0 52px !important;
+        display: block !important;
+        background-image: none !important;
+        background-color: #fdfafb !important;
+        overflow: visible !important;
       }
 
-      /* NACHBARSCHAFTSHILFE – Tablet: Collage oben, Text darunter */
+      .about-section::before {
+        content: '' !important;
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: calc(100vw * 1023 / 1537) !important;
+        aspect-ratio: 1537 / 1023 !important;
+        background-image: url('./assets/Sehrgut.JPG') !important;
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 8%, #000 25%, #000 100%) !important;
+        mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 8%, #000 25%, #000 100%) !important;
+        inset: auto !important;
+        z-index: 0 !important;
+      }
+
+      .about-inner {
+        padding: 24px 20px 0 !important;
+        margin-top: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+      }
+
+      .about-card {
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        padding: 30px 26px !important;
+        background: #ffffff !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.03) !important;
+      }
+
+      /* 2. NACHBARSCHAFTSHILFE / NBH */
       #nachbarschaftshilfe {
-        min-height: auto;
-        padding: 0 0 72px;
-        background: var(--bg-warm);
+        min-height: auto !important;
+        padding: 0 0 52px !important;
+        background-color: var(--bg-warm) !important;
+        background-image: none !important;
       }
 
-   #nachbarschaftshilfe::before {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1403 / 1121;
-  background-size: 100% 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-mask-image: none;
-  mask-image: none;
-}
+      #nachbarschaftshilfe::before {
+        content: '' !important;
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: calc(100vw * 1121 / 1403) !important;
+        aspect-ratio: 1403 / 1121 !important;
+        background-image: url('./assets/NBH.png') !important;
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 8%, #000 25%, #000 100%) !important;
+        mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 8%, #000 25%, #000 100%) !important;
+        inset: auto !important;
+        z-index: 0 !important;
+      }
 
       #nachbarschaftshilfe::after {
-        display: none;
+        display: none !important;
       }
 
-      .two-col {
-        display: block;
+      #nachbarschaftshilfe .two-col {
+        display: block !important;
+        padding-top: 24px !important;
+        gap: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
       }
 
-      .two-col > div:first-child {
-        max-width: 620px;
-        margin: 0 auto;
-        padding: 38px 0 0;
-      }
-
-      .info-list {
-        gap: 16px;
-      }
-
-      .info-list-text p {
-        font-size: 17px;
+      #nachbarschaftshilfe .two-col > div:first-child {
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        padding: 30px 26px !important;
+        background: #ffffff !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.03) !important;
       }
 
       .section-side-img {
-        display: none;
+        display: none !important;
       }
 
-      /* RUHEBEREICH */
-      .between-sections {
-        padding: 52px 0 58px;
-      }
-
-      .between-sections-inner {
-        padding: 0 36px;
-      }
-
-      /* TRAUER – Tablet: Bild oben, Text darunter */
+      /* 3. TRAUER- & STERBEBEGLEITUNG */
       #trauerbegleitung {
-        aspect-ratio: auto;
-        min-height: auto;
-        padding: 0 0 72px;
-        display: block;
-        background-color: #f2ebeb;
-        background-size: 100% auto;
-        background-position: center top;
-        background-repeat: no-repeat;
+        position: relative !important;
+        aspect-ratio: auto !important;
+        min-height: auto !important;
+        padding: 0 0 52px !important;
+        display: block !important;
+        background-image: none !important;
+        background-color: var(--bg-cream) !important;
       }
 
       #trauerbegleitung::before {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: calc(100vw * 1023 / 1537);
-        background: transparent;
-        -webkit-mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%);
-        mask-image: linear-gradient(90deg,
-          transparent 0%,
-          rgba(0,0,0,0.18) 7%,
-          rgba(0,0,0,0.55) 16%,
-          rgba(0,0,0,0.88) 27%,
-          #000 38%,
-          #000 100%);
-        pointer-events: none;
+        content: '' !important;
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: calc(100vw * 9 / 16) !important;
+        aspect-ratio: 16 / 9 !important;
+        background-image: url('./assets/trauer.png') !important;
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 8%, #000 25%, #000 100%) !important;
+        mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.18) 8%, #000 25%, #000 100%) !important;
+        inset: auto !important;
+        z-index: 0 !important;
       }
 
       .trauer-inner {
-        padding: 0 36px;
-        margin-top: 0;
+        padding: 24px 20px 0 !important;
+        margin-top: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
       }
 
       .trauer-content {
-        max-width: 620px;
-        margin: 0 auto;
-        padding: 34px 32px;
-        background: #f2ebeb;
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      }
-
-      .trauer-content .lead {
-        font-size: 18px;
-      }
-
-      .trauer-content .about-text {
-        font-size: 17px;
-      }
-
-      /* KONTAKT */
-      #kontakt {
-        padding: 60px 0;
-      }
-
-      .contact-grid {
-        gap: 48px;
-      }
-
-      .contact-wrapper {
-        padding: 36px;
-      }
-    }
-
-    /* FINAL MOBILE HERO OVERRIDES */
-    @media (max-width: 768px) {
-      .hero-left {
-        align-items: center !important;
-        padding: 38px 20px 42px !important;
-      }
-
-      .hero-left > * {
         width: 100% !important;
-        max-width: 620px !important;
-      }
-
-      .hero-left .hero-tag,
-      .hero-left .hero-btns,
-      .hero-left .trust-row {
-        align-self: center !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        padding: 30px 26px !important;
+        background: #ffffff !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.03) !important;
       }
     }
 
@@ -1224,8 +783,7 @@
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-
+  <!-- NAVIGATION -->
   <nav>
     <a href="#home" class="nav-logo">
       <img src="./assets/logo.png" alt="Alltagsfreund Jenny Logo">
@@ -1245,7 +803,6 @@
   </nav>
 
   <!-- ÜBER MICH -->
-
   <section id="ueber-mich" class="about-section">
     <div class="about-inner">
       <div class="about-card">
@@ -1253,30 +810,28 @@
         <h2>Hallo, ich bin Jenny.</h2>
         <span class="handwritten small">Persönlich. Nah. Und so, wie es für Sie passt.</span>
 
-    <p class="lead">
-      Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
-      unterstützen, wo sie gerade Hilfe brauchen.
-    </p>
+        <p class="lead">
+          Ich bin in Burgstädt zu Hause und möchte Menschen im Alltag genau dort
+          unterstützen, wo sie gerade Hilfe brauchen.
+        </p>
 
-    <p class="about-text">
-      Mir ist wichtig, dass sich Unterstützung nicht nach einer fertigen
-      Schablone anfühlt. Jeder Mensch hat seinen eigenen Alltag, seine
-      Gewohnheiten und seine Geschichte. Deshalb nehme ich mir Zeit zum
-      Zuhören und bespreche mit Ihnen in Ruhe, was für Sie passend ist.
-    </p>
+        <p class="about-text">
+          Mir ist wichtig, dass sich Unterstützung nicht nach einer fertigen
+          Schablone anfühlt. Jeder Mensch hat seinen eigenen Alltag, seine
+          Gewohnheiten und seine Geschichte. Deshalb nehme ich mir Zeit zum
+          Zuhören und bespreche mit Ihnen in Ruhe, was für Sie passend ist.
+        </p>
 
-    <p class="about-text" style="margin-top: 18px;">
-      Dabei geht es für mich nicht nur darum, eine Aufgabe zu erledigen.
-      Es geht genauso um Vertrauen, einen guten Umgang miteinander und
-      darum, dass Sie sich mit der Unterstützung wohlfühlen.
-    </p>
-  </div>
-</div>
-
+        <p class="about-text" style="margin-top: 18px;">
+          Dabei geht es für mich nicht nur darum, eine Aufgabe zu erledigen.
+          Es geht genauso um Vertrauen, einen guten Umgang miteinander und
+          darum, dass Sie sich mit der Unterstützung wohlfühlen.
+        </p>
+      </div>
+    </div>
   </section>
 
- <!-- LEISTUNGEN -->
-
+  <!-- LEISTUNGEN -->
   <section id="leistungen">
     <div class="container">
       <span class="section-tag">Mein Angebot</span>
@@ -1286,49 +841,45 @@
         was für Sie im Alltag sinnvoll ist.
       </p>
 
-  <div class="cards-grid">
+      <div class="cards-grid">
+        <div class="card reveal">
+          <h3>Haushalt &amp; Wäsche</h3>
+          <p>Unterstützung beim Putzen, bei der Wäsche und bei Aufgaben, die im Haushalt gerade zu viel werden.</p>
+        </div>
 
-    <div class="card reveal">
-      <h3>Haushalt &amp; Wäsche</h3>
-      <p>Unterstützung beim Putzen, bei der Wäsche und bei Aufgaben, die im Haushalt gerade zu viel werden.</p>
+        <div class="card reveal">
+          <h3>Einkaufen &amp; Besorgungen</h3>
+          <p>Ich übernehme kleinere oder größere Einkäufe und unterstütze Sie bei Besorgungen, wenn Sie selbst nicht gut dazu kommen.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Seniorenbetreuung</h3>
+          <p>Ob Spaziergang, Arzttermin, Einkauf oder gemeinsame Zeit: Ich begleite Sie zuverlässig und ohne Zeitdruck.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Nachbarschaftshilfe</h3>
+          <p>Unterstützung in Burgstädt und Umgebung, abgestimmt auf Ihren Alltag und das, wobei Sie gerade Hilfe benötigen.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Sterbe- &amp; Trauerbegleitung</h3>
+          <p>Eine persönliche Begleitung für Menschen am Lebensende, Angehörige und Menschen, die einen Verlust verarbeiten.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Trauergruppen</h3>
+          <p>Gemeinsamer Austausch und Aufarbeitung in einer kleinen Gruppe, in der jede Trauer ihren eigenen Platz haben darf.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 34px; text-align: center;">
+        <a href="leistungen.html" class="btn-secondary">Leistungs- und Preisliste ansehen</a>
+      </div>
     </div>
-
-    <div class="card reveal">
-      <h3>Einkaufen &amp; Besorgungen</h3>
-      <p>Ich übernehme kleinere oder größere Einkäufe und unterstütze Sie bei Besorgungen, wenn Sie selbst nicht gut dazu kommen.</p>
-    </div>
-
-    <div class="card reveal">
-      <h3>Seniorenbetreuung</h3>
-      <p>Ob Spaziergang, Arzttermin, Einkauf oder gemeinsame Zeit: Ich begleite Sie zuverlässig und ohne Zeitdruck.</p>
-    </div>
-
-    <div class="card reveal">
-      <h3>Nachbarschaftshilfe</h3>
-      <p>Unterstützung in Burgstädt und Umgebung, abgestimmt auf Ihren Alltag und das, wobei Sie gerade Hilfe benötigen.</p>
-    </div>
-
-    <div class="card reveal">
-      <h3>Sterbe- &amp; Trauerbegleitung</h3>
-      <p>Eine persönliche Begleitung für Menschen am Lebensende, Angehörige und Menschen, die einen Verlust verarbeiten.</p>
-    </div>
-
-    <div class="card reveal">
-      <h3>Trauergruppen</h3>
-      <p>Gemeinsamer Austausch und Aufarbeitung in einer kleinen Gruppe, in der jede Trauer ihren eigenen Platz haben darf.</p>
-    </div>
-
-  </div>
-
-  <div style="margin-top: 34px; text-align: center;">
-    <a href="leistungen.html" class="btn-secondary">Leistungs- und Preisliste ansehen</a>
-  </div>
-</div>
-
   </section>
 
   <!-- HERO SECTION -->
-
   <section id="home">
     <div class="hero-left">
       <div class="hero-tag">
@@ -1352,115 +903,104 @@
   </section>
 
   <!-- ABLAUF -->
-
   <section id="ablauf">
     <div class="container">
       <span class="section-tag">So lernen wir uns kennen</span>
       <h2>Ganz in Ruhe, Schritt für Schritt</h2>
 
-  <div class="step-grid">
+      <div class="step-grid">
+        <div class="card reveal">
+          <h3>1. Erstes Gespräch</h3>
+          <p>
+            Wir sprechen darüber, was Sie gerade beschäftigt und wobei Sie
+            Unterstützung suchen. Das erste Gespräch ist unverbindlich.
+          </p>
+        </div>
 
-    <div class="card reveal">
-      <h3>1. Erstes Gespräch</h3>
-      <p>
-        Wir sprechen darüber, was Sie gerade beschäftigt und wobei Sie
-        Unterstützung suchen. Das erste Gespräch ist unverbindlich.
-      </p>
+        <div class="card reveal">
+          <h3>2. Gemeinsam besprechen</h3>
+          <p>
+            Wir schauen, welche Unterstützung zu Ihrem Alltag passt und
+            was ich für Sie übernehmen kann.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3>3. Unterstützung beginnt</h3>
+          <p>
+            Wenn alles passt, vereinbaren wir die nächsten Schritte.
+            Ohne Druck und so, wie es für Sie passt.
+          </p>
+        </div>
+      </div>
     </div>
-
-    <div class="card reveal">
-      <h3>2. Gemeinsam besprechen</h3>
-      <p>
-        Wir schauen, welche Unterstützung zu Ihrem Alltag passt und
-        was ich für Sie übernehmen kann.
-      </p>
-    </div>
-
-    <div class="card reveal">
-      <h3>3. Unterstützung beginnt</h3>
-      <p>
-        Wenn alles passt, vereinbaren wir die nächsten Schritte.
-        Ohne Druck und so, wie es für Sie passt.
-      </p>
-    </div>
-
-  </div>
-</div>
-
   </section>
 
   <!-- NACHBARSCHAFTSHILFE -->
-
   <section id="nachbarschaftshilfe">
     <div class="container">
       <div class="two-col">
+        <div>
+          <span class="section-tag">Nachbarschaftshilfe</span>
+          <h2>Nachbarschaftshilfe in Burgstädt und Umgebung</h2>
+          <span class="handwritten small">Hilfe im Alltag darf ganz unkompliziert sein.</span>
 
-    <div>
-      <span class="section-tag">Nachbarschaftshilfe</span>
-      <h2>Nachbarschaftshilfe in Burgstädt und Umgebung</h2>
-      <span class="handwritten small">Hilfe im Alltag darf ganz unkompliziert sein.</span>
+          <p class="lead">
+            Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen,
+            bei Terminen oder einfach dann, wenn Gesellschaft guttut.
+            Was genau ich übernehme, besprechen wir in Ruhe und passend
+            zu Ihrem Alltag.
+          </p>
 
-      <p class="lead">
-        Ich unterstütze Sie zuhause und unterwegs – beim Einkaufen,
-        bei Terminen oder einfach dann, wenn Gesellschaft guttut.
-        Was genau ich übernehme, besprechen wir in Ruhe und passend
-        zu Ihrem Alltag.
-      </p>
+          <ul class="info-list">
+            <li>
+              <span class="info-list-icon">✓</span>
+              <div class="info-list-text">
+                <strong>Hilfe im Alltag</strong>
+                <p>
+                  Zum Beispiel beim Einkaufen, bei kleinen Aufgaben im Haushalt
+                  oder bei Wegen und Terminen.
+                </p>
+              </div>
+            </li>
 
-      <ul class="info-list">
+            <li>
+              <span class="info-list-icon">✓</span>
+              <div class="info-list-text">
+                <strong>Auch Zeit füreinander</strong>
+                <p>
+                  Ein Spaziergang, ein Gespräch oder eine gemeinsame Aktivität
+                  kann genauso wichtig sein wie praktische Hilfe.
+                </p>
+              </div>
+            </li>
 
-        <li>
-          <span class="info-list-icon">✓</span>
-          <div class="info-list-text">
-            <strong>Hilfe im Alltag</strong>
-            <p>
-              Zum Beispiel beim Einkaufen, bei kleinen Aufgaben im Haushalt
-              oder bei Wegen und Terminen.
-            </p>
+            <li>
+              <span class="info-list-icon">✓</span>
+              <div class="info-list-text">
+                <strong>Entlastungsbetrag</strong>
+                <p>
+                  Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung
+                  über den Entlastungsbetrag möglich sein. Das klären wir
+                  gemeinsam vorab.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 30px;">
+            <a href="leistungen.html" class="btn-primary">Leistungen ansehen</a>
           </div>
-        </li>
+        </div>
 
-        <li>
-          <span class="info-list-icon">✓</span>
-          <div class="info-list-text">
-            <strong>Auch Zeit füreinander</strong>
-            <p>
-              Ein Spaziergang, ein Gespräch oder eine gemeinsame Aktivität
-              kann genauso wichtig sein wie praktische Hilfe.
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <span class="info-list-icon">✓</span>
-          <div class="info-list-text">
-            <strong>Entlastungsbetrag</strong>
-            <p>
-              Wenn die Voraussetzungen erfüllt sind, kann eine Unterstützung
-              über den Entlastungsbetrag möglich sein. Das klären wir
-              gemeinsam vorab.
-            </p>
-          </div>
-        </li>
-
-      </ul>
-
-      <div style="margin-top: 30px;">
-        <a href="leistungen.html" class="btn-primary">Leistungen ansehen</a>
+        <div>
+          <img src="./assets/NBH.png" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
+        </div>
       </div>
     </div>
-
-    <div>
-      <img src="./assets/NBH.png" alt="Nachbarschaftshilfe und Begleitung" class="section-side-img">
-    </div>
-
-  </div>
-</div>
-
   </section>
 
   <!-- RUHEBEREICH ZWISCHEN NBH UND TRAUER -->
-
   <section class="between-sections" aria-label="Persönliche Unterstützung">
     <div class="between-sections-inner">
       <span class="handwritten">Unterstützung darf auch einfach sein.</span>
@@ -1474,109 +1014,96 @@
   </section>
 
   <!-- TRAUER- & STERBEBEGLEITUNG -->
-
   <section id="trauerbegleitung">
     <div class="container trauer-inner">
       <div class="trauer-content">
+        <span class="section-tag">Begleitung</span>
+        <h2>Trauer- &amp; Sterbebegleitung</h2>
+        <span class="handwritten">Ich bin an Ihrer Seite – in der Zeit, in der Worte manchmal fehlen.</span>
 
-    <span class="section-tag">Begleitung</span>
-    <h2>Trauer- &amp; Sterbebegleitung</h2>
-    <span class="handwritten">Ich bin an Ihrer Seite – in der Zeit, in der Worte manchmal fehlen.</span>
+        <p class="lead">
+          Wenn ein Mensch schwer erkrankt ist, das Leben sich dem Ende nähert
+          oder ein geliebter Mensch bereits gegangen ist, verändert sich vieles.
+          In solchen Zeiten möchte ich Sie nicht mit großen Worten begleiten,
+          sondern vor allem mit Zeit, einem offenen Ohr und einem verlässlichen
+          Gegenüber.
+        </p>
 
-    <p class="lead">
-      Wenn ein Mensch schwer erkrankt ist, das Leben sich dem Ende nähert
-      oder ein geliebter Mensch bereits gegangen ist, verändert sich vieles.
-      In solchen Zeiten möchte ich Sie nicht mit großen Worten begleiten,
-      sondern vor allem mit Zeit, einem offenen Ohr und einem verlässlichen
-      Gegenüber.
-    </p>
+        <p class="about-text" style="margin-top: 20px;">
+          Trauer ist bei jedem Menschen anders. Es gibt keinen festen Ablauf
+          und keine richtige oder falsche Art zu trauern. Deshalb entscheiden
+          Sie selbst, was Ihnen guttut und worüber Sie sprechen möchten.
+        </p>
 
-    <p class="about-text" style="margin-top: 20px;">
-      Trauer ist bei jedem Menschen anders. Es gibt keinen festen Ablauf
-      und keine richtige oder falsche Art zu trauern. Deshalb entscheiden
-      Sie selbst, was Ihnen guttut und worüber Sie sprechen möchten.
-    </p>
+        <p class="about-text" style="margin-top: 18px;">
+          Manchmal braucht es ein Gespräch. Manchmal gemeinsame Zeit oder
+          Unterstützung im Alltag. Und manchmal einfach jemanden, der da ist
+          und die Stille aushält.
+        </p>
 
-    <p class="about-text" style="margin-top: 18px;">
-      Manchmal braucht es ein Gespräch. Manchmal gemeinsame Zeit oder
-      Unterstützung im Alltag. Und manchmal einfach jemanden, der da ist
-      und die Stille aushält.
-    </p>
-
-    <div style="margin-top: 28px;">
-      <a href="leistungen.html" class="btn-secondary">Mehr zur Begleitung</a>
+        <div style="margin-top: 28px;">
+          <a href="leistungen.html" class="btn-secondary">Mehr zur Begleitung</a>
+        </div>
+      </div>
     </div>
-
-  </div>
-</div>
-
   </section>
 
   <!-- KONTAKT -->
-
   <section id="kontakt">
-  <div class="container">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-text">
+          <span class="section-tag">Kontakt</span>
+          <h2>Melden Sie sich gerne bei mir</h2>
+          <p class="lead">
+            Schreiben Sie mir gerne, wobei Sie Unterstützung suchen. Wir können dann in Ruhe besprechen, was für Sie passend ist.
+          </p>
+        </div>
 
-<div class="contact-grid">
-  
-  <div class="contact-text">
-    <span class="section-tag">Kontakt</span>
-    <h2>Melden Sie sich gerne bei mir</h2>
-    <p class="lead">
-      Schreiben Sie mir gerne, wobei Sie Unterstützung suchen. Wir können dann in Ruhe besprechen, was für Sie passend ist.
-    </p>
-  </div>
+        <div class="contact-wrapper">
+          <form method="POST" id="contact-form">
+            <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-  <div class="contact-wrapper">
-    <form method="POST" id="contact-form">
-      <!-- Web3Forms Access Key -->
-      <input type="hidden" name="access_key" value="b673c40a-60c6-4aad-94f6-317e1053d389">
-      
-      <!-- Spam-Schutz (Honeypot) -->
-      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <div class="form-group">
+              <label for="name">Vor- und Zuname</label>
+              <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
+            </div>
 
-      <div class="form-group">
-        <label for="name">Vor- und Zuname</label>
-        <input type="text" id="name" name="name" placeholder="Ihr Vor- und Nachname" required>
+            <div class="form-group">
+              <label for="phone">Telefonnummer</label>
+              <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-Mail-Adresse</label>
+              <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
+              <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
+            </div>
+
+            <label class="privacy-consent" for="privacy">
+              <input type="checkbox" id="privacy" name="privacy" required>
+              <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage an Web3Forms übermittelt werden.</span>
+            </label>
+            
+            <button type="submit" id="submit-btn" class="btn-submit">Nachricht senden</button>
+
+            <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
+              Ihre Angaben werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage verwendet.
+            </p>
+
+            <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
+          </form>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label for="phone">Telefonnummer</label>
-        <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer für Rückfragen" required>
-      </div>
-
-      <div class="form-group">
-        <label for="email">E-Mail-Adresse</label>
-        <input type="email" id="email" name="email" placeholder="ihre.mail@beispiel.de" required>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Wie kann ich Ihnen helfen? (Freitext)</label>
-        <textarea id="message" name="message" rows="5" placeholder="Schreiben Sie mir hier gerne Ihre Wünsche oder Fragen auf..." required></textarea>
-      </div>
-
-      <label class="privacy-consent" for="privacy">
-        <input type="checkbox" id="privacy" name="privacy" required>
-        <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage an Web3Forms übermittelt werden.</span>
-      </label>
-      
-      <button type="submit" id="submit-btn" class="btn-submit">Nachricht senden</button>
-
-      <p style="font-size: 12px; color: #888; margin-top: 15px; text-align: center;">
-        Ihre Angaben werden vertraulich behandelt und nur zur Bearbeitung Ihrer Anfrage verwendet.
-      </p>
-
-      <div id="form-result" style="margin-top: 15px; font-weight: bold; display: none; text-align: center;"></div>
-    </form>
-  </div>
-
-</div>
-
-  </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
-
   <footer>
     <div class="container">
       <p style="margin-top: 15px; font-size: 13px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
@@ -1592,7 +1119,6 @@
   </footer>
 
   <!-- Scroll-Animation Script -->
-
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.documentElement.classList.add('js');
@@ -1616,7 +1142,6 @@
   </script>
 
   <!-- Kontaktformular Script (Web3Forms) -->
-
   <script>
   const form = document.getElementById('contact-form');
   const result = document.getElementById('form-result');
@@ -1624,9 +1149,6 @@
 
   form.addEventListener('submit', function(e) {
       e.preventDefault();
-
-      // 1. Validierung
-      // Die integrierte Browser-Validierung von type="email" und required übernimmt die Plausibilitätsprüfung.
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
